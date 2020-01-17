@@ -1,19 +1,41 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './app-navbar.component.html',
-  styles: []
+  styles: [`
+    .sidenav-container {
+      height: 100%;
+    }
+    
+    .sidenav {
+      width: 200px;
+    }
+    
+    .sidenav .mat-toolbar {
+      background: inherit;
+    }
+    
+    .mat-toolbar.mat-primary {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    
+  `]
 })
-export class AppNavbarComponent implements OnInit {
+export class AppNavbarComponent {
 
-  private url: string;
-  collapsed = true;
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  .pipe(
+    map(result => result.matches),
+    shareReplay()
+  );
 
-  constructor(private router: Router) {  }
-
-  ngOnInit() {
-  }
+constructor(private breakpointObserver: BreakpointObserver) {}
 
 }

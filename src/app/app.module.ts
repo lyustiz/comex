@@ -12,6 +12,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 
 // project modules
 import { CartolasFlujoModule } from './cartolas-flujo/cartolas-flujo.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { CartolasFlujoModule } from './cartolas-flujo/cartolas-flujo.module';
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     // project modules
-    CartolasFlujoModule
+    CartolasFlujoModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
