@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
@@ -11,21 +11,17 @@ import { map, shareReplay } from 'rxjs/operators';
     .sidenav-container {
       height: 100%;
     }
-    
     .sidenav {
       width: 200px;
     }
-    
     .sidenav .mat-toolbar {
       background: inherit;
     }
-    
     .mat-toolbar.mat-primary {
       position: sticky;
       top: 0;
       z-index: 1;
     }
-    
   `]
 })
 export class AppNavbarComponent {
@@ -36,6 +32,7 @@ export class AppNavbarComponent {
     shareReplay()
   );
 
+public opened = false;
 constructor(private breakpointObserver: BreakpointObserver) {}
 
 }

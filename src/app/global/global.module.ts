@@ -1,16 +1,16 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+import { TranslateModule } from '@ngx-translate/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /** avoid app module full of declarations */
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
-    HttpClientModule,
     TranslateModule,
+    BrowserAnimationsModule
   ],
   declarations: [
   ]
