@@ -1,13 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { environment  } from '../environments/environment';
+import { environment  } from '@env/environment';
+import {AuthModule } from '@module/auth/auth.module';
 
+import { LoginComponent  } from '@module/auth/components/login/login.component';
 
-const routes: Routes = [];
-
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/auth/login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('@module/auth/auth.module').then( m => m.AuthModule)
+  }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash : environment.production ? false : true })],
+  imports: [RouterModule.forRoot(routes, { useHash : environment.production ? false : true }), AuthModule],
   exports: [RouterModule]
 })
 

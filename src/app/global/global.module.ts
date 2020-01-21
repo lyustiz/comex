@@ -4,13 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { TranslateModule } from '@ngx-translate/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-/** avoid app module full of declarations */
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
     TranslateModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   declarations: [
   ]
