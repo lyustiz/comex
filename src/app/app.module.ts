@@ -20,17 +20,10 @@ import { AppComponent } from './app.component';
     CoreModule,
     SharedModule,
     // app
-    AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    AppRoutingModule,
    ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-
-  constructor() {
-    console.log(GlobalModule,
-    
-    SharedModule);
-  }
- }
+export class AppModule {}
