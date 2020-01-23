@@ -2,3 +2,13 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+// Import Reboot
+@import '~bootstrap/scss/reboot';
+@import '~bootstrap/scss/grid'; // add the grid
+@import '~bootstrap/scss/utilities'; // add css utilities
+
+@import 'reset';
