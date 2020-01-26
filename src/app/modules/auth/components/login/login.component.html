@@ -1,39 +1,59 @@
-<main class=" mw-100 mh-100">
-  <div class="container mt-5 pt-5 ">
-      <div class="row justify-content-center align-items-center">
-          <div class="col-md-6">
-          <div class="col-md-12">
+<main >
+  <div class="container">
+  <div class="row justify-content-center" style="height: 100vh">
+  <div class="d-flex col-md-5 align-items-center">
+  <div class="col-md-12">
 
-              <form>
-                  <mat-card>
+    <form (ngSubmit)="onSubmit($event)" [formGroup]="formLogin">
 
-                      <mat-toolbar color="primary" class="mat-elevation-z6">
-                        <h3 >Login</h3>
-                      </mat-toolbar>
+      <mat-card class="mat-elevation-z3">
 
-                      <mat-card-content class="py-4">
+        <mat-toolbar color="primary" class="mat-elevation-z3">
+          <h3 >COMEX</h3>
+        </mat-toolbar>
 
-                          <mat-form-field class="col-md-12 my-2">
-                              <input matInput placeholder="Usuario">
-                          </mat-form-field>
+        <mat-card-content class="py-4">
 
-                          <mat-form-field class="col-md-12 my-2">
-                              <input matInput type="password" placeholder="Contraseña">
-                          </mat-form-field>
+          <mat-form-field  class="col-md-12 my-2">
 
-                      </mat-card-content>
+              <input matInput formControlName="user" placeholder="Usuario">
+              <mat-icon matSuffix>perm_identity</mat-icon>
 
-                      <mat-card-actions class="d-flex justify-content-center align-items-center py-2">
-                          <button mat-raised-button color="primary">Ingresar</button>
-                          <button mat-raised-button color="warn">Limpiar</button>
-                      </mat-card-actions>
+              <mat-error *ngIf="user.invalid && user.touched">
+                {{ (password.hasError('required')) ? 'Usuario requerido' : ''}}
+              </mat-error>
 
-                  </mat-card>
-              </form>
+          </mat-form-field>
 
-          </div>
-          </div>
-      </div>
+
+          <mat-form-field  class="col-md-12 my-2">
+
+              <input matInput formControlName="password" [type]="(hidden) ? 'password' : 'text'" placeholder="Contraseña">
+              <mat-icon matSuffix (click)="hidden = !hidden">{{ (hidden) ? 'visibility_off' : 'visibility'}}</mat-icon>
+
+              <mat-hint>La contraseña debe tener almenos 8 Caracteres</mat-hint>
+
+              <mat-error *ngIf="password.invalid && password.touched">
+                {{ (password.hasError('required')) ? 'Password requerido' : ''}}
+                {{ (password.hasError('minlength')) ? 'La contraseña debe tener almenos 8 caracteres': '' }}
+              </mat-error>
+
+          </mat-form-field>
+
+        </mat-card-content>
+
+            <mat-card-actions class="d-flex justify-content-center align-items-center py-2">
+                <button type="submit" [disabled]="formLogin.invalid" mat-raised-button  color="primary">Ingresar</button>
+                <button type="reset" mat-raised-button color="warn">Reiniciar</button>
+            </mat-card-actions>
+
+        </mat-card>
+
+    </form>
+
+  </div>
+  </div>
+  </div>
   </div>
 </main>
 
