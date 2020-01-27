@@ -51,13 +51,17 @@ export class ListCartolasComponent implements AfterViewInit, OnInit {
 
   ngOnInit() {
    // this.dataSource = new ListCartolasDataSource();
-
-    this.dataSource.paginator = this.paginator;
+    // this.dataSource.paginator = this.paginator;
+    // this.dataSource.sort = this.sort;
   }
 
   ngAfterViewInit() {
     this.dataSource.sort      = this.sort;
     this.dataSource.paginator = this.paginator;
-    this.table.dataSource     = this.dataSource;
+    // this.table.dataSource     = this.dataSource;
+  }
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 }

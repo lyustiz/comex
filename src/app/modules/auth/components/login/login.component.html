@@ -25,16 +25,15 @@
 
           </mat-form-field>
 
-
           <mat-form-field  class="col-md-12 my-2">
 
-              <input matInput formControlName="password" [type]="(hidden) ? 'password' : 'text'" placeholder="Contraseña">
-              <mat-icon matSuffix (click)="hidden = !hidden">{{ (hidden) ? 'visibility_off' : 'visibility'}}</mat-icon>
-
-              <mat-hint>La contraseña debe tener almenos 8 Caracteres</mat-hint>
+              <input matInput formControlName="password" [type]="(isHidden) ? 'password' : 'text'" placeholder="Contraseña">
+              <mat-icon matSuffix (click)="isHidden = !isHidden">{{ (isHidden) ? 'visibility_off' : 'visibility'}}</mat-icon>
+              
+              <mat-hint>Indique Contraseña</mat-hint>
 
               <mat-error *ngIf="password.invalid && password.touched">
-                {{ (password.hasError('required')) ? 'Password requerido' : ''}}
+                {{ (password.hasError('required'))  ? 'Password requerido' : ''}}
                 {{ (password.hasError('minlength')) ? 'La contraseña debe tener almenos 8 caracteres': '' }}
               </mat-error>
 
