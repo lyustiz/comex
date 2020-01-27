@@ -20,6 +20,14 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSliderModule } from '@angular/material/';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
+
+
+
 
 @NgModule({
   declarations: [],
@@ -43,7 +51,11 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatSlideToggleModule,
     MatDividerModule,
     MatSliderModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatGridListModule,
+    MatRadioModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   exports: [
     LayoutModule,
@@ -65,7 +77,11 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatSlideToggleModule,
     MatDividerModule,
     MatSliderModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatGridListModule,
+    MatRadioModule,
+    MatTableModule,
+    MatPaginatorModule
   ]
 })
 export class MaterialModule { }

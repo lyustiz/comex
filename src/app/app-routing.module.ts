@@ -17,6 +17,10 @@ const routes: Routes = [
     loadChildren: () => import('@module/home/home.module').then( m => m.HomeModule )
   },
   {
+    path: 'cartolas',
+    loadChildren: () => import('@module/cartolas/cartolas.module').then( m => m.CartolasModule )
+  },
+  {
     path: '**',
     loadChildren: () => import('@module/not-found/not-found.module').then( m => m.NotFoundModule )
   }
@@ -43,4 +47,5 @@ https://itnext.io/choosing-a-highly-scalable-folder-structure-in-angular-d987de6
 https://github.com/mathisGarberg/angular-folder-structure/blob/master/src/app/app-routing.module.ts
 https://github.com/glats/angular-workshop/blob/master/src/app/app-routing.module.ts
 */
-export class AppRoutingModule { }
+export class AppRoutingModule {
+ }
