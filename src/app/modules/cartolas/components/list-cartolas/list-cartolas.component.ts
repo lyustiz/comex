@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { MatTable, MatTableDataSource } from '@angular/material/table';
+import { MatTableDataSource } from '@angular/material/table';
 // import { ListCartolasDataSource, ListCartolasItem } from './list-cartolas-datasource';
 
 export interface ListCartolasItem {
@@ -39,12 +39,12 @@ const LIST_CARTOLAS: ListCartolasItem[] = [
 })
 export class ListCartolasComponent implements AfterViewInit, OnInit {
 
-  displayedColumns: string[] = ['id', 'name'];
+  displayedColumns: string[] = ['id', 'name', 'actions'];
   dataSource = new MatTableDataSource <ListCartolasItem> (LIST_CARTOLAS);
 
   @ViewChild( MatPaginator, {static: false}) paginator: MatPaginator;
-  @ViewChild( MatSort,      {static: false}) sort: MatSort;
-  @ViewChild( MatTable,     {static: false}) table: MatTable<ListCartolasItem>;
+  @ViewChild( MatSort, {static: false}) sort: MatSort;
+ // @ViewChild( MatTable,     {static: false}) table: MatTable<ListCartolasItem>;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered.
    */
@@ -52,16 +52,24 @@ export class ListCartolasComponent implements AfterViewInit, OnInit {
   ngOnInit() {
    // this.dataSource = new ListCartolasDataSource();
     // this.dataSource.paginator = this.paginator;
-    // this.dataSource.sort = this.sort;
   }
 
   ngAfterViewInit() {
     this.dataSource.sort      = this.sort;
     this.dataSource.paginator = this.paginator;
     // this.table.dataSource     = this.dataSource;
+    console.log(this.sort, this.paginator);
   }
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
+  clearFilter(filter) {
+    // this.sort = '';
   }
 }

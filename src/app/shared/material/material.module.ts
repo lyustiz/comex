@@ -24,7 +24,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-
+import { MatSortModule } from '@angular/material/sort';
 
 
 
@@ -55,7 +55,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatGridListModule,
     MatRadioModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSortModule
   ],
   exports: [
     LayoutModule,
@@ -81,7 +82,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatGridListModule,
     MatRadioModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSortModule
   ]
 })
 export class MaterialModule { }
