@@ -2,7 +2,11 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-// import { ListCartolasDataSource, ListCartolasItem } from './list-cartolas-datasource';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
+import { SearchCartolasComponent } from '../search-cartolas/search-cartolas.component';
+
+
 
 export interface ListCartolasItem {
   name: string;
@@ -41,27 +45,27 @@ export class ListCartolasComponent implements AfterViewInit, OnInit {
 
   displayedColumns: string[] = ['id', 'name', 'actions'];
   dataSource = new MatTableDataSource <ListCartolasItem> (LIST_CARTOLAS);
+  filterField: string = null;
 
   @ViewChild( MatPaginator, {static: false}) paginator: MatPaginator;
   @ViewChild( MatSort, {static: false}) sort: MatSort;
  // @ViewChild( MatTable,     {static: false}) table: MatTable<ListCartolasItem>;
 
-  /** Columns displayed in the table. Columns IDs can be added, removed, or reordered.
-   */
+  constructor( public dialog: MatDialog ) {
+
+  }
 
   ngOnInit() {
-   // this.dataSource = new ListCartolasDataSource();
-    // this.dataSource.paginator = this.paginator;
+
   }
 
   ngAfterViewInit() {
     this.dataSource.sort      = this.sort;
     this.dataSource.paginator = this.paginator;
     // this.table.dataSource     = this.dataSource;
-    console.log(this.sort, this.paginator);
   }
 
-  applyFilter(filterValue: string) {
+  applyFilter(filterValue: string): void {
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
     if (this.dataSource.paginator) {
@@ -69,7 +73,17 @@ export class ListCartolasComponent implements AfterViewInit, OnInit {
     }
   }
 
-  clearFilter(filter) {
-    // this.sort = '';
+  clearFilter(): void {
+    this.dataSource.filter = '';
+    this.filterField = '';
+  }
+
+
+  open() {
+
+    this.dialog.open( SearchCartolasComponent, {
+      height: '600px',
+      width:  '800px'
+    });
   }
 }

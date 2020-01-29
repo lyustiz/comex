@@ -6,6 +6,7 @@ import { CartolasRoutingModule } from './cartolas-routing.module';
 import { ListCartolasComponent } from './components/list-cartolas/list-cartolas.component';
 import { SearchCartolasComponent } from './components/search-cartolas/search-cartolas.component';
 
+
 @NgModule({
   declarations: [ListCartolasComponent, SearchCartolasComponent],
   imports: [
@@ -13,5 +14,6 @@ import { SearchCartolasComponent } from './components/search-cartolas/search-car
     SharedModule,
     CartolasRoutingModule,
   ],
+  entryComponents: [SearchCartolasComponent],
 })
 export class CartolasModule { }

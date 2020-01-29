@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from './material/material.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Shared Componets
 import { ContentComponent } from '@shared/components/content/content.component';
@@ -12,7 +12,8 @@ import { NavBarComponent } from '@shared/components/nav-bar/nav-bar.component';
   imports: [
     MaterialModule,
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [
     MaterialModule,
@@ -20,7 +21,8 @@ import { NavBarComponent } from '@shared/components/nav-bar/nav-bar.component';
     ContentComponent,
     FooterComponent,
     NavBarComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   declarations: [
     ContentComponent,
