@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -41,7 +41,7 @@ const LIST_CARTOLAS: ListCartolasItem[] = [
   templateUrl: './list-cartolas.component.html',
   styles: []
 })
-export class ListCartolasComponent implements AfterViewInit, OnInit {
+export class ListCartolasComponent implements AfterViewInit {
 
   displayedColumns: string[] = ['id', 'name', 'actions'];
   dataSource = new MatTableDataSource <ListCartolasItem> (LIST_CARTOLAS);
@@ -49,20 +49,12 @@ export class ListCartolasComponent implements AfterViewInit, OnInit {
 
   @ViewChild( MatPaginator, {static: false}) paginator: MatPaginator;
   @ViewChild( MatSort, {static: false}) sort: MatSort;
- // @ViewChild( MatTable,     {static: false}) table: MatTable<ListCartolasItem>;
 
-  constructor( public dialog: MatDialog ) {
-
-  }
-
-  ngOnInit() {
-
-  }
+  constructor( public dialog: MatDialog ) { }
 
   ngAfterViewInit() {
     this.dataSource.sort      = this.sort;
     this.dataSource.paginator = this.paginator;
-    // this.table.dataSource     = this.dataSource;
   }
 
   applyFilter(filterValue: string): void {

@@ -21,11 +21,13 @@ const routes: Routes = [
     loadChildren: () => import('@module/cartolas/cartolas.module').then( m => m.CartolasModule )
   },
   {
+    path: 'admin',
+    loadChildren: () => import('@module/admin/admin.module').then( m => m.AdminModule )
+  },
+  {
     path: '**',
     loadChildren: () => import('@module/not-found/not-found.module').then( m => m.NotFoundModule )
   }
-
-
 ];
 
 @NgModule({

@@ -1,0 +1,6 @@
+
+getFile() {
+    this.sucursalService.getFile()
+    .subscribe(content => console.log(content));
+    // file-save npm
+  }
