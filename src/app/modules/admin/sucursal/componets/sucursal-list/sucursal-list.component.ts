@@ -80,8 +80,10 @@ export class SucursalListComponent implements OnInit, AfterViewInit {
     const dialogRef = this.dialog.open( SucursalCreateComponent, {
       height: '80vh',
       width:  '80vw',
-      data: this.dataSource.data[0],
-      disableClose: true
+      data: { item: this.dataSource.data[0], title: 'Cargar Sucursal'},
+      disableClose: true,
+      autoFocus: true,
+
     });
 
     dialogRef.afterClosed().subscribe( result => console.log(result));

@@ -25,6 +25,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -56,7 +57,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatRadioModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatDialogModule
   ],
   exports: [
     LayoutModule,
@@ -83,7 +85,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatRadioModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatDialogModule
   ]
 })
 export class MaterialModule { }
