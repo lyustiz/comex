@@ -41,7 +41,7 @@ export class SucursalCreateComponent implements OnInit {
       tx_fax:	            [ '', [ Validators.required ] ],
       nu_flg_Idc_banco:	  [ '', [ Validators.required ] ],
       nu_banco:	          [ '', [ Validators.required ] ],
-      tx_email_agente:	  [ '', [ Validators.required ] ],
+      tx_email_agente:	  [ '', [ Validators.required, Validators.email ] ],
       id_usuario:	        [ '', [ Validators.required ] ],
       id_status:	        [ '', [ Validators.required ] ],
       fe_creado:	        [ '', [ Validators.required ] ],

@@ -1,72 +1,78 @@
-<div mat-dialog-title class="row">
-  <span class="col">{{title}}</span>
-  <span class="col-10"></span>
-  <button  class="col" color="warn" (click)="close()" mat-icon-button>
+
+<div mat-dialog-title class="row bg-dark rounded text-white p-1">
+  <span class="col-12">{{title}}</span>
+  <span class="col">
+    <button   color="warn" (click)="close()" mat-icon-button>
       <mat-icon>close</mat-icon>
     </button>
+  </span>
+  
 </div>
 
-<form (ngSubmit)="send()" #form="ngForm" [formGroup]="formGroup" class="row w-100">
 
-    <mat-form-field class="m-1 col-3">
+<div class="container w-100">
+<form (ngSubmit)="send()" #form="ngForm" [formGroup]="formGroup" class="row bg-primary rounded">
+
+    <mat-form-field class="col-md-3">
       <input matInput matInput formControlName="co_sucursal" placeholder="co_sucursal">
     </mat-form-field>
 
 
-    <mat-form-field class="m-1 col-3">
+    <mat-form-field class="col-md-3">
       <input matInput matInput formControlName="nu_sucursal" placeholder="nu_sucursal">
     </mat-form-field>
 
 
-    <mat-form-field class="m-1 col-3">
+    <mat-form-field class="col-md-3">
       <input matInput matInput formControlName="tx_glosa_sucursal" placeholder="tx_glosa_sucursal">
     </mat-form-field>
 
 
-    <mat-form-field class="m-1 col-3">
+    <mat-form-field class="col-md-3">
       <input matInput matInput formControlName="tx_direccion" placeholder="tx_direccion">
     </mat-form-field>
 
 
-    <mat-form-field class="m-1 col-3">
+    <mat-form-field class="col-md-3">
       <input matInput matInput formControlName="nu_direccion" placeholder="nu_direccion">
     </mat-form-field>
 
 
-    <mat-form-field class="m-1 col-3">
+    <mat-form-field class="col-md-3">
       <input matInput matInput formControlName="tx_comuna" placeholder="tx_comuna">
     </mat-form-field>
 
 
-    <mat-form-field class="m-1 col-3">
+    <mat-form-field class="col-md-3">
       <input matInput matInput formControlName="tx_telefono" placeholder="tx_telefono">
     </mat-form-field>
 
 
-    <mat-form-field class="m-1 col-3">
+    <mat-form-field class="col-md-3">
       <input matInput matInput formControlName="tx_fax" placeholder="tx_fax">
     </mat-form-field>
 
 
-    <mat-form-field class="m-1 col-3">
+    <mat-form-field class="col-md-3">
       <input matInput matInput formControlName="nu_flg_Idc_banco" placeholder="nu_flg_Idc_banco">
     </mat-form-field>
 
 
-    <mat-form-field class="m-1 col-3">
+    <mat-form-field class="col-md-3">
       <input matInput matInput formControlName="nu_banco" placeholder="nu_banco">
     </mat-form-field>
 
 
-    <mat-form-field class="m-1 col-3">
+    <mat-form-field class="col-md-3">
       <input matInput matInput formControlName="tx_email_agente" placeholder="tx_email_agente">
     </mat-form-field>
 
-    <mat-form-field class="m-1 col-3">
+    <mat-form-field class="col-md-3">
       <input matInput matInput formControlName="id_status" placeholder="id_status">
     </mat-form-field>
 
 </form>
+</div>
 
 <mat-dialog-actions>
   <button class="mat-raised-button"(click)="close()">Close</button>
