@@ -6,21 +6,16 @@
       [opened]="false">
     <mat-toolbar style="height: 8vh;">Menu</mat-toolbar >
     <mat-nav-list>
-      <a mat-list-item routerLink="/cartola-flujo">Flujo</a>
-      <a mat-list-item routerLink="/cartola-flujo">Stock</a>
+      <a mat-list-item routerLink="/admin/sucursal/list">Sucursal</a>
+      <a mat-list-item routerLink="/cartolas">Stock</a>
     </mat-nav-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
 
-    <mat-toolbar color="primary" style="height: 8vh;">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        >
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    <mat-toolbar color="warn" style="height: 8vh;">
+      <button type="button" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
       </button>
       <span>Comex</span>
     </mat-toolbar>

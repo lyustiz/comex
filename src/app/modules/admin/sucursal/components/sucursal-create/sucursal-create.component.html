@@ -1,0 +1,76 @@
+
+<div mat-dialog-title class=" bg-danger rounded text-white p-2">
+  <span>{{title}}</span>
+</div>
+
+<mat-dialog-content>
+<form (ngSubmit)="send()" #form="ngForm" [formGroup]="formGroup" class=" rounded ">
+
+  <mat-form-field class="col-md-6">
+    <input matInput formControlName="tx_glosa_sucursal" placeholder="Glosa Sucursal">
+    <mat-icon matSuffix>home</mat-icon>
+  </mat-form-field>  
+  
+  <mat-form-field class="col-md-3">
+    <input matInput formControlName="co_sucursal" placeholder="Cod Sucursal">
+  </mat-form-field>
+
+  <mat-form-field class="col-md-3">
+    <input matInput formControlName="nu_sucursal" placeholder="Nro. Sucursal">
+  </mat-form-field>
+
+  <mat-form-field class="col-md-6">
+    <input matInput formControlName="nu_flg_Idc_banco" placeholder="IDC">
+  </mat-form-field>
+
+  <mat-form-field class="col-md-6">
+    <input matInput formControlName="nu_banco" placeholder="Nro. Banco">
+  </mat-form-field>
+
+  <mat-form-field class="col-md-6">
+    <input matInput formControlName="tx_telefono" placeholder="Telefono">
+    <mat-icon matSuffix>phone</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field class="col-md-6">
+    <input matInput formControlName="tx_fax" placeholder="Fax">
+    <mat-icon matSuffix>phone</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field class="col-md-6">
+    <input matInput formControlName="tx_email_agente" placeholder="Email agente">
+    <mat-icon matSuffix>email</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field class="col-md-6">
+    <mat-label>Status</mat-label>
+    <mat-select formControlName="id">
+      <mat-option *ngFor="let item of status" [value]="item.id">
+        {{ item.nb_status }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field> 
+
+  <mat-form-field class="col-md-6">
+    <input matInput formControlName="nu_direccion" placeholder="Numero">
+  </mat-form-field>
+
+  <mat-form-field class="col-md-6">
+    <input matInput formControlName="tx_comuna" placeholder="Comuna">
+  </mat-form-field>
+
+  <mat-form-field class="col-md-12">
+    <textarea  matInput formControlName="tx_direccion" placeholder="Direccion"></textarea>
+    <mat-icon matSuffix>place</mat-icon>
+  </mat-form-field>
+
+</form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <div class="d-flex align-items-end"> 
+    <button mat-raised-button class="bg-danger text-white"(click)="close()"><mat-icon>close</mat-icon> Cancelar</button>
+    <button mat-raised-button class="bg-warning text-white"(click)="close()"><mat-icon>replay</mat-icon>Salvar</button>
+    <button mat-raised-button class="bg-success text-white"(click)="close()"><mat-icon>save</mat-icon> Close</button>
+  </div>
+</mat-dialog-actions>

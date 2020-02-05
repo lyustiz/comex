@@ -75,18 +75,30 @@ export class SucursalListComponent implements OnInit, AfterViewInit {
     this.filterField = '';
   }
 
-  open() {
+  create() {
 
     const dialogRef = this.dialog.open( SucursalCreateComponent, {
-      height: '80vh',
-      width:  '80vw',
-      data: { item: this.dataSource.data[0], title: 'Cargar Sucursal'},
+      data: { item: '', title: 'Cargar Sucursal'},
       disableClose: true,
       autoFocus: true,
-
     });
 
     dialogRef.afterClosed().subscribe( result => console.log(result));
+  }
+
+  edit(item: Sucursal) {
+
+    const dialogRef = this.dialog.open( SucursalCreateComponent, {
+      data: { item, title: 'Cargar Sucursal'},
+      disableClose: true,
+      autoFocus: true,
+    });
+
+    dialogRef.afterClosed().subscribe( result => console.log(result));
+  }
+
+  delete(item: Sucursal) {
+    console.log('del');
   }
 
 }

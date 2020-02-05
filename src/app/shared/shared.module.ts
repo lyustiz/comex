@@ -1,33 +1,35 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { MaterialModule } from './material/material.module';
 
-// Shared Componets
-import { ContentComponent } from '@shared/components/content/content.component';
-import { FooterComponent } from '@shared/components/footer/footer.component';
+// Shared Components
+import { LayoutComponent } from '@shared/components/layout/layout.component';
 import { NavBarComponent } from '@shared/components/nav-bar/nav-bar.component';
+import { FooterComponent } from '@shared/components/footer/footer.component';
 
 @NgModule({
   imports: [
     MaterialModule,
     CommonModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   exports: [
     MaterialModule,
     CommonModule,
-    ContentComponent,
-    FooterComponent,
-    NavBarComponent,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    LayoutComponent,
+    NavBarComponent,
+    FooterComponent,
   ],
   declarations: [
-    ContentComponent,
+    LayoutComponent,
+    NavBarComponent,
     FooterComponent,
-    NavBarComponent
   ],
 })
 

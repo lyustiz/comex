@@ -2,27 +2,35 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { environment } from '@env/environment';
 
+import { LayoutComponent } from '@shared/components/layout/layout.component';
+
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
+    component: LayoutComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full',
+      },
+      {
+        path: 'home',
+        loadChildren: () => import('@module/home/home.module').then( m => m.HomeModule )
+      },
+      {
+        path: 'cartolas',
+        loadChildren: () => import('@module/cartolas/cartolas.module').then( m => m.CartolasModule )
+      },
+      {
+        path: 'admin',
+        loadChildren: () => import('@module/admin/admin.module').then( m => m.AdminModule )
+      },
+    ]
   },
   {
     path: 'auth',
     loadChildren: () => import('@module/auth/auth.module').then( m => m.AuthModule )
-  },
-  {
-    path: 'home',
-    loadChildren: () => import('@module/home/home.module').then( m => m.HomeModule )
-  },
-  {
-    path: 'cartolas',
-    loadChildren: () => import('@module/cartolas/cartolas.module').then( m => m.CartolasModule )
-  },
-  {
-    path: 'admin',
-    loadChildren: () => import('@module/admin/admin.module').then( m => m.AdminModule )
   },
   {
     path: '**',

@@ -15,6 +15,8 @@ export class SucursalCreateComponent implements OnInit {
   public formGroup: FormGroup;
   public title: string;
 
+  public status = [ { id: 1, nb_status: 'activo' }, { id: 2, nb_status: 'inactivo'} ];
+
   constructor(
     public dialogRef: MatDialogRef<SucursalCreateComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -25,7 +27,15 @@ export class SucursalCreateComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.data);
+    if ( this.data.item ) {
+      for ( const field in this.data.item ) {
+          if ( this.formGroup.value.hasOwnProperty(field)) {
+              this.formGroup.get(field).setValue(this.data.item[field]);
+          }
+      }
+    } else {
+      console.log('sin data');
+    }
   }
 
   setForm() {

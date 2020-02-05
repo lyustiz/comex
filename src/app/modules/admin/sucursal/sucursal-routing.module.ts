@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { SucursalListComponent } from './componets/sucursal-list/sucursal-list.component';
+import { SucursalListComponent } from './components/sucursal-list/sucursal-list.component';
 
 
 const routes: Routes = [
