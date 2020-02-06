@@ -12,7 +12,7 @@ import { SucursalUpdateComponent } from './components/sucursal-update/sucursal-u
   declarations: [SucursalListComponent, SucursalSearchComponent, SucursalCreateComponent, SucursalUpdateComponent],
   imports: [
     SucursalRoutingModule,
-    SharedModule
+    SharedModule,
   ],
   entryComponents: [SucursalCreateComponent, SucursalUpdateComponent]
 })

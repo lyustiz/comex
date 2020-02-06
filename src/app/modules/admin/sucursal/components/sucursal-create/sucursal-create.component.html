@@ -1,6 +1,6 @@
 
-<div mat-dialog-title class=" bg-danger rounded text-white p-2">
-  <span>{{title}}</span>
+<div mat-dialog-title class="mat-elevation-z2 bg-danger rounded text-white p-2">
+  <span class="col">{{title}}</span>
 </div>
 
 <mat-dialog-content>
@@ -9,8 +9,8 @@
   <mat-form-field class="col-md-6">
     <input matInput formControlName="tx_glosa_sucursal" placeholder="Glosa Sucursal">
     <mat-icon matSuffix>home</mat-icon>
-  </mat-form-field>  
-  
+  </mat-form-field>
+
   <mat-form-field class="col-md-3">
     <input matInput formControlName="co_sucursal" placeholder="Cod Sucursal">
   </mat-form-field>
@@ -38,18 +38,18 @@
   </mat-form-field>
 
   <mat-form-field class="col-md-6">
-    <input matInput formControlName="tx_email_agente" placeholder="Email agente">
+    <input matInput formControlName="tx_email_agente" placeholder="Email Agente">
     <mat-icon matSuffix>email</mat-icon>
   </mat-form-field>
 
   <mat-form-field class="col-md-6">
     <mat-label>Status</mat-label>
-    <mat-select formControlName="id">
+    <mat-select formControlName="id_status">
       <mat-option *ngFor="let item of status" [value]="item.id">
         {{ item.nb_status }}
       </mat-option>
     </mat-select>
-  </mat-form-field> 
+  </mat-form-field>
 
   <mat-form-field class="col-md-6">
     <input matInput formControlName="nu_direccion" placeholder="Numero">
@@ -67,10 +67,14 @@
 </form>
 </mat-dialog-content>
 
-<mat-dialog-actions>
-  <div class="d-flex align-items-end"> 
-    <button mat-raised-button class="bg-danger text-white"(click)="close()"><mat-icon>close</mat-icon> Cancelar</button>
-    <button mat-raised-button class="bg-warning text-white"(click)="close()"><mat-icon>replay</mat-icon>Salvar</button>
-    <button mat-raised-button class="bg-success text-white"(click)="close()"><mat-icon>save</mat-icon> Close</button>
-  </div>
+<mat-dialog-actions class="container justify-content-end">
+    <button mat-raised-button class="bg-danger text-white"(click)="close()">
+      <mat-icon>close</mat-icon> Cancelar
+    </button>
+    <button mat-raised-button class="bg-warning text-white"(click)="form.resetForm()">
+      <mat-icon>replay</mat-icon>Limpiar
+    </button>
+    <button mat-raised-button class="bg-success text-white"(click)="close()">
+      <mat-icon>save</mat-icon> Guardar
+    </button>
 </mat-dialog-actions>

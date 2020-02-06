@@ -89,7 +89,7 @@ export class SucursalListComponent implements OnInit, AfterViewInit {
   edit(item: Sucursal) {
 
     const dialogRef = this.dialog.open( SucursalCreateComponent, {
-      data: { item, title: 'Cargar Sucursal'},
+      data: { item , title: 'Editar Sucursal'},
       disableClose: true,
       autoFocus: true,
     });
