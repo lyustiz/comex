@@ -3,6 +3,8 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -10,7 +12,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 })
 export class NavBarComponent implements OnInit {
 
-constructor(private breakpointObserver: BreakpointObserver) {}
+constructor(private breakpointObserver: BreakpointObserver, public router: Router) {}
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
   .pipe(
@@ -19,6 +21,7 @@ constructor(private breakpointObserver: BreakpointObserver) {}
   );
 
   ngOnInit() {
+
   }
 
 }

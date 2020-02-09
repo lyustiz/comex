@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild, Inject } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -47,7 +47,6 @@ export class SucursalListComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     this.dataSource.sort      = this.sort;
     this.dataSource.paginator = this.paginator;
-
   }
 
   getSucursales() {
@@ -55,6 +54,7 @@ export class SucursalListComponent implements OnInit, AfterViewInit {
     .subscribe(
       sucursales => {
         this.dataSource.data = sucursales;
+        console.log(sucursales);
       },
       error => {
         console.error(error);

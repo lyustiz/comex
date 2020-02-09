@@ -4,3 +4,27 @@ getFile() {
     .subscribe(content => console.log(content));
     // file-save npm
   }
+
+
+/**
+ * orderByChild 	Specify a child to order by.
+ * orderByKey 	Boolean to order by Firebase Database keys.
+ * orderByValue 	Specify a value to order by.
+ * equalTo2 	Limit list to items that contain certain value.
+ * limitToFirst 	Sets the maximum number of items to return from the beginning of the ordered list of results.
+ * limitToLast 	Sets the maximum number of items to return from the end of the ordered list of results.
+ * startAt2 	Return items greater than or equal to the specified key or value, depending on the order-by method chosen.
+ * endAt2 	Return items less than or equal to the specified key or value, depending on the order-by method chosen.
+ * addItem(newName: string) {
+ *   this.itemsRef.push({ text: newName });
+ * }
+ * updateItem(key: string, newText: string) {
+ *   this.itemsRef.update(key, { text: newText });
+ * }
+ * deleteItem(key: string) {
+ *   this.itemsRef.remove(key);
+ * }
+ * deleteEverything() {
+ *   this.itemsRef.remove();
+ * }
+ */

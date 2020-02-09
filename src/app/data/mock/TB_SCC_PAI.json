@@ -1,0 +1,702 @@
+[
+   {
+      "PAI_COD":1000,
+      "PAI_GLS":"Jordan",
+      "PAI_COD_NUM":1000,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"370124613894344"
+   },
+   {
+      "PAI_COD":999,
+      "PAI_GLS":"Belize",
+      "PAI_COD_NUM":999,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"371765340052801"
+   },
+   {
+      "PAI_COD":998,
+      "PAI_GLS":"Taiwan",
+      "PAI_COD_NUM":998,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"3794 529411 80206"
+   },
+   {
+      "PAI_COD":997,
+      "PAI_GLS":"Malaysia",
+      "PAI_COD_NUM":997,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"379687094152359"
+   },
+   {
+      "PAI_COD":996,
+      "PAI_GLS":"Australia",
+      "PAI_COD_NUM":996,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"346419168603343"
+   },
+   {
+      "PAI_COD":995,
+      "PAI_GLS":"Tonga",
+      "PAI_COD_NUM":995,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"3405 890900 55568"
+   },
+   {
+      "PAI_COD":994,
+      "PAI_GLS":"Sudan",
+      "PAI_COD_NUM":994,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"374558776300720"
+   },
+   {
+      "PAI_COD":993,
+      "PAI_GLS":"Bahamas",
+      "PAI_COD_NUM":993,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"374379208103792"
+   },
+   {
+      "PAI_COD":992,
+      "PAI_GLS":"India",
+      "PAI_COD_NUM":992,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"3464 841367 54057"
+   },
+   {
+      "PAI_COD":991,
+      "PAI_GLS":"Trinidad and Tobago",
+      "PAI_COD_NUM":991,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"3497 128150 69836"
+   },
+   {
+      "PAI_COD":990,
+      "PAI_GLS":"Latvia",
+      "PAI_COD_NUM":990,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"3424 206009 98196"
+   },
+   {
+      "PAI_COD":989,
+      "PAI_GLS":"Côte D'Ivoire (Ivory Coast)",
+      "PAI_COD_NUM":989,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"347352429201194"
+   },
+   {
+      "PAI_COD":988,
+      "PAI_GLS":"Qatar",
+      "PAI_COD_NUM":988,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"373000175682383"
+   },
+   {
+      "PAI_COD":987,
+      "PAI_GLS":"Taiwan",
+      "PAI_COD_NUM":987,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"3453 376906 17154"
+   },
+   {
+      "PAI_COD":986,
+      "PAI_GLS":"Virgin Islands, United States",
+      "PAI_COD_NUM":986,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"3729 456014 11719"
+   },
+   {
+      "PAI_COD":985,
+      "PAI_GLS":"Egypt",
+      "PAI_COD_NUM":985,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"345958545565569"
+   },
+   {
+      "PAI_COD":984,
+      "PAI_GLS":"Belgium",
+      "PAI_COD_NUM":984,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"3711 599844 58377"
+   },
+   {
+      "PAI_COD":983,
+      "PAI_GLS":"Côte D'Ivoire (Ivory Coast)",
+      "PAI_COD_NUM":983,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"377078978291178"
+   },
+   {
+      "PAI_COD":982,
+      "PAI_GLS":"Czech Republic",
+      "PAI_COD_NUM":982,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"3421 976443 53212"
+   },
+   {
+      "PAI_COD":981,
+      "PAI_GLS":"Faroe Islands",
+      "PAI_COD_NUM":981,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"3707 023278 92587"
+   },
+   {
+      "PAI_COD":980,
+      "PAI_GLS":"Albania",
+      "PAI_COD_NUM":980,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"3438 313842 86344"
+   },
+   {
+      "PAI_COD":979,
+      "PAI_GLS":"Zimbabwe",
+      "PAI_COD_NUM":979,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"378517098531202"
+   },
+   {
+      "PAI_COD":978,
+      "PAI_GLS":"Rwanda",
+      "PAI_COD_NUM":978,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"342991335124662"
+   },
+   {
+      "PAI_COD":977,
+      "PAI_GLS":"Maldives",
+      "PAI_COD_NUM":977,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"3714 653249 57238"
+   },
+   {
+      "PAI_COD":976,
+      "PAI_GLS":"Western Sahara",
+      "PAI_COD_NUM":976,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"3482 769928 04903"
+   },
+   {
+      "PAI_COD":975,
+      "PAI_GLS":"Azerbaijan",
+      "PAI_COD_NUM":975,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"344567914514933"
+   },
+   {
+      "PAI_COD":974,
+      "PAI_GLS":"Sudan",
+      "PAI_COD_NUM":974,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"3772 719991 51584"
+   },
+   {
+      "PAI_COD":973,
+      "PAI_GLS":"Uruguay",
+      "PAI_COD_NUM":973,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"349567608464895"
+   },
+   {
+      "PAI_COD":972,
+      "PAI_GLS":"Solomon Islands",
+      "PAI_COD_NUM":972,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"343132532579130"
+   },
+   {
+      "PAI_COD":971,
+      "PAI_GLS":"Azerbaijan",
+      "PAI_COD_NUM":971,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"342719689347112"
+   },
+   {
+      "PAI_COD":970,
+      "PAI_GLS":"Luxembourg",
+      "PAI_COD_NUM":970,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"3409 635624 01594"
+   },
+   {
+      "PAI_COD":969,
+      "PAI_GLS":"French Guiana",
+      "PAI_COD_NUM":969,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"3401 471291 11785"
+   },
+   {
+      "PAI_COD":968,
+      "PAI_GLS":"Costa Rica",
+      "PAI_COD_NUM":968,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"3445 041105 83511"
+   },
+   {
+      "PAI_COD":967,
+      "PAI_GLS":"Bhutan",
+      "PAI_COD_NUM":967,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"3783 192421 83760"
+   },
+   {
+      "PAI_COD":966,
+      "PAI_GLS":"Trinidad and Tobago",
+      "PAI_COD_NUM":966,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"3763 899827 35915"
+   },
+   {
+      "PAI_COD":965,
+      "PAI_GLS":"Solomon Islands",
+      "PAI_COD_NUM":965,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"3764 115781 52162"
+   },
+   {
+      "PAI_COD":964,
+      "PAI_GLS":"Bolivia",
+      "PAI_COD_NUM":964,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"374030449346951"
+   },
+   {
+      "PAI_COD":963,
+      "PAI_GLS":"Libya",
+      "PAI_COD_NUM":963,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"3449 081005 34485"
+   },
+   {
+      "PAI_COD":962,
+      "PAI_GLS":"Rwanda",
+      "PAI_COD_NUM":962,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"377589684395541"
+   },
+   {
+      "PAI_COD":961,
+      "PAI_GLS":"Guernsey",
+      "PAI_COD_NUM":961,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"341453778066109"
+   },
+   {
+      "PAI_COD":960,
+      "PAI_GLS":"Pakistan",
+      "PAI_COD_NUM":960,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"370930221571599"
+   },
+   {
+      "PAI_COD":959,
+      "PAI_GLS":"Western Sahara",
+      "PAI_COD_NUM":959,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"347928643947298"
+   },
+   {
+      "PAI_COD":958,
+      "PAI_GLS":"Benin",
+      "PAI_COD_NUM":958,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"377397602576600"
+   },
+   {
+      "PAI_COD":957,
+      "PAI_GLS":"Gibraltar",
+      "PAI_COD_NUM":957,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"348933636169164"
+   },
+   {
+      "PAI_COD":956,
+      "PAI_GLS":"Northern Mariana Islands",
+      "PAI_COD_NUM":956,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"373510691398801"
+   },
+   {
+      "PAI_COD":955,
+      "PAI_GLS":"Bahrain",
+      "PAI_COD_NUM":955,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"343316270894708"
+   },
+   {
+      "PAI_COD":954,
+      "PAI_GLS":"Peru",
+      "PAI_COD_NUM":954,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"3741 775132 54486"
+   },
+   {
+      "PAI_COD":953,
+      "PAI_GLS":"Bangladesh",
+      "PAI_COD_NUM":953,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"377163579942559"
+   },
+   {
+      "PAI_COD":952,
+      "PAI_GLS":"India",
+      "PAI_COD_NUM":952,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"3414 538670 85127"
+   },
+   {
+      "PAI_COD":951,
+      "PAI_GLS":"Solomon Islands",
+      "PAI_COD_NUM":951,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"3478 257124 34309"
+   },
+   {
+      "PAI_COD":950,
+      "PAI_GLS":"Nepal",
+      "PAI_COD_NUM":950,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"344868741445923"
+   },
+   {
+      "PAI_COD":949,
+      "PAI_GLS":"Romania",
+      "PAI_COD_NUM":949,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"346570020074113"
+   },
+   {
+      "PAI_COD":948,
+      "PAI_GLS":"Cocos (Keeling) Islands",
+      "PAI_COD_NUM":948,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"377469167593948"
+   },
+   {
+      "PAI_COD":947,
+      "PAI_GLS":"Togo",
+      "PAI_COD_NUM":947,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"3789 117840 87639"
+   },
+   {
+      "PAI_COD":946,
+      "PAI_GLS":"Cyprus",
+      "PAI_COD_NUM":946,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"374399729066534"
+   },
+   {
+      "PAI_COD":945,
+      "PAI_GLS":"Mauritius",
+      "PAI_COD_NUM":945,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"377623079581595"
+   },
+   {
+      "PAI_COD":944,
+      "PAI_GLS":"Cocos (Keeling) Islands",
+      "PAI_COD_NUM":944,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"3426 279234 73471"
+   },
+   {
+      "PAI_COD":943,
+      "PAI_GLS":"Mongolia",
+      "PAI_COD_NUM":943,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"377220160966999"
+   },
+   {
+      "PAI_COD":942,
+      "PAI_GLS":"El Salvador",
+      "PAI_COD_NUM":942,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"374026640586254"
+   },
+   {
+      "PAI_COD":941,
+      "PAI_GLS":"Nigeria",
+      "PAI_COD_NUM":941,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"3440 221834 61416"
+   },
+   {
+      "PAI_COD":940,
+      "PAI_GLS":"American Samoa",
+      "PAI_COD_NUM":940,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"349768844851792"
+   },
+   {
+      "PAI_COD":939,
+      "PAI_GLS":"Guinea",
+      "PAI_COD_NUM":939,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"3478 181864 43195"
+   },
+   {
+      "PAI_COD":938,
+      "PAI_GLS":"Moldova",
+      "PAI_COD_NUM":938,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"375495722168761"
+   },
+   {
+      "PAI_COD":937,
+      "PAI_GLS":"Kyrgyzstan",
+      "PAI_COD_NUM":937,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"3460 012930 41902"
+   },
+   {
+      "PAI_COD":936,
+      "PAI_GLS":"Åland Islands",
+      "PAI_COD_NUM":936,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"3721 796228 99013"
+   },
+   {
+      "PAI_COD":935,
+      "PAI_GLS":"Iran",
+      "PAI_COD_NUM":935,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"3760 955815 24515"
+   },
+   {
+      "PAI_COD":934,
+      "PAI_GLS":"Heard Island and Mcdonald Islands",
+      "PAI_COD_NUM":934,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"3468 970211 38138"
+   },
+   {
+      "PAI_COD":933,
+      "PAI_GLS":"Virgin Islands, British",
+      "PAI_COD_NUM":933,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"3722 383623 98204"
+   },
+   {
+      "PAI_COD":932,
+      "PAI_GLS":"Haiti",
+      "PAI_COD_NUM":932,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"349119861075065"
+   },
+   {
+      "PAI_COD":931,
+      "PAI_GLS":"Slovakia",
+      "PAI_COD_NUM":931,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"376391793901892"
+   },
+   {
+      "PAI_COD":930,
+      "PAI_GLS":"Fiji",
+      "PAI_COD_NUM":930,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"370685807111885"
+   },
+   {
+      "PAI_COD":929,
+      "PAI_GLS":"South Sudan",
+      "PAI_COD_NUM":929,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"3438 319365 56400"
+   },
+   {
+      "PAI_COD":928,
+      "PAI_GLS":"United States",
+      "PAI_COD_NUM":928,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"376400477510000"
+   },
+   {
+      "PAI_COD":927,
+      "PAI_GLS":"Holy See (Vatican City State)",
+      "PAI_COD_NUM":927,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"347233714404422"
+   },
+   {
+      "PAI_COD":926,
+      "PAI_GLS":"Nepal",
+      "PAI_COD_NUM":926,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"348691726138818"
+   },
+   {
+      "PAI_COD":925,
+      "PAI_GLS":"Albania",
+      "PAI_COD_NUM":925,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"3464 240475 18142"
+   },
+   {
+      "PAI_COD":924,
+      "PAI_GLS":"Sierra Leone",
+      "PAI_COD_NUM":924,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"370371001779898"
+   },
+   {
+      "PAI_COD":923,
+      "PAI_GLS":"Maldives",
+      "PAI_COD_NUM":923,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"348612694551899"
+   },
+   {
+      "PAI_COD":922,
+      "PAI_GLS":"Andorra",
+      "PAI_COD_NUM":922,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"3406 397443 01098"
+   },
+   {
+      "PAI_COD":921,
+      "PAI_GLS":"Libya",
+      "PAI_COD_NUM":921,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"3755 375849 61252"
+   },
+   {
+      "PAI_COD":920,
+      "PAI_GLS":"Egypt",
+      "PAI_COD_NUM":920,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"3730 188681 39008"
+   },
+   {
+      "PAI_COD":919,
+      "PAI_GLS":"Jordan",
+      "PAI_COD_NUM":919,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"3491 955475 90255"
+   },
+   {
+      "PAI_COD":918,
+      "PAI_GLS":"Turkmenistan",
+      "PAI_COD_NUM":918,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"3437 315256 14513"
+   },
+   {
+      "PAI_COD":917,
+      "PAI_GLS":"Anguilla",
+      "PAI_COD_NUM":917,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"3731 237014 30224"
+   },
+   {
+      "PAI_COD":916,
+      "PAI_GLS":"Guam",
+      "PAI_COD_NUM":916,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"3458 735259 16163"
+   },
+   {
+      "PAI_COD":915,
+      "PAI_GLS":"American Samoa",
+      "PAI_COD_NUM":915,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"3776 488316 66111"
+   },
+   {
+      "PAI_COD":914,
+      "PAI_GLS":"Saint Pierre and Miquelon",
+      "PAI_COD_NUM":914,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"370407492104418"
+   },
+   {
+      "PAI_COD":913,
+      "PAI_GLS":"Pitcairn Islands",
+      "PAI_COD_NUM":913,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"373067410373979"
+   },
+   {
+      "PAI_COD":912,
+      "PAI_GLS":"Curaçao",
+      "PAI_COD_NUM":912,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"3430 866129 31068"
+   },
+   {
+      "PAI_COD":911,
+      "PAI_GLS":"Colombia",
+      "PAI_COD_NUM":911,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"3448 417003 32382"
+   },
+   {
+      "PAI_COD":910,
+      "PAI_GLS":"Kyrgyzstan",
+      "PAI_COD_NUM":910,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"3472 003741 66047"
+   },
+   {
+      "PAI_COD":909,
+      "PAI_GLS":"Palau",
+      "PAI_COD_NUM":909,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"3471 447668 98264"
+   },
+   {
+      "PAI_COD":908,
+      "PAI_GLS":"Bolivia",
+      "PAI_COD_NUM":908,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"3767 651757 02038"
+   },
+   {
+      "PAI_COD":907,
+      "PAI_GLS":"Sri Lanka",
+      "PAI_COD_NUM":907,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"349120524120827"
+   },
+   {
+      "PAI_COD":906,
+      "PAI_GLS":"Saint Pierre and Miquelon",
+      "PAI_COD_NUM":906,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"342173011858034"
+   },
+   {
+      "PAI_COD":905,
+      "PAI_GLS":"Monaco",
+      "PAI_COD_NUM":905,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"348927235303232"
+   },
+   {
+      "PAI_COD":904,
+      "PAI_GLS":"Lebanon",
+      "PAI_COD_NUM":904,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"3410 710717 28488"
+   },
+   {
+      "PAI_COD":903,
+      "PAI_GLS":"Niger",
+      "PAI_COD_NUM":903,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"3420 165858 88392"
+   },
+   {
+      "PAI_COD":902,
+      "PAI_GLS":"Hong Kong",
+      "PAI_COD_NUM":902,
+      "PAI_IND_ALA":"0",
+      "PAI_COD_SWF":"343949716961986"
+   },
+   {
+      "PAI_COD":901,
+      "PAI_GLS":"Dominica",
+      "PAI_COD_NUM":901,
+      "PAI_IND_ALA":"1",
+      "PAI_COD_SWF":"373553428943325"
+   }
+]
