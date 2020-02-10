@@ -8,24 +8,14 @@ import { AbstractControl } from '@angular/forms';
 })
 export class FormValidationsComponent implements OnInit {
 
-  public formShow: boolean;
-
-  @Input() formControl: AbstractControl;
+  @Input() formField: AbstractControl;
 
   @Input() fieldName: string;
 
-  constructor() {
-      console.log(this.formControl, this.fieldName)
+  constructor() { }
+
+  ngOnInit() {
+    // console.log(this.formField, this.fieldName);
   }
-
-  ngOnInit() { }
-
-
-
-
-  /* <mat-error *ngIf="password.invalid && password.touched">
-                {{ (password.hasError('required'))  ? 'Password requerido' : ''}}
-                {{ (password.hasError('minlength')) ? 'La contraseña debe tener almenos 8 caracteres': '' }}
-              </mat-error>
-   */
 }
+

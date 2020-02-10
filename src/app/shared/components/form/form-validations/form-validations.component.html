@@ -1,24 +1,15 @@
-<mat-error *ngIf="formShow">
+<div *ngIf="formField.invalid && formField.touched">
 
-  <span *ngIf="formControl.hasError('required')"> {{ fieldName }} requerido</span>
+  <span *ngIf="formField.hasError('required')"> {{ fieldName }} requerido</span>
 
-  <span *ngIf="formControl.hasError('minlength')"> La {{ fieldName }} debe tener almenos 8 caracteres}}</span>
+  <span *ngIf="formField.hasError('minlength')"> {{ fieldName }} debe tener almenos {{ formField.errors.minlength.requiredLength }} caracteres</span>
 
-  <span *ngIf="formControl.hasError('maxlength')"> La {{ fieldName }} debe tener menos de 8 caracteres}}</span>
+  <span *ngIf="formField.hasError('maxlength')"> {{ fieldName }} debe tener menos de {{ formField.errors.maxlength.requiredLength }} caracteres</span>
 
-  <span *ngIf="formControl.hasError('min')"> {{ fieldName }}</span>
+  <span *ngIf="formField.hasError('min')"> {{ fieldName }}</span>
 
-  <span *ngIf="formControl.hasError('max')"> {{ fieldName }}</span>
+  <span *ngIf="formField.hasError('max')"> {{ fieldName }}</span>
 
-  <span *ngIf="formControl.hasError('email')"> {{ fieldName }}</span>
+  <span *ngIf="formField.hasError('email')"> {{ fieldName }} no es Valido</span>
 
-  <span *ngIf="formControl.hasError('nullValidator')"> {{ fieldName }}</span>
-
-</mat-error>
-
-<!--
-{minlength: {requiredLength: 3, actualLength: 2}}
-{max: {max: 15, actual: 16}}
-pattern
-
--->
+</div>

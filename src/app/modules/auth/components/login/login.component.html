@@ -31,16 +31,13 @@
               <mat-icon matSuffix (click)="isHidden = !isHidden">{{ (isHidden) ? 'visibility_off' : 'visibility'}}</mat-icon>
 
               <mat-hint>Indique Contraseña</mat-hint>
-
-              <mat-error *ngIf="password.invalid && password.touched">
-                {{ (password.hasError('required'))  ? 'Password requerido' : ''}}
-                {{ (password.hasError('minlength')) ? 'La contraseña debe tener almenos 8 caracteres': '' }}
-              </mat-error>
-
-              <app-form-validations [formControl]="password"  fieldName="password"></app-form-validations>
-
+              <mat-error>
+                <app-form-validations [formField]="password"  [fieldName]="'password'"></app-form-validations>
+              </mat-error> 
+              
           </mat-form-field>
-
+          
+          
         </mat-card-content>
 
             <mat-card-actions class="d-flex justify-content-center align-items-center py-2">
