@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { FormService } from '@core/service/form/form.service';
 import { Sucursal } from '@model/sucursal.model';
 
 @Component({
@@ -13,30 +14,26 @@ import { Sucursal } from '@model/sucursal.model';
 export class SucursalCreateComponent implements OnInit {
 
   public formGroup: FormGroup;
+
   public title: string;
 
-  public status = [ { id: 1, nb_status: 'activo' }, { id: 2, nb_status: 'inactivo'} ];
+  public status = [
+                    { id: 1, nb_status: 'activo' },
+                    { id: 2, nb_status: 'inactivo'}
+                  ];
 
   constructor(
     public dialogRef: MatDialogRef<SucursalCreateComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    public formBuilder: FormBuilder
+    public formBuilder: FormBuilder,
+    public form: FormService
   ) {
-      this.setForm();
       this.title = this.data.title;
+      this.setForm();
+      this.form.mapFormFields(this.data.item, this.formGroup, this.data.action);
   }
 
-  ngOnInit() {
-    if ( this.data.item ) {
-      for ( const field in this.data.item ) {
-          if ( this.formGroup.value.hasOwnProperty(field)) {
-              this.formGroup.get(field).setValue(this.data.item[field]);
-          }
-      }
-    } else {
-      console.log('sin data');
-    }
-  }
+  ngOnInit() { }
 
   setForm() {
     this.formGroup = this.formBuilder.group({
@@ -59,12 +56,16 @@ export class SucursalCreateComponent implements OnInit {
     });
   }
 
-  close(): void {
+  close() {
     this.dialogRef.close(this.data);
   }
 
-  send(): void {
-    console.log();
+  send() {
+
+    if (this.formGroup.valid) {
+      console.log();
+    }
+
   }
 
 

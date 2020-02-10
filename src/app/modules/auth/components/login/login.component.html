@@ -37,6 +37,8 @@
                 {{ (password.hasError('minlength')) ? 'La contraseña debe tener almenos 8 caracteres': '' }}
               </mat-error>
 
+              <app-form-validations [formControl]="password"  fieldName="password"></app-form-validations>
+
           </mat-form-field>
 
         </mat-card-content>

@@ -8,6 +8,11 @@ import { MaterialModule } from './material/material.module';
 import { LayoutComponent } from '@shared/components/layout/layout.component';
 import { NavBarComponent } from '@shared/components/nav-bar/nav-bar.component';
 import { FooterComponent } from '@shared/components/footer/footer.component';
+import { FormButtonsComponent } from './components/form/form-buttons/form-buttons.component';
+import { FormHeaderComponent } from './components/form/form-header/form-header.component';
+import { FormValidationsComponent } from './components/form/form-validations/form-validations.component';
+import { ListButtonsComponent } from './components/list/list-buttons/list-buttons.component';
+import { ListHeaderComponent } from './components/list/list-header/list-header.component';
 
 @NgModule({
   imports: [
@@ -25,11 +30,21 @@ import { FooterComponent } from '@shared/components/footer/footer.component';
     LayoutComponent,
     NavBarComponent,
     FooterComponent,
+    FormButtonsComponent,
+    FormHeaderComponent,
+    FormValidationsComponent,
+    ListButtonsComponent,
+    ListHeaderComponent,
   ],
   declarations: [
     LayoutComponent,
     NavBarComponent,
     FooterComponent,
+    FormButtonsComponent,
+    FormHeaderComponent,
+    FormValidationsComponent,
+    ListButtonsComponent,
+    ListHeaderComponent,
   ],
 })
 

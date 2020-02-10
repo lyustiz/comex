@@ -1,12 +1,11 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 import { ClientesService } from '@service/clientes.service';
+import { TableService } from '@app/core/service/list/table.service';
 import { Cliente } from '@model/cliente.model';
 import { ClientesFormComponent } from '../clientes-form/clientes-form.component';
+
 
 @Component({
   selector: 'app-clientes-list',
@@ -17,8 +16,8 @@ export class ClientesListComponent implements OnInit, AfterViewInit {
 
   public clientes: Cliente[];
   public cliente: Cliente;
-  public filterField: string = null;
-  public dataSource = new MatTableDataSource <Cliente> (this.clientes);
+  private dialogRef: MatDialogRef<any>;
+
   public columns: string[] = ['BCO_SWF',
                               'BCO_NOM',
                               'BCO_NRO_RUT',
@@ -29,73 +28,42 @@ export class ClientesListComponent implements OnInit, AfterViewInit {
                               'BCO_COR'
                             ];
 
-  @ViewChild( MatPaginator, {static: false}) paginator: MatPaginator;
-  @ViewChild( MatSort, {static: false}) sort: MatSort;
-
   constructor(
     public clientesService: ClientesService,
-    private dialog: MatDialog
+    public dialog: MatDialog,
+    public table: TableService
   ) { }
 
   ngOnInit() {
-    this.getClientes();
+    this.table.getData(this.clientesService.getClientes());
   }
 
-  ngAfterViewInit(): void {
-    this.dataSource.sort      = this.sort;
-    this.dataSource.paginator = this.paginator;
-  }
-
-  getClientes() {
-    return this.clientesService.getClientes()
-    .subscribe(
-      data => {
-        this.clientes = data;
-        console.log(data);
-      },
-      error => {
-        console.error(error);
-      }
-    );
-  }
-
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
-  }
-
-  clearFilter() {
-    this.dataSource.filter = '';
-    this.filterField = '';
+  ngAfterViewInit() {
+    this.table.dataSource.sort      = this.table.sort;
+    this.table.dataSource.paginator = this.table.paginator;
   }
 
   create() {
+    this.showDialog( '', 'create', 'Agregar Cliente', ClientesFormComponent );
+  }
 
-    const dialogRef = this.dialog.open( ClientesFormComponent, {
-      data: { item: '', title: 'Cargar Cliente'},
+  edit( item: Cliente ) {
+    this.showDialog( item, 'edit', 'Editar Cliente', ClientesFormComponent );
+  }
+
+  delete( item: Cliente ) {
+    this.showDialog( item, 'delete', 'Delete Cliente', ClientesFormComponent );
+  }
+
+  showDialog( data , action: string, title: string,  component) {
+
+    this.dialogRef = this.dialog.open( component, {
+      data: { data, title, action },
       disableClose: true,
       autoFocus: true,
     });
 
-    dialogRef.afterClosed().subscribe( result => console.log(result));
-  }
-
-  edit(item: Cliente) {
-
-    const dialogRef = this.dialog.open( ClientesFormComponent, {
-      data: { item , title: 'Editar Cliente'},
-      disableClose: true,
-      autoFocus: true,
-    });
-
-    dialogRef.afterClosed().subscribe( result => console.log(result));
-  }
-
-  delete(item: Cliente) {
-    console.log('del');
+    this.dialogRef.afterClosed().subscribe( result => console.log(result));
   }
 
 }
