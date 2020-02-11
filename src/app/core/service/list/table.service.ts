@@ -24,6 +24,7 @@ export class TableService {
     dataSource.subscribe(
       data => {
         this.dataSource.data = data;
+        console.log(data)
       },
       error => {
         console.error(error);
@@ -32,6 +33,8 @@ export class TableService {
   }
 
   applyFilter(filterValue: string) {
+
+    console.log(filterValue);
     this.dataSource.filter = filterValue.trim().toLowerCase();
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
@@ -41,6 +44,7 @@ export class TableService {
   clearFilter() {
     this.dataSource.filter = '';
     this.filterField = '';
+    console.log('clear')
   }
 
 

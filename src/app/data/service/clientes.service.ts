@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { Observable, from } from 'rxjs';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import 'firebase/database';
@@ -18,7 +18,7 @@ export class ClientesService {
   constructor(private db: AngularFireDatabase, private errorHandler: HttpHandlerErrorService) {   }
 
   getClientes() {
-    return this.db.list<Cliente>('CARTOLAS/TB_SCC_CLI', ref => ref.limitToFirst(10)).snapshotChanges()
+    return this.db.list<Cliente>('CARTOLAS/TB_SCC_CLI', ref => ref.limitToFirst(10)).valueChanges()
     .pipe(
       catchError(this.errorHandler.haldler)
     );

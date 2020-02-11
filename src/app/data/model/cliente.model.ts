@@ -1,34 +1,74 @@
-export interface Cliente {
-  /*cli_rut: string;
-  cli_nom: string;
-  cli_dir: string;
-  cli_dir2: string;
-  cli_com: string;
-  cli_ciu: string;
-  cli_fon: string;
-  cli_fax: string;
-  cli_cas: string;
-  cli_eml: string;
-  cli_eml2: string;
-  cli_srv_eml: string;
-  cli_srv_fax: string;
-  cli_srv_mai: string;
-  cli_cod_suc: number;
-  cli_rut_eje_cta: string;
-  cli_tip_cli: string;
-  cli_rut_eje_cmx: string;
-  cli_rut_esp_cmx: string;
-  cli_num_ctl: number;
-  cli_sex: string;
-  cli_num_dia_vno: number;*/
+export class Cliente {
+  cliRut:	string;       // RUT
+  cliNom:	string;       // NOMBRE
+  cliDir:	string;       // DIRECCION
+  cliDir2: string;      // DIRECCION2
+  cliCom:	string;       // COMUNA
+  cliCiu:	string;       // CIUDAD
+  cliFon:	string;       // FONO
+  cliFax:	string;       // FAX
+  cliCas:	string;       // CASILLA
+  cliEml:	string;       // EMAIL
+  cliEml2: string;      // EMAIL2
+  cliSrvEml:	string;   // ENVIO EMAIL
+  cliSrvFax:	string;   // ENVIO FAX
+  cliSrvMai:	string;   // _
+  cliCodSuc:	number;   // CODIGO SUCURSAL
+  cliRutEjeCta:	string; // RUT EJECUTIVO CE CUENTAS
+  cliTipCli:	string;   // FUENTE CLIENTE
+  cliRutEjeCmx:	string; // RUT EJE. COMEX
+  cliRutEspCmx:	string; // RUT ESP. COMEX
+  cliNumCtl:	number;   // SEGMENTO
+  cliSex:	string;       // SEXO
+  cliNumDiaVno:	number; // DIAS DE VENCIMIENTO
 
-  BCO_SWF: string;
-  BCO_NOM: string;
-  BCO_NRO_RUT: string;
-  BCO_RUT_DV: string;
-  BCO_DIR: string;
-  BCO_CIU: string;
-  BCO_PAI: string;
-  BCO_COR: string;
+   constructor(
+    cliRut:	string,
+    cliNom:	string,
+    cliDir:	string,
+    cliDir2:	string,
+    cliCom:	string,
+    cliCiu:	string,
+    cliFon:	string,
+    cliFax:	string,
+    cliCas:	string,
+    cliEml:	string,
+    cliEml2:	string,
+    cliSrvEml:	string,
+    cliSrvFax:	string,
+    cliSrvMai:	string,
+    cliCodSuc:	number,
+    cliRutEjeCta:	string,
+    cliTipCli:	string,
+    cliRutEjeCmx:	string,
+    cliRutEspCmx:	string,
+    cliNumCtl:	number,
+    cliSex:	string,
+    cliNumDiaVno:	number
+   ) {
+    this.cliRut = cliRut;
+    this.cliNom = cliNom;
+    this.cliDir = cliDir;
+    this.cliDir2 = cliDir2;
+    this.cliCom = cliCom;
+    this.cliCiu = cliCiu;
+    this.cliFon = cliFon;
+    this.cliFax = cliFax;
+    this.cliCas = cliCas;
+    this.cliEml = cliEml;
+    this.cliEml2 = cliEml2;
+    this.cliSrvEml = cliSrvEml;
+    this.cliSrvFax = cliSrvFax;
+    this.cliSrvMai = cliSrvMai;
+    this.cliCodSuc = cliCodSuc;
+    this.cliRutEjeCta = cliRutEjeCta;
+    this.cliTipCli = cliTipCli;
+    this.cliRutEjeCmx = cliRutEjeCmx;
+    this.cliRutEspCmx = cliRutEspCmx;
+    this.cliNumCtl = cliNumCtl;
+    this.cliSex = cliSex;
+    this.cliNumDiaVno = cliNumDiaVno;
+   }
 }
+
 

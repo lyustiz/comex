@@ -3,15 +3,11 @@
   <div class="row">
 
     <!-- Filter  -->
-    <div class="col-md-6 mt-2">
-      <mat-form-field class="w-100" >
-        <mat-label>Buscar</mat-label>
-        <input matInput (keyup)="table.applyFilter($event.target.value)" placeholder="Indique texto a buscar" [(ngModel)]="table.filterField">
-        <button matSuffix mat-icon-button (click)="table.clearFilter($event.target)">
-          <mat-icon>clear</mat-icon>
-        </button>
-      </mat-form-field>
-    </div>
+    <app-table-filter 
+      (filter)="table.applyFilter($event)" 
+      (clear)="table.clearFilter()" 
+      [(inputModel)]="table.filterField" >
+    </app-table-filter>
 
     <div class="col-md-6 mt-3 text-right">
 
@@ -21,26 +17,7 @@
       </button>
 
       <!-- Head Menu  -->
-      <button mat-icon-button [matMenuTriggerFor]="actions">
-        <mat-icon>more_vert</mat-icon>
-      </button>
-
-      <mat-menu #actions="matMenu">
-        <button mat-menu-item [matMenuTriggerFor]="export"><mat-icon>open_in_new</mat-icon>Exportar</button>
-        <button mat-menu-item [matMenuTriggerFor]="fields"><mat-icon>visibility</mat-icon>Ver/Ocultar Campos</button>
-        <button mat-menu-item><mat-icon>search</mat-icon>Buscar</button>
-      </mat-menu>
-
-      <mat-menu #export="matMenu">
-        <button mat-menu-item><mat-icon>view_list</mat-icon> Excel</button>
-        <button mat-menu-item><mat-icon>picture_as_pdf</mat-icon> Pdf</button>
-      </mat-menu>
-
-      <mat-menu role="menuitemradio" #fields="matMenu">
-        <button mat-menu-item *ngFor="let colum of columns">
-          <mat-slide-toggle checked="true">{{ colum }}</mat-slide-toggle>
-        </button>
-      </mat-menu>
+      <app-form-menu [columns]="columns"></app-form-menu>
 
     </div>
   </div>
@@ -50,59 +27,58 @@
     <table mat-table [dataSource]="table.dataSource" matSort class="w-100 ">
 
       <!-- Table Columns -->
-      <ng-container matColumnDef="BCO_SWF">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Cod. Suc </th>
-        <td mat-cell *matCellDef="let row">  {{ row.BCO_SWF }}  </td>
+      <ng-container matColumnDef="CLI_RUT">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Rut Cliente </th>
+        <td mat-cell *matCellDef="let row">  {{ row.CLI_RUT }}  </td>
       </ng-container>
 
-      <ng-container matColumnDef="BCO_NOM">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Num. Suc </th>
-        <td mat-cell *matCellDef="let row">  {{ row.BCO_NOM }}  </td>
+      <ng-container matColumnDef="CLI_NOM">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+        <td mat-cell *matCellDef="let row">  {{ row.CLI_NOM }}  </td>
       </ng-container>
 
-      <ng-container matColumnDef="BCO_NRO_RUT">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Glosa </th>
-        <td mat-cell *matCellDef="let row">  {{ row.BCO_NRO_RUT }}  </td>
-      </ng-container>
-
-      <ng-container matColumnDef="BCO_RUT_DV">
+      <ng-container matColumnDef="CLI_DIR">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Direccion </th>
-        <td mat-cell *matCellDef="let row">  {{ row.BCO_RUT_DV }}  </td>
+        <td mat-cell *matCellDef="let row">  {{ row.CLI_DIR }}  </td>
       </ng-container>
 
-      <ng-container matColumnDef="BCO_DIR">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nro </th>
-        <td mat-cell *matCellDef="let row">  {{ row.BCO_DIR }}  </td>
+      <ng-container matColumnDef="CLI_CIU">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Ciudad </th>
+        <td mat-cell *matCellDef="let row">  {{ row.CLI_CIU }}  </td>
       </ng-container>
 
-      <ng-container matColumnDef="BCO_CIU">
+      <ng-container matColumnDef="CLI_COM">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Comuna </th>
-        <td mat-cell *matCellDef="let row">  {{ row.BCO_CIU }}  </td>
+        <td mat-cell *matCellDef="let row">  {{ row.CLI_COM }}  </td>
       </ng-container>
 
-      <ng-container matColumnDef="BCO_PAI">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Telefono </th>
-        <td mat-cell *matCellDef="let row">  {{ row.BCO_PAI }}  </td>
+      <ng-container matColumnDef="CLI_FON">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Fono </th>
+        <td mat-cell *matCellDef="let row">  {{ row.CLI_FON }}  </td>
+      </ng-container>
+
+      <ng-container matColumnDef="CLI_EML">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+        <td mat-cell *matCellDef="let row">  {{ row.CLI_EML }}  </td>
       </ng-container>
 
       <!-- Table Actions  -->
-      <ng-container matColumnDef="BCO_COR">
+      <ng-container matColumnDef="CLI_CAS">
         <th mat-header-cell *matHeaderCellDef> Acciones </th>
         <td mat-cell *matCellDef="let row">
 
-          <button mat-icon-button (click)="edit(row)" color="primary" class="mx-1" matTooltip="Editar" matTooltipPosition="left">
-            <mat-icon>edit</mat-icon>
-          </button>
-
-          <button mat-icon-button (click)="delete(row)" color="warn" class="mx-1" matTooltip="Eliminar" matTooltipPosition="right">
-            <mat-icon>delete</mat-icon>
-          </button>
+          <app-list-buttons 
+            (edit)="edit($event)" 
+            (delete)="delete($event)" 
+            [row]="row">
+          </app-list-buttons>
 
         </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="columns"></tr>
       <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+
     </table>
 
       <mat-paginator #paginator

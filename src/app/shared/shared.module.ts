@@ -13,6 +13,9 @@ import { FormHeaderComponent } from './components/form/form-header/form-header.c
 import { FormValidationsComponent } from './components/form/app-validator/app-validator.component';
 import { ListButtonsComponent } from './components/list/list-buttons/list-buttons.component';
 import { ListHeaderComponent } from './components/list/list-header/list-header.component';
+import { FormMenuComponent } from './components/form/form-menu/form-menu.component';
+import { FormFilterComponent } from './components/form/form-filter/form-filter.component';
+import { TableFilterComponent } from './components/list/table-filter/table-filter.component';
 
 @NgModule({
   imports: [
@@ -35,6 +38,8 @@ import { ListHeaderComponent } from './components/list/list-header/list-header.c
     FormValidationsComponent,
     ListButtonsComponent,
     ListHeaderComponent,
+    FormMenuComponent,
+    TableFilterComponent
   ],
   declarations: [
     LayoutComponent,
@@ -45,6 +50,9 @@ import { ListHeaderComponent } from './components/list/list-header/list-header.c
     FormValidationsComponent,
     ListButtonsComponent,
     ListHeaderComponent,
+    FormMenuComponent,
+    FormFilterComponent,
+    TableFilterComponent,
   ],
 })
 

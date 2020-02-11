@@ -18,14 +18,14 @@ export class ClientesListComponent implements OnInit, AfterViewInit {
   public cliente: Cliente;
   private dialogRef: MatDialogRef<any>;
 
-  public columns: string[] = ['BCO_SWF',
-                              'BCO_NOM',
-                              'BCO_NRO_RUT',
-                              'BCO_RUT_DV',
-                              'BCO_DIR',
-                              'BCO_CIU',
-                              'BCO_PAI',
-                              'BCO_COR'
+  public columns: string[] = ['CLI_RUT',
+                              'CLI_NOM',
+                              'CLI_DIR',
+                              'CLI_CIU',
+                              'CLI_COM',
+                              'CLI_FON',
+                              'CLI_EML',
+                              'CLI_CAS'
                             ];
 
   constructor(
