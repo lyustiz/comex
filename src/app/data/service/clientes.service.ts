@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { catchError } from 'rxjs/operators';
-import { Observable } from 'rxjs';
-import { AngularFireDatabase } from '@angular/fire/database';
+import { Observable, from } from 'rxjs';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import 'firebase/database';
 
 import { HttpHandlerErrorService } from '@app/core/service/error/http-handler-error.service';
@@ -13,32 +13,37 @@ import { Cliente } from '@model/cliente.model';
 
 export class ClientesService {
 
+  cliente: AngularFireList<Cliente>;
+
   constructor(private db: AngularFireDatabase, private errorHandler: HttpHandlerErrorService) {   }
 
   getClientes() {
-   return this.db.list<Cliente>('CARTOLAS/TB_SCC_CLI', ref => ref.limitToFirst(10)).valueChanges()
-   .pipe(
-    catchError(this.errorHandler.haldler)
-  );
+    return this.db.list<Cliente>('CARTOLAS/TB_SCC_CLI', ref => ref.limitToFirst(10)).snapshotChanges()
+    .pipe(
+      catchError(this.errorHandler.haldler)
+    );
   }
 
-  createCliente(cliente: Cliente): void {
-    this.todos$.push({ content: value, done: false });
+  createCliente(cliente: Cliente ) {
+    return from(this.db.list<Cliente>('CARTOLAS/TB_SCC_CLI').push(cliente))
+    .pipe(
+      catchError(this.errorHandler.haldler)
+    );
   }
 
-  toggleDone(todo: any): void {
-    this.af.object('/todos/' + todo.$key)
-      .update({ content: todo.content, done: !todo.done });
+  updateCliente(cliente: Cliente, id) {
+    return from(this.db.list('CARTOLAS/TB_SCC_CLI').update(id, cliente))
+    .pipe(
+      catchError(this.errorHandler.haldler)
+    );
   }
 
-  updateTodo2(todo: any, newValue: string): void {
-    this.af.object('/todos/' + todo.$key)
-      .update({ content: newValue, done: todo.done });
+  deleteCliente( id ) {
+    return from(this.db.list('CARTOLAS/TB_SCC_CLI/' + id).remove())
+    .pipe(
+      catchError(this.errorHandler.haldler)
+    );
   }
 
-  deleteTodo(todo: any): void {
-    this.af.object('/todos/' + todo.$key).remove();
-  }
-  // snapshotChanges()
 }
 
