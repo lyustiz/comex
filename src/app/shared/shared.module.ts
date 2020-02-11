@@ -10,7 +10,7 @@ import { NavBarComponent } from '@shared/components/nav-bar/nav-bar.component';
 import { FooterComponent } from '@shared/components/footer/footer.component';
 import { FormButtonsComponent } from './components/form/form-buttons/form-buttons.component';
 import { FormHeaderComponent } from './components/form/form-header/form-header.component';
-import { FormValidationsComponent } from './components/form/form-validations/form-validations.component';
+import { FormValidationsComponent } from './components/form/app-validator/app-validator.component';
 import { ListButtonsComponent } from './components/list/list-buttons/list-buttons.component';
 import { ListHeaderComponent } from './components/list/list-header/list-header.component';
 

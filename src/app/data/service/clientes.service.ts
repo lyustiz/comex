@@ -22,5 +22,23 @@ export class ClientesService {
   );
   }
 
+  createCliente(cliente: Cliente): void {
+    this.todos$.push({ content: value, done: false });
+  }
+
+  toggleDone(todo: any): void {
+    this.af.object('/todos/' + todo.$key)
+      .update({ content: todo.content, done: !todo.done });
+  }
+
+  updateTodo2(todo: any, newValue: string): void {
+    this.af.object('/todos/' + todo.$key)
+      .update({ content: newValue, done: todo.done });
+  }
+
+  deleteTodo(todo: any): void {
+    this.af.object('/todos/' + todo.$key).remove();
+  }
+  // snapshotChanges()
 }
 

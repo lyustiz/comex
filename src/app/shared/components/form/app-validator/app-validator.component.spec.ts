@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormValidationsComponent } from './form-validations.component';
+import { FormValidationsComponent } from './app-validator.component';
 
 describe('FormValidationsComponent', () => {
   let component: FormValidationsComponent;

@@ -2,9 +2,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-form-validations',
-  templateUrl: './form-validations.component.html',
-  styleUrls: ['./form-validations.component.scss']
+  selector: 'app-validator',
+  templateUrl: './app-validator.component.html',
+  styleUrls: ['./app-validator.component.scss']
 })
 export class FormValidationsComponent implements OnInit {
 
