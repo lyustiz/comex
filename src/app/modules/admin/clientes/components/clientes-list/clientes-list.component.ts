@@ -1,5 +1,7 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 
 import { ClientesService } from '@service/clientes.service';
 import { TableService } from '@app/core/service/list/table.service';
@@ -17,6 +19,9 @@ export class ClientesListComponent implements OnInit, AfterViewInit {
   public clientes: Cliente[];
   public cliente: Cliente;
   private dialogRef: MatDialogRef<any>;
+
+  @ViewChild( MatPaginator, {static: false}) paginator: MatPaginator;
+  @ViewChild( MatSort, {static: false}) sort: MatSort;
 
   public columns: string[] = ['CLI_RUT',
                               'CLI_NOM',
@@ -39,15 +44,16 @@ export class ClientesListComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.table.dataSource.sort      = this.table.sort;
-    this.table.dataSource.paginator = this.table.paginator;
+
+    this.table.dataSource.paginator = this.paginator;
+    this.table.dataSource.sort = this.sort;
   }
 
   create() {
     this.showDialog( '', 'create', 'Agregar Cliente', ClientesFormComponent );
   }
 
-  edit( item: Cliente ) {
+  edit( item ) {
     this.showDialog( item, 'edit', 'Editar Cliente', ClientesFormComponent );
   }
 
@@ -55,15 +61,17 @@ export class ClientesListComponent implements OnInit, AfterViewInit {
     this.showDialog( item, 'delete', 'Delete Cliente', ClientesFormComponent );
   }
 
-  showDialog( data , action: string, title: string,  component) {
+  showDialog( item , action: string, title: string,  component) {
 
     this.dialogRef = this.dialog.open( component, {
-      data: { data, title, action },
+      data: { item, title, action },
       disableClose: true,
       autoFocus: true,
     });
 
     this.dialogRef.afterClosed().subscribe( result => console.log(result));
   }
+
+
 
 }

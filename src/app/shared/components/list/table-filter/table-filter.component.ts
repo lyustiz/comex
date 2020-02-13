@@ -3,7 +3,7 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 @Component({
   selector: 'app-table-filter',
   template: `
-  <div class="col-md-6 mt-2">
+  <div class="col-md-12 mt-2">
       <mat-form-field class="w-100" >
         <mat-label>Buscar</mat-label>
         <input matInput

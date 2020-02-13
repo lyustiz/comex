@@ -3,66 +3,138 @@
   <span class="col">{{title}}</span>
 </div>
 
-<mat-dialog-content>
 <form (ngSubmit)="send()" #form="ngForm" [formGroup]="formGroup" class=" rounded ">
 
-  <mat-form-field class="col-md-6">
-    <input matInput formControlName="tx_glosa_sucursal" placeholder="Glosa Sucursal">
-    <mat-icon matSuffix>home</mat-icon>
-  </mat-form-field>
+  <mat-dialog-content>
 
-  <mat-form-field class="col-md-3">
-    <input matInput formControlName="co_sucursal" placeholder="Cod Sucursal">
-  </mat-form-field>
+    <mat-form-field class="col-md-3">
+      <input matInput formControlName="cliRut" placeholder="Rut Cliente" required>
+      <mat-icon matSuffix>person</mat-icon>
+      <mat-error><app-validator [formField]="cliRut" [fieldName]="'Rut Cliente'"></app-validator></mat-error>
+    </mat-form-field>
 
+    <mat-form-field class="col-md-3">
+      <input matInput formControlName="cliNumCtl" placeholder="Nro Cliente" required>
+      <mat-error><app-validator [formField]="cliRut" [fieldName]="'Nro Cliente'"></app-validator></mat-error>
+    </mat-form-field>
 
-  <mat-form-field class="col-md-3">
-    <input matInput formControlName="nu_sucursal" placeholder="Nro. Sucursal">
-  </mat-form-field>
+    <mat-form-field class="col-md-6">
+      <input matInput formControlName="cliNom" placeholder="Nombre" required>
+      <mat-error><app-validator [formField]="cliNom" [fieldName]="'Nombre'"></app-validator></mat-error>
+    </mat-form-field>
 
-  <mat-form-field class="col-md-6">
-    <input matInput formControlName="nu_flg_Idc_banco" placeholder="IDC">
-  </mat-form-field>
+    <mat-form-field class="col-md-12">
+      <input matInput formControlName="cliDir" placeholder="Direccion" required>
+      <mat-icon matSuffix>house</mat-icon>
+    </mat-form-field>
 
-  <mat-form-field class="col-md-6">
-    <input matInput formControlName="nu_banco" placeholder="Nro. Banco">
-  </mat-form-field>
+    <mat-form-field class="col-md-6">
+      <input matInput formControlName="cliCom" placeholder="Comuna">
+    </mat-form-field>
 
-  <mat-form-field class="col-md-6">
-    <input matInput formControlName="tx_telefono" placeholder="Telefono">
-    <mat-icon matSuffix>phone</mat-icon>
-  </mat-form-field>
+    <mat-form-field class="col-md-6">
+      <input matInput formControlName="cliCiu" placeholder="Ciudad">
+    </mat-form-field>
 
-  <mat-form-field class="col-md-6">
-    <input matInput formControlName="tx_fax" placeholder="Fax">
-    <mat-icon matSuffix>phone</mat-icon>
-  </mat-form-field>
+    <mat-form-field class="col-md-3">
+      <input matInput formControlName="cliCas" placeholder="Casilla">
+      <mat-icon matSuffix>markunread_mailbox</mat-icon>
+    </mat-form-field>
 
-  <mat-form-field class="col-md-6">
-    <input matInput formControlName="tx_email_agente" placeholder="Email Agente">
-    <mat-icon matSuffix>email</mat-icon>
-  </mat-form-field>
+    <mat-form-field class="col-md-3">
+      <input matInput formControlName="cliFon" placeholder="Telefono" required>
+      <mat-icon matSuffix>phone</mat-icon>
+    </mat-form-field>
 
-  <mat-form-field class="col-md-6">
-    <mat-label>Status</mat-label>
-    <mat-select formControlName="id_status">
-      <mat-option *ngFor="let item of status" [value]="item.id">
-        {{ item.nb_status }}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+    <mat-form-field class="col-md-3">
+      <input matInput formControlName="cliFax" placeholder="Fax" required>
+      <mat-icon matSuffix>print</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-3">
+      <input matInput formControlName="cliEml" placeholder="Email" required>
+      <mat-icon matSuffix>email</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-3">
+      <input matInput formControlName="cliSrvEml" placeholder="cliSrvEml">
+      <mat-error><app-validator [formField]="cliSrvEml"  [fieldName]="'cliSrvEml'"></app-validator></mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-3">
+      <input matInput formControlName="cliSrvFax" placeholder="cliSrvFax">
+    </mat-form-field>
+
+    <mat-form-field class="col-md-3">
+      <input matInput formControlName="cliSrvMai" placeholder="cliSrvMai">
+    </mat-form-field>
+
+    <mat-form-field class="col-md-3">
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="cliCodSuc">
+        <mat-option *ngFor="let item of status" [value]="item.id">
+          {{ item.nb_status }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-3">
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="cliRutEjeCta">
+        <mat-option *ngFor="let item of status" [value]="item.id">
+          {{ item.nb_status }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-3">
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="cliTipCli">
+        <mat-option *ngFor="let item of status" [value]="item.id">
+          {{ item.nb_status }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-3">
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="cliRutEjeCmx">
+        <mat-option *ngFor="let item of status" [value]="item.id">
+          {{ item.nb_status }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-3">
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="cliRutEspCmx">
+        <mat-option *ngFor="let item of status" [value]="item.id">
+          {{ item.nb_status }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-6">
+      <input matInput formControlName="cliNumDiaVno" placeholder="Dias Vencimiento">
+      <mat-icon matSuffix>event_busy</mat-icon>
+    </mat-form-field>
+
+    <mat-radio-group formControlName="cliSex" class="col-md-6" required>
+      <mat-radio-button value="M" class="col-md-1">M</mat-radio-button>
+      <mat-radio-button value="F" class="col-md-1">F</mat-radio-button>
+    </mat-radio-group>
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="container justify-content-end">
+
+    <app-form-buttons
+      (closer)="close()"
+      (reseter)="form.resetForm()"
+      (sender)="send()"
+      [disable]="formGroup.invalid"
+    ></app-form-buttons>
+
+  </mat-dialog-actions>
 
 </form>
-</mat-dialog-content>
-
-<mat-dialog-actions class="container justify-content-end">
-    <button mat-raised-button class="bg-danger text-white"(click)="close()">
-      <mat-icon>close</mat-icon> Cancelar
-    </button>
-    <button mat-raised-button class="bg-warning text-white"(click)="form.resetForm()">
-      <mat-icon>replay</mat-icon>Limpiar
-    </button>
-    <button mat-raised-button class="bg-success text-white"(click)="close()">
-      <mat-icon>save</mat-icon> Guardar
-    </button>
-</mat-dialog-actions>

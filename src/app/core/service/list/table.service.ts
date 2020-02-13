@@ -1,8 +1,5 @@
-import { Injectable, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource,   } from '@angular/material/table';
-import { MatDialog } from '@angular/material/dialog';
+import { Injectable } from '@angular/core';
+import { MatTableDataSource  } from '@angular/material/table';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -12,25 +9,24 @@ export class TableService {
 
   public data: any[];
   public filterField: string = null;
+  public loading = true;
 
-  constructor(private dialog: MatDialog) { }
+  constructor() { }
 
   public dataSource = new MatTableDataSource <any> (this.data);
-
-  @ViewChild( MatPaginator, {static: false}) paginator: MatPaginator;
-  @ViewChild( MatSort, {static: false}) sort: MatSort;
 
   getData( dataSource: Observable<any>) {
     dataSource.subscribe(
       data => {
         this.dataSource.data = data;
-        console.log(data)
+        this.loading = false;
       },
       error => {
         console.error(error);
       }
     );
   }
+
 
   applyFilter(filterValue: string) {
 
@@ -44,8 +40,9 @@ export class TableService {
   clearFilter() {
     this.dataSource.filter = '';
     this.filterField = '';
-    console.log('clear')
   }
+
+
 
 
 }

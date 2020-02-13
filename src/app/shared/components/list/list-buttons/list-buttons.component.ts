@@ -4,11 +4,11 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
   selector: 'app-list-buttons',
   template: `
     <div>
-      <button mat-icon-button (click)="edit.emit(row)" color="primary" class="mx-1" matTooltip="Editar" matTooltipPosition="left">
+      <button mat-icon-button (click)="editRow()" color="primary" class="mx-1" matTooltip="Editar" matTooltipPosition="left">
           <mat-icon>edit</mat-icon>
       </button>
 
-      <button mat-icon-button (click)="delete.emit(row)" color="warn" class="mx-1" matTooltip="Eliminar" matTooltipPosition="right">
+      <button mat-icon-button (click)="deleteRow()" color="warn" class="mx-1" matTooltip="Eliminar" matTooltipPosition="right">
           <mat-icon>delete</mat-icon>
       </button>
   </div>
@@ -23,7 +23,14 @@ export class ListButtonsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {  }
+
+  editRow() {
+    this.edit.emit(this.row);
+  }
+
+  deleteRow() {
+    this.delete.emit(this.row);
   }
 
 }

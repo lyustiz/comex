@@ -15,7 +15,15 @@ export class FormValidationsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // console.log(this.formField, this.fieldName);
+  }
+
+  public getError(controlName: string): string {
+    let error = '';
+    const control = null; // this.formGroup.get(controlName);
+    if (control.touched && control.errors != null) {
+      error = JSON.stringify(control.errors);
+    }
+    return error;
   }
 }
 

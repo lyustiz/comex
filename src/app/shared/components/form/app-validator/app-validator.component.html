@@ -2,14 +2,22 @@
 
   <span *ngIf="formField.hasError('required')"> {{ fieldName }} requerido</span>
 
-  <span *ngIf="formField.hasError('minlength')"> {{ fieldName }} debe tener almenos {{ formField.errors.minlength.requiredLength }} caracteres</span>
+  <span *ngIf="!formField.hasError('required')">
 
-  <span *ngIf="formField.hasError('maxlength')"> {{ fieldName }} debe tener menos de {{ formField.errors.maxlength.requiredLength }} caracteres</span>
+    <span *ngIf="formField.hasError('minlength')"> {{ fieldName }} debe tener almenos {{ formField.errors.minlength.requiredLength }} caracteres</span>
 
-  <span *ngIf="formField.hasError('min')"> {{ fieldName }}</span>
+    <span *ngIf="formField.hasError('maxlength')"> {{ fieldName }} debe tener menos de {{ formField.errors.maxlength.requiredLength }} caracteres</span>
 
-  <span *ngIf="formField.hasError('max')"> {{ fieldName }}</span>
+    <span *ngIf="formField.hasError('min')"> {{ fieldName }}</span>
 
-  <span *ngIf="formField.hasError('email')"> {{ fieldName }} no es Valido</span>
+    <span *ngIf="formField.hasError('max')"> {{ fieldName }}</span>
+
+    <span *ngIf="formField.hasError('email')"> {{ fieldName }} no es Valido</span>
+
+    <span *ngIf="formField.hasError('custom')"> {{ formField.errors.custom.msj }}</span>
+
+  </span>
 
 </div>
+
+
