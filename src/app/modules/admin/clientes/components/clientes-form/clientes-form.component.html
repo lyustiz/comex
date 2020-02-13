@@ -3,7 +3,7 @@
   <span class="col">{{title}}</span>
 </div>
 
-<form (ngSubmit)="send()" #form="ngForm" [formGroup]="formGroup" class=" rounded ">
+<form #form="ngForm" [formGroup]="formGroup" class=" rounded ">
 
   <mat-dialog-content>
 
@@ -129,9 +129,9 @@
   <mat-dialog-actions class="container justify-content-end">
 
     <app-form-buttons
-      (closer)="close()"
-      (reseter)="form.resetForm()"
-      (sender)="send()"
+      (Cancel)="close()"
+      (Reset)="form.resetForm()"
+      (Send)="send()"
       [disable]="formGroup.invalid"
     ></app-form-buttons>
 

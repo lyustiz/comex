@@ -32,10 +32,20 @@ export class ClientesService {
   }
 
   updateCliente(cliente: Cliente, id) {
-    return from(this.db.list('CARTOLAS/TB_SCC_CLI').update(id, cliente))
+
+    console.log('updcli', cliente, id );
+
+    this.db.list('CARTOLAS/TB_SCC_CLI').update(id, cliente)
+    .then( data => {
+        console.log('data',data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+    /*return from(this.db.list('CARTOLAS/TB_SCC_CLI').update(id, cliente))
     .pipe(
       catchError(this.errorHandler.haldler)
-    );
+    );*/
   }
 
   deleteCliente( id ) {

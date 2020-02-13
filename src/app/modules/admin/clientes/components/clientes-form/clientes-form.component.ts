@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CustomValidators as cValidators} from '@shared/utils/validators';
 
 import { FormService } from '@core/service/form/form.service';
-
+import { ClientesService } from '@service/clientes.service';
 
 @Component({
   selector: 'app-clientes-form',
@@ -26,7 +26,8 @@ export class ClientesFormComponent implements OnInit {
     public dialogRef: MatDialogRef<ClientesFormComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     public formBuilder: FormBuilder,
-    public form: FormService
+    public form: FormService,
+    public clientesService: ClientesService
   ) {
     this.title = this.data.title;
     this.setForm();
@@ -135,7 +136,7 @@ export class ClientesFormComponent implements OnInit {
 
   send(): void {
     if (this.formGroup.valid) {
-      console.log('enviando', this.formGroup.value);
+      this.clientesService.updateCliente(this.formGroup.value, this.formGroup.value.cliRut);
     }
   }
 

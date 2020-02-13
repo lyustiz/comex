@@ -4,8 +4,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 
 import { ClientesService } from '@service/clientes.service';
-import { TableService } from '@app/core/service/list/table.service';
 import { Cliente } from '@model/cliente.model';
+import { TableService } from '@app/core/service/list/table.service';
 import { ClientesFormComponent } from '../clientes-form/clientes-form.component';
 
 

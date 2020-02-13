@@ -10,6 +10,8 @@ export class HttpHandlerErrorService {
   constructor() { }
 
   public haldler(error: HttpErrorResponse) {
+
+    console.log(error);
     return throwError('ups. algo salio mal');
   }
 }
