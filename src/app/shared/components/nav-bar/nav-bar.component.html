@@ -1,49 +1,101 @@
 <mat-sidenav-container class="sidenav-container">
 
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
+  <mat-sidenav #drawer class="sidenav bg-dark" fixedInViewport
       attr.role='navigation'
       mode='side'
       [opened]="false">
-    <mat-toolbar style="height: 8vh;">Menu</mat-toolbar >
-    <mat-nav-list>
-      <a mat-list-item routerLink="auth/login">login</a>
-      <a mat-list-item routerLink="auth/password-recover">password-recover</a>
-      <a mat-list-item routerLink="cartolas/flujo/list">cartolas-flujo-list</a>
-      <a mat-list-item routerLink="cartolas/flujo/detail">flujo-detail</a>
-      <a mat-list-item routerLink="cartolas/flujo/print">flujo-print</a>
-      <a mat-list-item routerLink="cartolas/flujo/xls">flujo-xls</a>
-      <a mat-list-item routerLink="cartolas/flujo/pdf-aviso">flujo-pdf-aviso</a>
-      <a mat-list-item routerLink="cartolas/flujo/pdf-switf">flujo-pdf-switf</a>
-      <a mat-list-item routerLink="cartolas/stock/list">cartolas-stock-list</a>
-      <a mat-list-item routerLink="cartolas/stock/detail/sin-negociar">cartolas-stock-sin-negociar</a>
-      <a mat-list-item routerLink="cartolas/stock/detail/stand-by">cartolas-stock-stand-by</a>
-      <a mat-list-item routerLink="cartolas/stock/detail/opns-contado">cartolas-stock-opns-contado</a>
-      <a mat-list-item routerLink="admin/clientes/list">clientes</a>
-      <a mat-list-item routerLink="admin/emails/list">emails</a>
-      <a mat-list-item routerLink="admin/emails/activate">emails-activate</a>
-      <a mat-list-item routerLink="admin/emails/cuentas">emails-cuentas</a>
-      <a mat-list-item routerLink="admin/cargos/list">cargos</a>
-      <a mat-list-item routerLink="admin/servicios/list">servicios</a>
-      <a mat-list-item routerLink="admin/ejecutivos/list">ejecutivos</a>
-      <a mat-list-item routerLink="admin/sucursales/list">sucursales</a>
-      <a mat-list-item routerLink="admin/interfaces/list">interfaces</a>
-      <a mat-list-item routerLink="admin/parametros/list">parametros</a>
-      <a mat-list-item routerLink="admin/colocaciones/list">colocaciones</a>
-      <a mat-list-item routerLink="admin/colocaciones/certificar">colocaciones-certificar</a>
-      <a mat-list-item routerLink="admin/cobranzas/list">cobranzas</a>
-      <a mat-list-item routerLink="admin/cobranzas/cobranzas-certificar">cobranzas-certificar</a>
-      <a mat-list-item routerLink="admin/flujos/list">flujos-list/eliminar</a>
-      <a mat-list-item routerLink="admin/flujos/flujos-certificar">flujos-certificar</a>
-      <a mat-list-item routerLink="informes/cuadre-flujo/print">cuadre-flujo-print</a>
-      <a mat-list-item routerLink="informes/cuadre-flujo/resumen">flujo-list-resumen</a>
-      <a mat-list-item routerLink="informes/cuadre-flujo/general">flujo-list-general</a>
-      <a mat-list-item routerLink="informes/stock-cobranza/print">stock-cobranza-print</a>
-      <a mat-list-item routerLink="informes/stock-cobranza/resumen">cobranza-list-resumen</a>
-      <a mat-list-item routerLink="informes/stock-cobranza/general">cobranza-list-general</a>
-      <a mat-list-item routerLink="informes/stock-colocaciones/print">stock-colocaciones-print</a>
-      <a mat-list-item routerLink="informes/stock-colocaciones/resumen">colocaciones-list-resumen</a>
-      <a mat-list-item routerLink="informes/stock-colocaciones/general">colocaciones-list-general</a>
-    </mat-nav-list>
+    
+    <mat-toolbar class="bg-dark text-white" style="height: 8vh;">Menu</mat-toolbar >
+      
+    <mat-accordion class="w-80 bg-dark text-white" >
+
+      <mat-expansion-panel >
+        <mat-expansion-panel-header>
+          <span class="text-danger"> Cartolas </span>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+        <a mat-list-item routerLinkActive="active-link" routerLink="/cartolas/flujo/list">Cartolas de Flujo</a>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <span class="text-danger"> Cartolas Stock</span> 
+          </mat-expansion-panel-header>
+          <mat-nav-list>
+            <a mat-list-item routerLinkActive="active-link" routerLink="/cartolas/stock/detail/sin-negociar">Sin Negociar</a>
+            <a mat-list-item routerLinkActive="active-link" routerLink="/cartolas/stock/detail/stand-by">Stand-By</a>
+            <a mat-list-item routerLinkActive="active-link" routerLink="/cartolas/stock/detail/opns-contado">Operaciones Contado</a>
+        </mat-nav-list>
+        </mat-expansion-panel>
+        
+      </mat-nav-list>
+      </mat-expansion-panel>
+    
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <span class="text-danger"> Mantenedor </span>
+        </mat-expansion-panel-header>
+    
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active-link" routerLink="/admin/clientes/list">Clientes</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active-link" routerLink="/admin/emails/list">Emails</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active-link" routerLink="/admin/emails/cuentas">Emails-cuentas</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active-link" routerLink="/admin/cargos/list">Cargos</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active-link" routerLink="/admin/servicios/list">Servicios</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active-link" routerLink="/admin/ejecutivos/list">Ejecutivos</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active-link" routerLink="/admin/sucursales/list">Sucursales</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active-link" routerLink="/admin/interfaces/list">Interfaces</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active-link" routerLink="/admin/parametros/list">Parametros</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active-link" routerLink="/admin/colocaciones/list">Colocaciones</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active-link" routerLink="/admin/cobranzas/list">Cobranzas</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active-link" routerLink="/admin/flujos/list">Flujos/eliminar</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active-link" routerLink="/admin/flujos/flujos-certificar">Flujos/certificar</a>
+          
+        </mat-nav-list>
+            
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <span class="text-danger"> Informes </span>
+          </mat-expansion-panel-header>
+          <mat-nav-list>
+            <a mat-list-item routerLinkActive="active-link" routerLink="/informes/cuadre-flujo/print">Cuadre Flujo</a>
+            <a mat-list-item routerLinkActive="active-link" routerLink="/informes/cuadre-flujo/resumen">Flujo Resumen</a>
+            <a mat-list-item routerLinkActive="active-link" routerLink="/informes/cuadre-flujo/general">Flujo General</a>
+            <a mat-list-item routerLinkActive="active-link" routerLink="/informes/stock-cobranza/print">Stock cobranza</a>
+            <a mat-list-item routerLinkActive="active-link" routerLink="/informes/stock-cobranza/resumen">Cobranza Resumen</a>
+            <a mat-list-item routerLinkActive="active-link" routerLink="/informes/stock-cobranza/general">Cobranza General</a>
+            <a mat-list-item routerLinkActive="active-link" routerLink="/informes/stock-colocaciones/print">Stock Colocaciones</a>
+            <a mat-list-item routerLinkActive="active-link" routerLink="/informes/stock-colocaciones/resumen">Stock Colocaciones Resumen</a>
+            <a mat-list-item routerLinkActive="active-link" routerLink="/informes/stock-colocaciones/general">Stock Colocaciones General</a>
+        </mat-nav-list>
+        </mat-expansion-panel>
+      
+      </mat-accordion>
+
   </mat-sidenav>
 
   <mat-sidenav-content>

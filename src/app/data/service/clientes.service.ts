@@ -37,7 +37,7 @@ export class ClientesService {
 
     this.db.list('CARTOLAS/TB_SCC_CLI').update(id, cliente)
     .then( data => {
-        console.log('data',data);
+        console.log('data', data);
       })
       .catch(error => {
         console.error(error);
