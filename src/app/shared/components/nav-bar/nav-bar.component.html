@@ -1,24 +1,24 @@
 <mat-sidenav-container class="sidenav-container">
 
-  <mat-sidenav #drawer class="sidenav bg-dark" fixedInViewport
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
       attr.role='navigation'
       mode='side'
       [opened]="false">
     
-    <mat-toolbar class="bg-dark text-white" style="height: 8vh;">Menu</mat-toolbar >
+    <mat-toolbar class="nav-toolbar">Menu</mat-toolbar >
       
-    <mat-accordion class="w-80 bg-dark text-white" >
+    <mat-accordion class="nav-menu" >
 
       <mat-expansion-panel >
         <mat-expansion-panel-header>
-          <span class="text-danger"> Cartolas </span>
+          <div class="nav-menu-header-title"> Cartolas </div>
         </mat-expansion-panel-header>
         <mat-nav-list>
         <a mat-list-item routerLinkActive="active-link" routerLink="/cartolas/flujo/list">Cartolas de Flujo</a>
 
         <mat-expansion-panel>
           <mat-expansion-panel-header>
-            <span class="text-danger"> Cartolas Stock</span> 
+            <div class="nav-menu-header-title"> Cartolas Stock</div> 
           </mat-expansion-panel-header>
           <mat-nav-list>
             <a mat-list-item routerLinkActive="active-link" routerLink="/cartolas/stock/detail/sin-negociar">Sin Negociar</a>
@@ -32,7 +32,7 @@
     
       <mat-expansion-panel>
         <mat-expansion-panel-header>
-          <span class="text-danger"> Mantenedor </span>
+          <div class="nav-menu-header-title"> Mantenedor </div>
         </mat-expansion-panel-header>
     
         <mat-nav-list>
@@ -79,7 +79,7 @@
         </mat-expansion-panel>
         <mat-expansion-panel>
           <mat-expansion-panel-header>
-            <span class="text-danger"> Informes </span>
+            <div class="nav-menu-header-title"> Informes </div>
           </mat-expansion-panel-header>
           <mat-nav-list>
             <a mat-list-item routerLinkActive="active-link" routerLink="/informes/cuadre-flujo/print">Cuadre Flujo</a>
@@ -104,7 +104,7 @@
       <button type="button" mat-icon-button (click)="drawer.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      <span>Comex</span>
+      <div>Comex</div>
     </mat-toolbar>
 
       <ng-content selector="#content"></ng-content>
