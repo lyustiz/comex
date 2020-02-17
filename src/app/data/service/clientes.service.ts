@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { catchError, map, tap } from 'rxjs/operators';
-import { Observable, from } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 import { AngularFireDatabase, AngularFireList,  } from '@angular/fire/database';
 import 'firebase/database';
 

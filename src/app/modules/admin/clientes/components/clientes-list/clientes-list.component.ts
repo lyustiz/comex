@@ -7,7 +7,7 @@ import { ClientesService } from '@service/clientes.service';
 import { Cliente } from '@model/cliente.model';
 import { TableService } from '@app/core/service/list/table.service';
 import { ClientesFormComponent } from '../clientes-form/clientes-form.component';
-
+import { DialogComponent } from '@shared/components/dialog/dialog.component';
 
 @Component({
   selector: 'app-clientes-list',
@@ -50,18 +50,27 @@ export class ClientesListComponent implements OnInit, AfterViewInit {
   }
 
   create() {
-    this.showDialog( '', 'create', 'Agregar Cliente', ClientesFormComponent );
+    this.showForm( '', 'create', 'Agregar Cliente', ClientesFormComponent );
   }
 
   edit( item ) {
-    this.showDialog( item, 'edit', 'Editar Cliente', ClientesFormComponent );
+    this.showForm( item, 'update', 'Editar Cliente', ClientesFormComponent );
   }
 
-  delete( item: Cliente ) {
-    this.showDialog( item, 'delete', 'Delete Cliente', ClientesFormComponent );
+  delete( item ) {
+
+    const description = `Desea eliminar el Cliente ${item.CLI_NOM} ?`;
+
+    this.showDialog('Atencion', description, 'confirm', DialogComponent);
+
+    this.dialogRef.afterClosed().subscribe( result => {
+      if ( result.confirm ) {
+        this.clientesService.deleteCliente( item.key );
+      }
+    });
   }
 
-  showDialog( item , action: string, title: string,  component) {
+  showForm( item , action: string, title: string,  component) {
 
     this.dialogRef = this.dialog.open( component, {
       data: { item, title, action },
@@ -72,6 +81,14 @@ export class ClientesListComponent implements OnInit, AfterViewInit {
     this.dialogRef.afterClosed().subscribe( result => console.log(result));
   }
 
+  showDialog( title: string, description: string, type: string, component) {
+
+    this.dialogRef = this.dialog.open( component, {
+      data: { title, description, type },
+      disableClose: true,
+      autoFocus: true,
+    });
+  }
 
 
 }

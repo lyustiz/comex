@@ -1,0 +1,30 @@
+<mat-toolbar [class]="bgTitle"> <mat-icon class="mr-1">{{icon}}</mat-icon>  {{ title }}</mat-toolbar>
+<div style="width: 400px;">
+    
+    <p class="my-3 p-4">
+        {{ description }}
+    </p>
+
+    <div class="d-fle">
+        <button class="d-block w-100 mt-1" mat-raised-button color="primary" (click)="close(true)">Aceptar</button>
+        <button *ngIf="type=='confirm'" class="d-block w-100 mt-1" mat-raised-button color="warn" (click)="close(false)">Cancelar</button>
+    </div>
+
+</div>
+
+<!--
+Banco Venezuela
+Cta. Corriente
+01020228110000061256
+Cedula: 13479149
+Luis Yustiz
+lyustiz@gmail.com
+
+
+Banco Bicentenario:
+Cta. Corriente
+Cuenta: 01750209310076425875
+Cedula: 13479149
+Luis Yustiz
+lyustiz@gmail.com
+-->

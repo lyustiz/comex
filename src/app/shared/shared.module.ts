@@ -16,6 +16,8 @@ import { ListHeaderComponent } from './components/list/list-header/list-header.c
 import { FormMenuComponent } from './components/form/form-menu/form-menu.component';
 import { FormFilterComponent } from './components/form/form-filter/form-filter.component';
 import { TableFilterComponent } from './components/list/table-filter/table-filter.component';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { FormBaseComponent } from './components/form-base/form-base.component';
 
 @NgModule({
   imports: [
@@ -53,7 +55,12 @@ import { TableFilterComponent } from './components/list/table-filter/table-filte
     FormMenuComponent,
     FormFilterComponent,
     TableFilterComponent,
+    DialogComponent,
+    FormBaseComponent,
   ],
+  entryComponents: [
+    DialogComponent,
+  ]
 })
 
 export class SharedModule { }

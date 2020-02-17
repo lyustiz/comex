@@ -1,8 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
-import { CustomValidators as cValidators} from '@shared/utils/validators';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { CustomValidators as cValidators} from '@shared/utils/validators';
 import { FormService } from '@core/service/form/form.service';
 import { ClientesService } from '@service/clientes.service';
 import { Cliente } from '@model/cliente.model';
@@ -26,10 +26,10 @@ export class ClientesFormComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<ClientesFormComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any,
     public formBuilder: FormBuilder,
     public form: FormService,
-    public clientesService: ClientesService
+    public clientesService: ClientesService,
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.setForm();
     this.form.mapFormFields(this.data.item, this.formGroup, this.data.action);
@@ -68,93 +68,31 @@ export class ClientesFormComponent implements OnInit {
     return this.formGroup.get(field);
   }
 
-
-  get cliRut() {
-    return this.formGroup.get('cliRut');
-  }
-  get cliNom() {
-    return this.formGroup.get('cliNom');
-  }
-  get cliDir() {
-    return this.formGroup.get('cliDir');
-  }
-  get cliDir2() {
-    return this.formGroup.get('cliDir2');
-  }
-  get cliCom() {
-    return this.formGroup.get('cliCom');
-  }
-  get cliCiu() {
-    return this.formGroup.get('cliCiu');
-  }
-  get cliFon() {
-    return this.formGroup.get('cliFon');
-  }
-  get cliFax() {
-    return this.formGroup.get('cliFax');
-  }
-  get cliCas() {
-    return this.formGroup.get('cliCas');
-  }
-  get cliEml() {
-    return this.formGroup.get('cliEml');
-  }
-  get cliEml2() {
-    return this.formGroup.get('cliEml2');
-  }
-  get cliSrvEml() {
-    return this.formGroup.get('cliSrvEml');
-  }
-  get cliSrvFax() {
-    return this.formGroup.get('cliSrvFax');
-  }
-  get cliSrvMai() {
-    return this.formGroup.get('cliSrvMai');
-  }
-  get cliCodSuc() {
-    return this.formGroup.get('cliCodSuc');
-  }
-  get cliRutEjeCta() {
-    return this.formGroup.get('cliRutEjeCta');
-  }
-  get cliTipCli() {
-    return this.formGroup.get('cliTipCli');
-  }
-  get cliRutEjeCmx() {
-    return this.formGroup.get('cliRutEjeCmx');
-  }
-  get cliRutEspCmx() {
-    return this.formGroup.get('cliRutEspCmx');
-  }
-  get cliNumCtl() {
-    return this.formGroup.get('cliNumCtl');
-  }
-  get cliSex() {
-    return this.formGroup.get('cliSex');
-  }
-  get cliNumDiaVno() {
-    return this.formGroup.get('cliNumDiaVno');
-  }
-
   close(): void {
-    this.dialogRef.close(this.data);
+    this.dialogRef.close(this.formGroup.value);
   }
 
   send(): void {
-    if (this.formGroup.valid) {
 
-      if ( this.data.action === 'update' ) {
+    if (this.formGroup.invalid) { return; }
 
-        const formatFields: Cliente = this.form.mapToTable(this.formGroup.value) as Cliente;
-        this.clientesService.updateCliente(formatFields, this.data.item.key);
-
-      } else if (this.data.action === 'delete') {
-
-        this.clientesService.deleteCliente( this.data.item.key);
-
-      }
-
-      this.dialogRef.close(this.formGroup.value);
+    switch (this.data.action) {
+      case 'update':
+        this.update();
+        break;
+      case 'create':
+        this.create();
+        break;
     }
+
+    this.close();
+  }
+
+  update() {
+    this.clientesService.updateCliente(this.form.mapToTable(this.formGroup.value) as Cliente, this.data.item.key);
+  }
+
+  create() {
+    this.clientesService.createCliente(this.form.mapToTable(this.formGroup.value) as Cliente);
   }
 }

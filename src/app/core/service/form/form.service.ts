@@ -11,7 +11,7 @@ export class FormService {
   constructor() { }
 
   mapFormFields(items: object, formFields: FormGroup, action: string) {
-    if ( items &&  action === 'edit' ) {
+    if ( items &&  action === 'update' ) {
       for ( const field in items ) {
         if ( formFields.value.hasOwnProperty(format.toCamelCase(field))) {
           const fmtField = format.toCamelCase(field);

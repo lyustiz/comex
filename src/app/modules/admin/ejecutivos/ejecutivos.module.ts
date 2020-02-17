@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from '@shared/shared.module';
 
 import { EjecutivosRoutingModule } from './ejecutivos-routing.module';
 import { EjecutivosFormComponent } from './components/ejecutivos-form/ejecutivos-form.component';
@@ -11,6 +12,7 @@ import { EjecutivosSearchComponent } from './components/ejecutivos-search/ejecut
   declarations: [EjecutivosFormComponent, EjecutivosListComponent, EjecutivosSearchComponent],
   imports: [
     CommonModule,
+    SharedModule,
     EjecutivosRoutingModule
   ]
 })

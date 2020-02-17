@@ -1,6 +1,6 @@
 
 <div mat-dialog-title class="mat-elevation-z2 bg-danger rounded text-white p-2">
-  <span class="col">{{title}}</span>
+  <span class="col">{{data.title}}</span>
 </div>
 
 <form #form="ngForm" [formGroup]="formGroup" class=" rounded ">
@@ -10,17 +10,17 @@
     <mat-form-field class="col-md-3">
       <input matInput formControlName="cliRut" placeholder="Rut Cliente" required>
       <mat-icon matSuffix>person</mat-icon>
-      <mat-error><app-validator [formField]="cliRut" [fieldName]="'Rut Cliente'"></app-validator></mat-error>
+      <mat-error><app-validator [formField]="formField('cliRut')" [fieldName]="'Rut Cliente'"></app-validator></mat-error>
     </mat-form-field>
 
     <mat-form-field class="col-md-3">
       <input matInput formControlName="cliNumCtl" placeholder="Nro Cliente" required>
-      <mat-error><app-validator [formField]="cliNumCtl" [fieldName]="'Nro Cliente'"></app-validator></mat-error>
+      <mat-error><app-validator [formField]="formField('cliNumCtl')" [fieldName]="'Nro Cliente'"></app-validator></mat-error>
     </mat-form-field>
 
     <mat-form-field class="col-md-6">
       <input matInput formControlName="cliNom" placeholder="Nombre" required>
-      <mat-error><app-validator [formField]="cliNom" [fieldName]="'Nombre'"></app-validator></mat-error>
+      <mat-error><app-validator [formField]="formField('cliNom')" [fieldName]="'Nombre'"></app-validator></mat-error>
     </mat-form-field>
 
     <mat-form-field class="col-md-12">
@@ -58,7 +58,7 @@
 
     <mat-form-field class="col-md-3">
       <input matInput formControlName="cliSrvEml" placeholder="cliSrvEml">
-      <mat-error><app-validator [formField]="cliSrvEml"  [fieldName]="'cliSrvEml'"></app-validator></mat-error>
+      <mat-error><app-validator [formField]="formField('cliSrvEml')"  [fieldName]="'cliSrvEml'"></app-validator></mat-error>
     </mat-form-field>
 
     <mat-form-field class="col-md-3">
