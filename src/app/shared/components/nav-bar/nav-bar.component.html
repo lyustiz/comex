@@ -1,110 +1,200 @@
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container>
 
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
+  <mat-sidenav #drawer fixedInViewport
       attr.role='navigation'
       mode='side'
       [opened]="false">
-    
-    <mat-toolbar class="nav-toolbar">Menu</mat-toolbar >
-      
-    <mat-accordion class="nav-menu" >
+
+    <mat-toolbar>Menu</mat-toolbar >
+
+    <mat-accordion displayMode="flat" class="nav-menu" >
 
       <mat-expansion-panel >
-        <mat-expansion-panel-header>
-          <div class="nav-menu-header-title"> Cartolas </div>
+        <mat-expansion-panel-header class="menu-header">
+            <mat-icon class="mr-2">library_books</mat-icon>
+            Cartolas
         </mat-expansion-panel-header>
         <mat-nav-list>
-        <a mat-list-item routerLinkActive="active-link" routerLink="/cartolas/flujo/list">Cartolas de Flujo</a>
+          <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/cartolas/flujo/list">
+            <mat-icon class="mr-2">arrow_right</mat-icon>Cartolas de Flujo
+          </a>
+        </mat-nav-list>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header class="menu-header">
+            <div class="nav-menu-header-title"> Cartolas Stock</div>
+          </mat-expansion-panel-header>
+          <mat-nav-list>
+            <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/cartolas/stock/detail/sin-negociar">
+              <mat-icon class="mr-2">arrow_right</mat-icon>Sin Negociar
+            </a>
+          </mat-nav-list>
+          <mat-nav-list>
+            <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/cartolas/stock/detail/stand-by">
+              <mat-icon class="mr-2">arrow_right</mat-icon>Stand-By
+            </a>
+          </mat-nav-list>
+          <mat-nav-list>
+            <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/cartolas/stock/detail/opns-contado">
+              <mat-icon class="mr-2">arrow_right</mat-icon>Operaciones Contado
+            </a>
+          </mat-nav-list>
+        </mat-expansion-panel>
+
+
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <div class="nav-menu-header-title">
+            <mat-icon class="mr-2">build</mat-icon> Mantenedor
+          </div>
+        </mat-expansion-panel-header>
+
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/admin/clientes/list">
+            <mat-icon class="mr-2">arrow_right</mat-icon>Clientes
+          </a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/admin/emails/list">
+            <mat-icon class="mr-2">arrow_right</mat-icon>Emails
+          </a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/admin/emails/cuentas">
+            <mat-icon class="mr-2">arrow_right</mat-icon>Emails
+            -cuentas</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/admin/cargos/list">
+            <mat-icon class="mr-2">arrow_right</mat-icon>Cargos
+          </a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/admin/servicios/list">
+            <mat-icon class="mr-2">arrow_right</mat-icon>Servicios
+          </a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/admin/ejecutivos/list">
+            <mat-icon class="mr-2">arrow_right</mat-icon>Ejecutivos
+          </a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/admin/sucursales/list">
+            <mat-icon class="mr-2">arrow_right</mat-icon>Sucursales
+          </a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/admin/interfaces/list">
+            <mat-icon class="mr-2">arrow_right</mat-icon>Interfaces
+          </a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/admin/parametros/list">
+            <mat-icon class="mr-2">arrow_right</mat-icon>Parametros
+          </a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/admin/colocaciones/list">
+            <mat-icon class="mr-2">arrow_right</mat-icon>Colocaciones
+          </a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/admin/cobranzas/list">
+            <mat-icon class="mr-2">arrow_right</mat-icon>Cobranzas
+          </a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/admin/flujos/list">
+            <mat-icon class="mr-2">arrow_right</mat-icon>Flujos
+            /eliminar</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/admin/flujos/flujos-certificar">
+            <mat-icon class="mr-2">arrow_right</mat-icon>Flujos
+            /certificar</a>
+        </mat-nav-list>
+        </mat-expansion-panel>
 
         <mat-expansion-panel>
           <mat-expansion-panel-header>
-            <div class="nav-menu-header-title"> Cartolas Stock</div> 
+            <div class="nav-menu-header-title"> <mat-icon class="mr-2">assignment</mat-icon>
+              Informes
+            </div>
           </mat-expansion-panel-header>
+
           <mat-nav-list>
-            <a mat-list-item routerLinkActive="active-link" routerLink="/cartolas/stock/detail/sin-negociar">Sin Negociar</a>
-            <a mat-list-item routerLinkActive="active-link" routerLink="/cartolas/stock/detail/stand-by">Stand-By</a>
-            <a mat-list-item routerLinkActive="active-link" routerLink="/cartolas/stock/detail/opns-contado">Operaciones Contado</a>
-        </mat-nav-list>
-        </mat-expansion-panel>
-        
-      </mat-nav-list>
-      </mat-expansion-panel>
-    
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <div class="nav-menu-header-title"> Mantenedor </div>
-        </mat-expansion-panel-header>
-    
-        <mat-nav-list>
-          <a mat-list-item routerLinkActive="active-link" routerLink="/admin/clientes/list">Clientes</a>
-        </mat-nav-list>
-        <mat-nav-list>
-          <a mat-list-item routerLinkActive="active-link" routerLink="/admin/emails/list">Emails</a>
-        </mat-nav-list>
-        <mat-nav-list>
-          <a mat-list-item routerLinkActive="active-link" routerLink="/admin/emails/cuentas">Emails-cuentas</a>
-        </mat-nav-list>
-        <mat-nav-list>
-          <a mat-list-item routerLinkActive="active-link" routerLink="/admin/cargos/list">Cargos</a>
-        </mat-nav-list>
-        <mat-nav-list>
-          <a mat-list-item routerLinkActive="active-link" routerLink="/admin/servicios/list">Servicios</a>
-        </mat-nav-list>
-        <mat-nav-list>
-          <a mat-list-item routerLinkActive="active-link" routerLink="/admin/ejecutivos/list">Ejecutivos</a>
-        </mat-nav-list>
-        <mat-nav-list>
-          <a mat-list-item routerLinkActive="active-link" routerLink="/admin/sucursales/list">Sucursales</a>
-        </mat-nav-list>
-        <mat-nav-list>
-          <a mat-list-item routerLinkActive="active-link" routerLink="/admin/interfaces/list">Interfaces</a>
-        </mat-nav-list>
-        <mat-nav-list>
-          <a mat-list-item routerLinkActive="active-link" routerLink="/admin/parametros/list">Parametros</a>
-        </mat-nav-list>
-        <mat-nav-list>
-          <a mat-list-item routerLinkActive="active-link" routerLink="/admin/colocaciones/list">Colocaciones</a>
-        </mat-nav-list>
-        <mat-nav-list>
-          <a mat-list-item routerLinkActive="active-link" routerLink="/admin/cobranzas/list">Cobranzas</a>
-        </mat-nav-list>
-        <mat-nav-list>
-          <a mat-list-item routerLinkActive="active-link" routerLink="/admin/flujos/list">Flujos/eliminar</a>
-        </mat-nav-list>
-        <mat-nav-list>
-          <a mat-list-item routerLinkActive="active-link" routerLink="/admin/flujos/flujos-certificar">Flujos/certificar</a>
-          
-        </mat-nav-list>
-            
-        </mat-expansion-panel>
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <div class="nav-menu-header-title"> Informes </div>
-          </mat-expansion-panel-header>
+            <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/informes/cuadre-flujo/print">
+              <mat-icon class="mr-2">arrow_right</mat-icon>Cuadre Flujo
+            </a>
+          </mat-nav-list>
           <mat-nav-list>
-            <a mat-list-item routerLinkActive="active-link" routerLink="/informes/cuadre-flujo/print">Cuadre Flujo</a>
-            <a mat-list-item routerLinkActive="active-link" routerLink="/informes/cuadre-flujo/resumen">Flujo Resumen</a>
-            <a mat-list-item routerLinkActive="active-link" routerLink="/informes/cuadre-flujo/general">Flujo General</a>
-            <a mat-list-item routerLinkActive="active-link" routerLink="/informes/stock-cobranza/print">Stock cobranza</a>
-            <a mat-list-item routerLinkActive="active-link" routerLink="/informes/stock-cobranza/resumen">Cobranza Resumen</a>
-            <a mat-list-item routerLinkActive="active-link" routerLink="/informes/stock-cobranza/general">Cobranza General</a>
-            <a mat-list-item routerLinkActive="active-link" routerLink="/informes/stock-colocaciones/print">Stock Colocaciones</a>
-            <a mat-list-item routerLinkActive="active-link" routerLink="/informes/stock-colocaciones/resumen">Stock Colocaciones Resumen</a>
-            <a mat-list-item routerLinkActive="active-link" routerLink="/informes/stock-colocaciones/general">Stock Colocaciones General</a>
-        </mat-nav-list>
-        </mat-expansion-panel>
-      
+            <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/informes/cuadre-flujo/resumen">
+              <mat-icon class="mr-2">arrow_right</mat-icon>Flujo Resumen
+            </a>
+          </mat-nav-list>
+          <mat-nav-list>
+            <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/informes/cuadre-flujo/general">
+              <mat-icon class="mr-2">arrow_right</mat-icon>Flujo General
+            </a>
+          </mat-nav-list>
+          <mat-nav-list>
+            <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/informes/stock-cobranza/print">
+              <mat-icon class="mr-2">arrow_right</mat-icon>Stock cobranza
+            </a>
+          </mat-nav-list>
+          <mat-nav-list>
+            <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/informes/stock-cobranza/resumen">
+              <mat-icon class="mr-2">arrow_right</mat-icon>Cobranza Resumen
+            </a>
+          </mat-nav-list>
+          <mat-nav-list>
+            <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/informes/stock-cobranza/general">
+              <mat-icon class="mr-2">arrow_right</mat-icon>Cobranza General
+            </a>
+          </mat-nav-list>
+          <mat-nav-list>
+            <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/informes/stock-colocaciones/print">
+              <mat-icon class="mr-2">arrow_right</mat-icon>Stock Colocaciones
+            </a>
+          </mat-nav-list>
+          <mat-nav-list>
+            <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/informes/stock-colocaciones/resumen">
+              <mat-icon class="mr-2">arrow_right</mat-icon>Stock Colocaciones Resumen
+            </a>
+          </mat-nav-list>
+          <mat-nav-list>
+            <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/informes/stock-colocaciones/general">
+              <mat-icon class="mr-2">arrow_right</mat-icon>Stock Colocaciones General
+            </a>
+          </mat-nav-list>
+  </mat-expansion-panel>
+
       </mat-accordion>
 
   </mat-sidenav>
+  <mat-sidenav position="end">End</mat-sidenav>
 
   <mat-sidenav-content>
 
-    <mat-toolbar color="warn" style="height: 8vh;">
+    <mat-toolbar color="warn" style="height: 60px;">
       <button type="button" mat-icon-button (click)="drawer.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      <div>Comex</div>
+      <span>Comex</span>
+      <span class="flex-fill"></span>
+      <button type="button" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon >notifications</mat-icon>
+      </button>
+      <button type="button" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>help</mat-icon>
+      </button>
+      <button type="button" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+
     </mat-toolbar>
 
       <ng-content selector="#content"></ng-content>

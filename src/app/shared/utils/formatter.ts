@@ -18,5 +18,12 @@ export class Formatter {
     .replace(/\w\S*/g, (m) => m.charAt(0).toUpperCase() + m.substr(1).toLowerCase());
   }
 
+  static toUpperCamelCase(str: string) {
+    return str
+    .replace(/\.?([A-Z]+)/g, ( x, y ) => '_' + y.toLowerCase()).replace(/^_/, '').toLocaleUpperCase();
+  }
+
+
+
 }
 

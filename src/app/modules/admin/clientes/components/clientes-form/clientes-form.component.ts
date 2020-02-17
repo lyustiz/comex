@@ -1,10 +1,12 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { CustomValidators as cValidators} from '@shared/utils/validators';
 
 import { FormService } from '@core/service/form/form.service';
 import { ClientesService } from '@service/clientes.service';
+import { Cliente } from '@model/cliente.model';
+
 
 @Component({
   selector: 'app-clientes-form',
@@ -15,7 +17,7 @@ export class ClientesFormComponent implements OnInit {
 
   public formGroup: FormGroup;
 
-  public title: string;
+  public formFields = [];
 
   public status = [
                     { id: 1, nb_status: 'activo'  },
@@ -29,7 +31,6 @@ export class ClientesFormComponent implements OnInit {
     public form: FormService,
     public clientesService: ClientesService
   ) {
-    this.title = this.data.title;
     this.setForm();
     this.form.mapFormFields(this.data.item, this.formGroup, this.data.action);
   }
@@ -62,6 +63,11 @@ export class ClientesFormComponent implements OnInit {
       cliNumDiaVno:	[ '', [ Validators.required ] ],                      // DIAS DE VENCIMIENTO
     });
   }
+
+  formField(field: string) {
+    return this.formGroup.get(field);
+  }
+
 
   get cliRut() {
     return this.formGroup.get('cliRut');
@@ -136,8 +142,19 @@ export class ClientesFormComponent implements OnInit {
 
   send(): void {
     if (this.formGroup.valid) {
-      this.clientesService.updateCliente(this.formGroup.value, this.formGroup.value.cliRut);
+
+      if ( this.data.action === 'update' ) {
+
+        const formatFields: Cliente = this.form.mapToTable(this.formGroup.value) as Cliente;
+        this.clientesService.updateCliente(formatFields, this.data.item.key);
+
+      } else if (this.data.action === 'delete') {
+
+        this.clientesService.deleteCliente( this.data.item.key);
+
+      }
+
+      this.dialogRef.close(this.formGroup.value);
     }
   }
-
 }

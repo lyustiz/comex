@@ -1,52 +1,50 @@
-.sidenav{
-    background-color: #2d323e !important;
+$base-color: #2d323e;
+$text-color: white;
+
+
+.mat-drawer-inner-container{
+  background-color: $base-color;
 }
-/*
-.mat-drawer-inner-container
-{
-    background-color: #2d323e !important;
-}
-mat-side-nav{
-    background-color: #2d323e !important;
 
-    mat-accordion{
-        background-color: #2d323e !important;
-    }
-}
-*/
-.mat-list-item.active-link {
-    background-color: white;
-    border-radius: 5px;    
-    color: white;
-}
-.nav-toolbar
-{
-    background-color: #1e2129;
-    color: white;
-}
-.mat-accordion .mat-expansion-panel{
-        border-radius: 0;
-    }
-.nav-menu {
-    width: 250px;
-    background-color: #2d323e;
+mat-sidenav{
+  background-color: $base-color;
 
-    .nav-menu-header-title:hover{
-        background-color: rgba(0,0,0,.04);
-        display: flex;
-    }
-
-    .mat-expansion-panel-header{
-
-        background-color: #2d323e !important;
-        border-radius: 0;
-        
-        
-
-        .nav-menu-header-title
-        {
-            color: white;
-        }
-    }
-
+  mat-toolbar{
+    background-color: darken($color: $base-color, $amount: 7);;
+    color: $text-color;
   }
+
+  mat-expansion-panel{
+    background-color: $base-color;
+    color: $text-color;
+    border-radius: 0px;
+
+
+    .mat-expansion-panel-header::after{
+      color: $text-color !important;
+    }
+
+    .mat-expansion-panel-header:hover{
+        background: darken($color: $base-color, $amount: 3);
+    }
+    .mat-expansion-panel-header.mat-expanded{
+      background: darken($color: $base-color, $amount: 5);
+    }
+    a.mat-list-item{
+      color: $text-color;
+      font-size: 1em;
+
+
+      :hover{
+        background: darken($color: $base-color, $amount: 3);
+      }
+    }
+  }
+
+
+}
+.mat-list-item.active-link {
+  background-color: lighten($color:  $base-color, $amount: 5);
+  color: white;
+  border-radius: 0 20px 20px 0;
+}

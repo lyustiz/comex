@@ -22,4 +22,17 @@ export class FormService {
       console.log('new');
     }
   }
+
+  mapToTable( formFields: object) {
+
+    const formatedField: object = {};
+    if ( formFields ) {
+     for ( const field in formFields ) {
+        if ( formFields.hasOwnProperty(field) ) {
+          formatedField[format.toUpperCamelCase(field)] = formFields[field];
+        }
+      }
+    }
+    return formatedField;
+  }
 }

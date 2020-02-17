@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styles: [`
         .fondo-404{
           background: url("../assets/images/404.webp");
-          background-size: contain;
+          background-size: 100% 100%;
           background-repeat: no-repeat;
 
         }
