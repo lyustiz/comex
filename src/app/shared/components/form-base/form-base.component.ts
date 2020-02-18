@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import {  FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { FormService } from '@core/service/form/form.service';
 
@@ -10,7 +10,7 @@ import { FormService } from '@core/service/form/form.service';
   templateUrl: './form-base.component.html',
   styleUrls: ['./form-base.component.scss']
 })
-export class FormBaseComponent implements OnInit {
+export abstract class FormBaseComponent implements OnInit {
 
   public formGroup: FormGroup;
 
@@ -19,15 +19,17 @@ export class FormBaseComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<FormBaseComponent>,
     public form: FormService,
+    public formBuilder: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.setForm();
     this.form.mapFormFields(this.data.item, this.formGroup, this.data.action);
+
   }
 
   ngOnInit() { }
 
-  setForm(): void {  }
+  abstract setForm();
 
   formField(field: string) {
     return this.formGroup.get(field);

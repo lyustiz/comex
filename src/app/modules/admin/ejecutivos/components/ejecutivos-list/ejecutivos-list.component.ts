@@ -23,14 +23,16 @@ export class EjecutivosListComponent implements OnInit, AfterViewInit {
   @ViewChild( MatPaginator, {static: false}) paginator: MatPaginator;
   @ViewChild( MatSort, {static: false}) sort: MatSort;
 
-  public columns: string[] = ['EJE_RUT',
+  public columns: string[] = [
+                              'EJE_NOM',
+                              'EJE_RUT',
                               'EJE_COD',
                               'EJE_TIP',
-                              'EJE_NOM',
                               'EJE_SUC',
                               'EJE_TEL',
                               'EJE_FAX',
                               'EJE_EML',
+                              'ACTIONS'
                             ];
 
   constructor(
@@ -60,7 +62,7 @@ export class EjecutivosListComponent implements OnInit, AfterViewInit {
 
   delete( item ) {
 
-    const description = `Desea eliminar el Cliente ${item.CLI_NOM} ?`;
+    const description = `Desea eliminar el Cliente ${item.EJE_NOM} ?`;
 
     this.showDialog('Atencion', description, 'confirm', DialogComponent);
 

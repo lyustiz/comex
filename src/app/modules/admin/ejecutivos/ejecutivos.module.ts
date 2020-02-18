@@ -14,6 +14,9 @@ import { EjecutivosSearchComponent } from './components/ejecutivos-search/ejecut
     CommonModule,
     SharedModule,
     EjecutivosRoutingModule
+  ],
+  entryComponents: [
+    EjecutivosFormComponent
   ]
 })
 export class EjecutivosModule { }

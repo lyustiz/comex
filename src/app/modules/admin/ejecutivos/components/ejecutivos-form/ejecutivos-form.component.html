@@ -1,1 +1,78 @@
-<p>ejecutivos-form works!</p>
+
+<div mat-dialog-title class="mat-elevation-z2 bg-danger rounded text-white p-2">
+  <span>{{data.title}}</span>
+</div>
+
+<form #form="ngForm" [formGroup]="formGroup" class=" rounded ">
+
+  <mat-dialog-content>
+
+    <mat-form-field class="col-md-3">
+      <input matInput formControlName="ejeRut" placeholder="Rut Ejecutivo" required>
+      <mat-error><app-validator [formField]="formField('ejeRut')" [fieldName]="'Rut Cliente'"></app-validator></mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-3">
+      <input matInput formControlName="ejeCod" placeholder="Codigo Ejecutivo" required>
+      <mat-error><app-validator [formField]="formField('ejeCod')" [fieldName]="'Nro Cliente'"></app-validator></mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-6">
+      <input matInput formControlName="ejeNom" placeholder="Nombre" required>
+      <mat-icon matSuffix>person</mat-icon>
+      <mat-error><app-validator [formField]="formField('ejeNom')" [fieldName]="'Nombre'"></app-validator></mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-3">
+      <input matInput formControlName="ejeTel" placeholder="Telefono" required>
+      <mat-icon matSuffix>phone</mat-icon>
+      <mat-error><app-validator [formField]="formField('ejeTel')" [fieldName]="'Telefono'"></app-validator></mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-3">
+      <input matInput formControlName="ejeFax" placeholder="Fax">
+      <mat-error><app-validator [formField]="formField('ejeFax')" [fieldName]="'Fax'"></app-validator></mat-error>
+      <mat-icon matSuffix>print</mat-icon>
+    </mat-form-field>
+
+
+    <mat-form-field class="col-md-6">
+      <input matInput formControlName="ejeEml" placeholder="Email">
+      <mat-icon matSuffix>email</mat-icon>
+      <mat-error><app-validator [formField]="formField('ejeEml')" [fieldName]="'Email'"></app-validator></mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-6">
+      <mat-label>Tipo Ejecutivo</mat-label>
+      <mat-select formControlName="ejeTip">
+        <mat-option *ngFor="let item of tipo" [value]="item.id">
+          {{ item.nb_status }}
+        </mat-option>
+      </mat-select>
+      <mat-error><app-validator [formField]="formField('ejeTip')" [fieldName]="'Tipo Ejecutivo'"></app-validator></mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-6">
+      <mat-label>Sucursal</mat-label>
+      <mat-select formControlName="ejeSuc">
+        <mat-option *ngFor="let item of sucursales" [value]="item.id">
+          {{ item.nb_status }}
+        </mat-option>
+      </mat-select>
+      <mat-error><app-validator [formField]="formField('ejeSuc')" [fieldName]="'Sucursal'"></app-validator></mat-error>
+    </mat-form-field>
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="container justify-content-end">
+
+    <app-form-buttons
+      (Cancel)="close()"
+      (Reset)="form.resetForm()"
+      (Send)="send()"
+      [disable]="formGroup.invalid"
+    ></app-form-buttons>
+
+  </mat-dialog-actions>
+
+</form>
