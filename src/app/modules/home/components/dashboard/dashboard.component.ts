@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
 
+import { MapService } from '@core/service/maps/map.service';
 
 
 @Component({
@@ -26,9 +27,23 @@ import { map } from 'rxjs/operators';
   .dashboard-card-content {
     text-align: center;
   }
+  .card-number {
+    font-size: 4rem;
+  }
+  .map-container {
+    width: 100%;height: 100%;position: absolute;
+  }
 `]
 })
 export class DashboardComponent implements OnInit {
+
+  latitude = -33.4569397;
+  longitude = -70.6482697;
+  mapType = 'roadmap';
+
+  sucursales = {
+    santiago: { latitud: -33.4569397, longitud: -70.6482697 }
+  };
 
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
@@ -50,9 +65,11 @@ export class DashboardComponent implements OnInit {
     })
   );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver,
+              private mapService: MapService) {}
 
   ngOnInit() {
+    this.mapService.buildMap();
   }
 
 }

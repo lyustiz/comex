@@ -1,11 +1,12 @@
 <div class="grid-container">
-  <h3 class="mat-h3">Dashboard</h3>
-  <mat-grid-list cols="2" rowHeight="350px">
-    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
-      <mat-card class="dashboard-card">
+  <h4 class="mat-h4 bg-light p-2 mx-3 rounded "><mat-icon>assessment</mat-icon> Dashboard</h4>
+  <mat-grid-list cols="4" rowHeight="200px">
+    
+    <mat-grid-tile>
+      <mat-card class="dashboard-card bg-warning text-white">
         <mat-card-header>
           <mat-card-title>
-            {{card.title}}
+            <h4>Cartolas de Flujo</h4>
             <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
               <mat-icon>more_vert</mat-icon>
             </button>
@@ -16,10 +17,156 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <div>Card Content Here</div>
+          <div class="card-number">
+            <mat-icon class="card-number mr-5">sync</mat-icon>
+            <span class="d-inline-block">125</span>
+          </div>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card class="dashboard-card bg-success text-white">
+        <mat-card-header>
+          <mat-card-title>
+            <h4>Cartolas Stock</h4>
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div class="card-number">
+            <mat-icon class="card-number mr-5">account_balance</mat-icon>
+            <span class="d-inline-block">226</span>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card class="dashboard-card bg-danger text-white">
+        <mat-card-header>
+          <mat-card-title>
+            <h4>Sin Negociar</h4>
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div class="card-number">
+            <mat-icon class="card-number mr-5">work_off</mat-icon>
+            <span class="d-inline-block">52</span>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+
+    <mat-grid-tile>
+      <mat-card class="dashboard-card bg-info text-white">
+        <mat-card-header>
+          <mat-card-title>
+            <h4>Stand-By</h4>
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div class="card-number">
+            <mat-icon class="card-number mr-5">access_alarm</mat-icon>
+            <span class="d-inline-block">28</span>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    
+    <mat-grid-tile colspan="2">
+      <mat-card class="dashboard-card bg-light">
+        <mat-card-header>
+          <mat-card-title>
+            <h4>Flujo General</h4>
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div class="card-number">
+            <mat-icon class="card-number mr-5">shop_two</mat-icon>
+            <span class="d-inline-block">1235</span>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="2" rowspan="2">
+      <mat-card class="dashboard-card bg-light">
+        <mat-card-header>
+          <mat-card-title>
+            <h4>Sucursales</h4>
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div id="map" class="map-container"> 
+            
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="2">
+      <mat-card class="dashboard-card bg-light">
+        <mat-card-header>
+          <mat-card-title>
+            <h4>Clientes</h4>
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div class="card-number">
+            <mat-icon class="card-number mr-5">people</mat-icon>
+            <span class="d-inline-block">458</span>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  
+  
+  
+  
+  
   </mat-grid-list>
 </div>
 
