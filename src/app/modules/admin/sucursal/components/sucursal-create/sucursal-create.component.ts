@@ -3,7 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { FormService } from '@core/service/form/form.service';
-import { Sucursal } from '@model/sucursal.model';
+import { Sucursal } from '@app/data/model/sucursal_old.model';
 
 @Component({
   selector: 'app-sucursal-create',

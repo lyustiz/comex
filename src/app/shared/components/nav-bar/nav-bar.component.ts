@@ -4,6 +4,7 @@ import { map, shareReplay } from 'rxjs/operators';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 import { Router } from '@angular/router';
+import { AuthService } from '@core/service/auth/auth.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -12,7 +13,9 @@ import { Router } from '@angular/router';
 })
 export class NavBarComponent implements OnInit {
 
-constructor(private breakpointObserver: BreakpointObserver, public router: Router) {}
+constructor(private breakpointObserver: BreakpointObserver,
+            public router: Router,
+            private authService: AuthService) {}
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
   .pipe(
@@ -22,6 +25,10 @@ constructor(private breakpointObserver: BreakpointObserver, public router: Route
 
   ngOnInit() {
 
+  }
+
+  logOut() {
+    this.authService.logOut();
   }
 
 }

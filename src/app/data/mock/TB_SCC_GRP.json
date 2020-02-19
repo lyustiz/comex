@@ -1,0 +1,121 @@
+[
+    {
+        "GRP_COD_NUM":	1,
+        "GRP_COD_GRP":	"CRDIS",
+        "GRP_GLS":	"CARTA, DE CREDITO DE IMPORTACION",
+        "GRP_GLS_CAR":	"",
+        "GRP_ORD_NUM":	1
+    },
+    {
+        "GRP_COD_NUM":	2,
+        "GRP_COD_GRP":	"CRDIN",
+        "GRP_GLS":	"CARTA, DE CREDITO DE IMPORTACION",
+        "GRP_GLS_CAR":	"",
+        "GRP_ORD_NUM":	2
+    },
+    {
+        "GRP_COD_NUM":	3,
+        "GRP_COD_GRP":	"OPCTD",
+        "GRP_GLS":	"OPERACIONES, CONTADO",
+        "GRP_GLS_CAR":	"",
+        "GRP_ORD_NUM":	3
+    },
+    {
+        "GRP_COD_NUM":	43,
+        "GRP_COD_GRP":	"OPIMP",
+        "GRP_GLS":	"ORDEN, DE PAGO DE IMPORTACION",
+        "GRP_GLS_CAR":	"",
+        "GRP_ORD_NUM":	4
+    },
+    {
+        "GRP_COD_NUM":	5,
+        "GRP_COD_GRP":	"CRDES",
+        "GRP_GLS":	"CARTAS, DE CREDITO DE EXPORTACION",
+        "GRP_GLS_CAR":	"",
+        "GRP_ORD_NUM":	5
+    },
+    {
+        "GRP_COD_NUM":	6,
+        "GRP_COD_GRP":	"CRDEN",
+        "GRP_GLS":	"CARTAS, DE CREDITO DE EXPORTACION",
+        "GRP_GLS_CAR":	"",
+        "GRP_ORD_NUM":	6
+    },
+    {
+        "GRP_COD_NUM":	7,
+        "GRP_COD_GRP":	"STDBY",
+        "GRP_GLS":	"LC, STAND BY EMITIDAS",
+        "GRP_GLS_CAR":	"",
+        "GRP_ORD_NUM":	7
+    },
+    {
+        "GRP_COD_NUM":	8,
+        "GRP_COD_GRP":	"PAEXP",
+        "GRP_GLS":	"PRESTAMOS, A EXPORTADORES",
+        "GRP_GLS_CAR":	"",
+        "GRP_ORD_NUM":	8
+    },
+    {
+        "GRP_COD_NUM":	9,
+        "GRP_COD_GRP":	"CREXT",
+        "GRP_GLS":	"CREDITOS, EXTERNOS",
+        "GRP_GLS_CAR":	"",
+        "GRP_ORD_NUM":	9
+    },
+    {
+        "GRP_COD_NUM":	10,
+        "GRP_COD_GRP":	"CREAV",
+        "GRP_GLS":	"CREDITOS, EXTERNOS",
+        "GRP_GLS_CAR":	"",
+        "GRP_ORD_NUM":	10
+    },
+    {
+        "GRP_COD_NUM":	11,
+        "GRP_COD_GRP":	"CR3V5",
+        "GRP_GLS":	"COLOCACIONES, COMERCIALES",
+        "GRP_GLS_CAR":	"",
+        "GRP_ORD_NUM":	11
+    },
+    {
+        "GRP_COD_NUM":	12,
+        "GRP_COD_GRP":	"CRVB2",
+        "GRP_GLS":	"COLOCACIONES, CAP. V.B.2",
+        "GRP_GLS_CAR":	"",
+        "GRP_ORD_NUM":	12
+    },
+    {
+        "GRP_COD_NUM":	13,
+        "GRP_COD_GRP":	"CCOME",
+        "GRP_GLS":	"CREDITOS, COMERCIALES",
+        "GRP_GLS_CAR":	"",
+        "GRP_ORD_NUM":	13
+    },
+    {
+        "GRP_COD_NUM":	14,
+        "GRP_COD_GRP":	"OTROS",
+        "GRP_GLS":	"OTROS,",
+        "GRP_GLS_CAR":	"",
+        "GRP_ORD_NUM":	14
+    },
+    {
+        "GRP_COD_NUM":	15,
+        "GRP_COD_GRP":	"CESDE",
+        "GRP_GLS":	"CESION, DE DERECHO",
+        "GRP_GLS_CAR":	"",
+        "GRP_ORD_NUM":	15
+    },
+    {
+        "GRP_COD_NUM":	16,
+        "GRP_COD_GRP":	"BLTGR",
+        "GRP_GLS":	"BOLETAS, DE GARANTIA",
+        "GRP_GLS_CAR":	"",
+        "GRP_ORD_NUM":	16
+    },
+    {
+        "GRP_COD_NUM":	17,
+        "GRP_COD_GRP":	"LTRDE",
+        "GRP_GLS":	"LETRAS, DESCONTADAS",
+        "GRP_GLS_CAR":	"",
+        "GRP_ORD_NUM":	17
+    }
+]

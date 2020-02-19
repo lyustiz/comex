@@ -11,7 +11,9 @@ export class TableService {
   public filterField: string = null;
   public loading = true;
 
-  constructor() { }
+  constructor() {
+    this.loading = true;
+   }
 
   public dataSource = new MatTableDataSource <any> (this.data);
 
@@ -29,8 +31,6 @@ export class TableService {
 
 
   applyFilter(filterValue: string) {
-
-    console.log(filterValue);
     this.dataSource.filter = filterValue.trim().toLowerCase();
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
@@ -41,8 +41,5 @@ export class TableService {
     this.dataSource.filter = '';
     this.filterField = '';
   }
-
-
-
 
 }

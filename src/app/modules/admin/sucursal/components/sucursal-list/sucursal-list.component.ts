@@ -4,8 +4,8 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 
-import { Sucursal } from '@model/sucursal.model';
-import { SucursalService } from '@service/sucursal.service';
+import { Sucursal } from '@app/data/model/sucursal_old.model';
+import { SucursalService } from '@app/data/service/sucursal_old.service';
 import { SucursalCreateComponent } from '../sucursal-create/sucursal-create.component';
 
 @Component({

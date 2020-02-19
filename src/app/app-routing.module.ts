@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { environment } from '@env/environment';
 
+import { AuthGuard } from '@core/guard/auth.guard';
+
 import { LayoutComponent } from '@shared/components/layout/layout.component';
 
 const routes: Routes = [
@@ -11,12 +13,13 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: '/home',
+        redirectTo: '/auth/login',
         pathMatch: 'full',
       },
       {
         path: 'home',
-        loadChildren: () => import('@module/home/home.module').then( m => m.HomeModule )
+        loadChildren: () => import('@module/home/home.module').then( m => m.HomeModule ),
+        canActivate: [AuthGuard]
       },
       {
         path: 'cartolas',

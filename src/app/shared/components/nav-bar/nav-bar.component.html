@@ -25,17 +25,17 @@
             <div class="nav-menu-header-title"> Cartolas Stock</div>
           </mat-expansion-panel-header>
           <mat-nav-list>
-            <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/cartolas/stock/detail/sin-negociar">
+            <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/cartolas/stock/detail/sin-negociar" disabled>
               <mat-icon class="mr-2">arrow_right</mat-icon>Sin Negociar
             </a>
           </mat-nav-list>
           <mat-nav-list>
-            <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/cartolas/stock/detail/stand-by">
+            <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/cartolas/stock/detail/stand-by" disabled>
               <mat-icon class="mr-2">arrow_right</mat-icon>Stand-By
             </a>
           </mat-nav-list>
           <mat-nav-list>
-            <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/cartolas/stock/detail/opns-contado">
+            <a mat-list-item routerLinkActive="active-link" (click)="drawer.toggle()" routerLink="/cartolas/stock/detail/opns-contado" disabled>
               <mat-icon class="mr-2">arrow_right</mat-icon>Operaciones Contado
             </a>
           </mat-nav-list>
@@ -194,6 +194,11 @@
       <button type="button" mat-icon-button (click)="drawer.toggle()">
         <mat-icon>account_circle</mat-icon>
       </button>
+      <button type="button" mat-icon-button (click)="logOut()">
+        <mat-icon>exit_to_app</mat-icon>
+      </button>
+
+
 
     </mat-toolbar>
 

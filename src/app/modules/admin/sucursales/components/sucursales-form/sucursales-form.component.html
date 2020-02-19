@@ -1,1 +1,83 @@
-<p>sucursales-form works!</p>
+
+<div mat-dialog-title class="mat-elevation-z2 bg-danger rounded text-white p-2">
+  <span>{{data.title}}</span>
+</div>
+
+<form #form="ngForm" [formGroup]="formGroup">
+
+  <mat-dialog-content>
+
+    <mat-form-field class="col-md-6">
+      <input matInput formControlName="sucGls" placeholder="Glosa Sucursal" required>
+      <mat-icon matSuffix>home</mat-icon>
+      <mat-error><app-validator [formField]="formField('sucGls')" [fieldName]="'Glosa Sucursal'"></app-validator></mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-3">
+      <input matInput formControlName="sucCod" placeholder="Cod Sucursal" required>
+      <mat-error><app-validator [formField]="formField('sucCod')" [fieldName]="'Cod Sucursal'"></app-validator></mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-3">
+      <input matInput formControlName="sucCodNum" placeholder="Nro. Sucursal" required>
+      <mat-error><app-validator [formField]="formField('sucCodNum')" [fieldName]="'Nro. Sucursal'"></app-validator></mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-6">
+      <input matInput formControlName="flgIdcBancoOrign" placeholder="IDC" required>
+      <mat-error><app-validator [formField]="formField('flgIdcBancoOrign')" [fieldName]="'IDC'"></app-validator></mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-6">
+      <input matInput formControlName="nroNvoBanco" placeholder="Nro. Banco">
+      <mat-error><app-validator [formField]="formField('nroNvoBanco')" [fieldName]="'Nro. Banco'"></app-validator></mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-6">
+      <input matInput formControlName="sucTelNum" placeholder="Telefono">
+      <mat-icon matSuffix>phone</mat-icon>
+      <mat-error><app-validator [formField]="formField('sucTelNum')" [fieldName]="'Telefono'"></app-validator></mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-6">
+      <input matInput formControlName="sucFaxNum" placeholder="Fax">
+      <mat-icon matSuffix>print</mat-icon>
+      <mat-error><app-validator [formField]="formField('sucFaxNum')" [fieldName]="'Fax'"></app-validator></mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-6">
+      <input matInput formControlName="glsEmlAgt" placeholder="Email Agente">
+      <mat-icon matSuffix>email</mat-icon>
+      <mat-error><app-validator [formField]="formField('glsEmlAgt')" [fieldName]="'Email'"></app-validator></mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-6">
+      <input matInput formControlName="sucDirNum" placeholder="Numero">
+      <mat-error><app-validator [formField]="formField('sucDirNum')" [fieldName]="'Numero'"></app-validator></mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-6">
+      <input matInput formControlName="sucDirCom" placeholder="Comuna">
+      <mat-error><app-validator [formField]="formField('sucDirCom')" [fieldName]="'Comuna'"></app-validator></mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-12">
+      <textarea matInput formControlName="sucDir" placeholder="Direccion"></textarea>
+      <mat-icon matSuffix>place</mat-icon>
+      <mat-error><app-validator [formField]="formField('sucDir')" [fieldName]="'Direccion'"></app-validator></mat-error>
+    </mat-form-field>
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="container justify-content-end">
+
+    <app-form-buttons
+      (Cancel)="close()"
+      (Reset)="form.resetForm()"
+      (Send)="send()"
+      [disable]="formGroup.invalid"
+    ></app-form-buttons>
+
+  </mat-dialog-actions>
+
+</form>

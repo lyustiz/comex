@@ -4,25 +4,24 @@ import { AngularFireDatabase, AngularFireList,  } from '@angular/fire/database';
 import 'firebase/database';
 
 import { HttpHandlerErrorService } from '@app/core/service/error/http-handler-error.service';
-import { Sucursal } from '@model/sucursal.model';
-
+import { Cargo } from '@model/cargo.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SucursalService {
+export class CargoService {
 
-  sucursal: Sucursal;
-  sucursales: AngularFireList<Sucursal>;
+  cargo: Cargo;
+  cargos: AngularFireList<Cargo>;
 
   constructor(private db: AngularFireDatabase,
               private errorHandler: HttpHandlerErrorService) { }
 
-  getSucursales() {
+  getCargos() {
 
-    this.sucursales = this.db.list<Sucursal>('CARTOLAS/TB_SCC_SUC', ref => ref.limitToFirst(10));
+    this.cargos = this.db.list<Cargo>('CARTOLAS/TA_SCC_TPO_CGO', ref => ref.limitToFirst(10));
 
-    return  this.sucursales.snapshotChanges()
+    return  this.cargos.snapshotChanges()
     .pipe(
         map(actions => actions.map(data => {
         return { key: data.key, ...data.payload.val() };
@@ -31,16 +30,15 @@ export class SucursalService {
     );
   }
 
-  createSucursal(ejecutivo: Sucursal ) {
-    this.sucursales.push(ejecutivo);
+  createCargo(cargo: Cargo ) {
+    this.cargos.push(cargo);
   }
 
-  updateSucursal(ejecutivo: Sucursal, id: string) {
-    this.sucursales.update(id, ejecutivo);
+  updateCargo(cargo: Cargo, id: string) {
+    this.cargos.update(id, cargo);
   }
 
-  deleteSucursal( id: string ) {
-    this.sucursales.remove(id);
+  deleteCargo( id: string ) {
+    this.cargos.remove(id);
   }
-
 }

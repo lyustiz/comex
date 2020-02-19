@@ -1,0 +1,32 @@
+[
+    {
+        "COD_CGO_PSN": 1,
+        "GLS_CGO_PSN": "ENCARGADO",
+        "NUM_CRV_ORD_CGO": 1
+    },
+    {
+        "COD_CGO_PSN": 2,
+        "GLS_CGO_PSN": "GERENTE",
+        "NUM_CRV_ORD_CGO": 2
+    },
+    {
+        "COD_CGO_PSN": 3,
+        "GLS_CGO_PSN": "SUBGERENTE",
+        "NUM_CRV_ORD_CGO": 3
+    },
+    {
+        "COD_CGO_PSN": 4,
+        "GLS_CGO_PSN": "CONTADOR",
+        "NUM_CRV_ORD_CGO": 4
+    },
+    {
+        "COD_CGO_PSN": 5,
+        "GLS_CGO_PSN": "PERSONA NATURAL",
+        "NUM_CRV_ORD_CGO": 5
+    },
+    {
+        "COD_CGO_PSN": 6,
+        "GLS_CGO_PSN": "RETIRA DOCUMENTOS EN EMBARQUE",
+        "NUM_CRV_ORD_CGO": 6
+    }
+]

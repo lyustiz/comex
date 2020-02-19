@@ -6,6 +6,8 @@ import { SharedModule } from '@shared/shared.module';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
 import { environment } from '@env/environment';
 // import { ServiceWorkerModule } from '@angular/service-worker';
 
@@ -22,6 +24,7 @@ import { AppComponent } from './app.component';
     SharedModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    AngularFireAuthModule,
     // ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     AppRoutingModule,
    ],

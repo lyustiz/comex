@@ -1,3 +1,9 @@
 .ng-valid[required], .ng-valid.required  {
   border-left: 5px solid #42A948; /* green */
 }
+
+.login-page{
+  background: url("../../../../../assets/images/login.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}

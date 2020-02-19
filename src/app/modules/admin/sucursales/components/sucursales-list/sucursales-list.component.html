@@ -1,1 +1,111 @@
-<p>sucursales-list works!</p>
+<h3 class="rounded text-white p-2 bg-primary ">
+  <span>Sucursales</span>
+</h3>
+
+<div class="container-fluid">
+
+    <div class="row">
+      <!-- Filter  -->
+      <app-table-filter class="col-md-6"
+        (filter)="table.applyFilter($event)"
+        (clear)="table.clearFilter()"
+        [(inputModel)]="table.filterField" >
+      </app-table-filter>
+
+      <div class="col-md-6 mt-3 text-right">
+        <!-- Add Button  -->
+        <button mat-mini-fab (click)="create()" color="primary" class="mx-3" matTooltip="Agregar" matTooltipPosition="above">
+          <mat-icon>add</mat-icon>
+        </button>
+        <!-- Head Menu  -->
+        <app-form-menu [columns]="columns"></app-form-menu>
+      </div>
+    </div>
+
+    <mat-progress-bar *ngIf="table.loading" mode="query"></mat-progress-bar>
+
+    <div class="table-holder row">
+    <div class="col mb-3 overflow-auto">
+      <table mat-table [dataSource]="table.dataSource" matSort class="w-100">
+
+        <!-- Table Columns -->
+        <ng-container matColumnDef="SUC_COD">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Cod. Suc </th>
+          <td mat-cell *matCellDef="let row">  {{ row.SUC_COD }}  </td>
+        </ng-container>
+
+        <ng-container matColumnDef="SUC_COD_NUM">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Num. Suc </th>
+          <td mat-cell *matCellDef="let row">  {{ row.SUC_COD_NUM }}  </td>
+        </ng-container>
+
+        <ng-container matColumnDef="SUC_GLS">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Glosa </th>
+          <td mat-cell *matCellDef="let row">  {{ row.SUC_GLS }}  </td>
+        </ng-container>
+
+        <ng-container matColumnDef="SUC_DIR">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Direccion </th>
+          <td mat-cell *matCellDef="let row">  {{ row.SUC_DIR }}  </td>
+        </ng-container>
+
+        <ng-container matColumnDef="SUC_DIR_NUM">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Nro </th>
+          <td mat-cell *matCellDef="let row">  {{ row.SUC_DIR_NUM }}  </td>
+        </ng-container>
+
+        <ng-container matColumnDef="SUC_DIR_COM">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Comuna </th>
+          <td mat-cell *matCellDef="let row">  {{ row.SUC_DIR_COM }}  </td>
+        </ng-container>
+
+        <ng-container matColumnDef="SUC_TEL_NUM">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Telefono </th>
+          <td mat-cell *matCellDef="let row">  {{ row.SUC_TEL_NUM }}  </td>
+        </ng-container>
+
+        <ng-container matColumnDef="SUC_FAX_NUM">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Fax </th>
+          <td mat-cell *matCellDef="let row">  {{ row.SUC_FAX_NUM }}  </td>
+        </ng-container>
+
+        <ng-container matColumnDef="FLG_IDC_BANCO_ORIGN">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Flg. Bco </th>
+          <td mat-cell *matCellDef="let row">  {{ row.FLG_IDC_BANCO_ORIGN }}  </td>
+        </ng-container>
+
+        <ng-container matColumnDef="NRO_NVO_BANCO">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Num. Bco </th>
+          <td mat-cell *matCellDef="let row">  {{ row.NRO_NVO_BANCO }}  </td>
+        </ng-container>
+
+        <ng-container matColumnDef="GLS_EML_AGT">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Email. Agte. </th>
+          <td mat-cell *matCellDef="let row">  {{ row.GLS_EML_AGT }}  </td>
+        </ng-container>
+
+        <!-- Table Actions  -->
+        <ng-container matColumnDef="ACTIONS" stickyEnd>
+          <th mat-header-cell *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let row">
+            <app-list-buttons (edit)="edit($event)" (delete)="delete($event)" [row]="row"></app-list-buttons>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columns"></tr>
+        <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+
+      </table>
+
+        <mat-paginator #paginator
+            [length]="table.dataSource?.data.length"
+            [pageIndex]="0"
+            [pageSize]="5"
+            [pageSizeOptions]="[5, 10, 15, 20]">
+        </mat-paginator>
+      </div>
+      </div>
+    </div>
+
+
+

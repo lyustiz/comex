@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, Validators } from '@angular/forms';
 
-import { FormBaseComponent } from '@shared/components/form-base/form-base.component';
+import { FormBaseComponent } from '@shared/components/form/form-base/form-base.component';
 import { FormService } from '@core/service/form/form.service';
 
 import { EjecutivoService } from '@service/ejecutivo.service';

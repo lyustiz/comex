@@ -17,7 +17,7 @@ import { FormMenuComponent } from './components/form/form-menu/form-menu.compone
 import { FormFilterComponent } from './components/form/form-filter/form-filter.component';
 import { TableFilterComponent } from './components/list/table-filter/table-filter.component';
 import { DialogComponent } from './components/dialog/dialog.component';
-import { FormBaseComponent } from './components/form-base/form-base.component';
+import { FormBaseComponent } from './components/form/form-base/form-base.component';
 
 @NgModule({
   imports: [

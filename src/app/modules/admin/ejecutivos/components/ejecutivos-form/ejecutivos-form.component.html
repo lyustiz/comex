@@ -3,7 +3,7 @@
   <span>{{data.title}}</span>
 </div>
 
-<form #form="ngForm" [formGroup]="formGroup" class=" rounded ">
+<form #form="ngForm" [formGroup]="formGroup">
 
   <mat-dialog-content>
 
@@ -34,7 +34,6 @@
       <mat-error><app-validator [formField]="formField('ejeFax')" [fieldName]="'Fax'"></app-validator></mat-error>
       <mat-icon matSuffix>print</mat-icon>
     </mat-form-field>
-
 
     <mat-form-field class="col-md-6">
       <input matInput formControlName="ejeEml" placeholder="Email">

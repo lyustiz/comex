@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
+
 @Component({
   selector: 'app-table-filter',
   template: `

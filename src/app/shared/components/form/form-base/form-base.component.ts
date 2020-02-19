@@ -10,7 +10,7 @@ import { FormService } from '@core/service/form/form.service';
   templateUrl: './form-base.component.html',
   styleUrls: ['./form-base.component.scss']
 })
-export abstract class FormBaseComponent implements OnInit {
+export class FormBaseComponent implements OnInit {
 
   public formGroup: FormGroup;
 
@@ -24,12 +24,11 @@ export abstract class FormBaseComponent implements OnInit {
   ) {
     this.setForm();
     this.form.mapFormFields(this.data.item, this.formGroup, this.data.action);
-
   }
 
   ngOnInit() { }
 
-  abstract setForm();
+  setForm() { }
 
   formField(field: string) {
     return this.formGroup.get(field);

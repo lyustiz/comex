@@ -3,11 +3,11 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 
-import { EjecutivoService } from '@service/ejecutivo.service';
-import { Ejecutivo } from '@model/ejecutivo.model';
-import { TableService } from '@app/core/service/list/table.service';
-import { EjecutivosFormComponent } from '../ejecutivos-form/ejecutivos-form.component';
 import { DialogComponent } from '@shared/components/dialog/dialog.component';
+import { TableService } from '@app/core/service/list/table.service';
+
+import { EjecutivoService } from '@service/ejecutivo.service';
+import { EjecutivosFormComponent } from '../ejecutivos-form/ejecutivos-form.component';
 
 @Component({
   selector: 'app-ejecutivos-list',
@@ -16,8 +16,6 @@ import { DialogComponent } from '@shared/components/dialog/dialog.component';
 })
 export class EjecutivosListComponent implements OnInit, AfterViewInit {
 
-  public clientes: Ejecutivo[];
-  public cliente: Ejecutivo;
   private dialogRef: MatDialogRef<any>;
 
   @ViewChild( MatPaginator, {static: false}) paginator: MatPaginator;
@@ -44,7 +42,6 @@ export class EjecutivosListComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-
   }
 
   ngAfterViewInit() {

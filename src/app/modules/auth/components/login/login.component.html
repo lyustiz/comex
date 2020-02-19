@@ -1,47 +1,53 @@
-<main >
+<main class="login-page">
   <div class="container">
   <div class="row justify-content-center" style="height: 100vh">
-  <div class="d-flex col-md-5 align-items-center">
+  <div class="d-flex col-md-5 col-10 align-items-center">
   <div class="col-md-12">
 
     <form (ngSubmit)="onSubmit($event)" [formGroup]="formLogin">
 
-      <mat-card class="mat-elevation-z3">
+      <mat-card class="mat-elevation-z5 p-4">
 
-        <mat-toolbar color="primary" class="mat-elevation-z3">
-          <h3 >COMEX</h3>
-        </mat-toolbar>
+        <div class="m-auto rounded w-100 h-100 text-center">
+          <div class="bg-primary d-inline-block rounded">
+            <img class="img-thumbnail" src="../../../../../assets/favicon/favicon-96x96.png" alt="">
+          </div>
 
-        <mat-card-content class="py-4">
+          <h1 class="display-4 text-danger d-block w-100 mt-1">COMEX</h1>
+          <h5 class="text-muted">Cartolas de Comercio Internacional</h5>
+        </div>
 
-          <mat-form-field  class="col-md-12 my-2">
+        <mat-card-content class="mt-4">
 
-              <input matInput formControlName="user" placeholder="Usuario">
-              <mat-icon matSuffix>perm_identity</mat-icon>
-              <mat-error>
-                <app-validator [formField]="user"  [fieldName]="'password'"></app-validator>
-              </mat-error>
+          <mat-form-field appearance="outline" class="col-md-12 mt-2">
+
+            <mat-label>Usuario</mat-label>
+            <input matInput formControlName="user" placeholder="Usuario">
+            <mat-icon matSuffix>perm_identity</mat-icon>
+            <mat-error>
+              <app-validator [formField]="user"  [fieldName]="'password'"></app-validator>
+            </mat-error>
 
           </mat-form-field>
 
-          <mat-form-field  class="col-md-12 my-2">
+          <mat-form-field appearance="outline" class="col-md-12">
 
-              <input matInput formControlName="password" [type]="(isHidden) ? 'password' : 'text'" placeholder="Contraseña">
-              <mat-icon matSuffix (click)="isHidden = !isHidden">{{ (isHidden) ? 'visibility_off' : 'visibility'}}</mat-icon>
-              <mat-hint>Indique Contraseña</mat-hint>
-              <mat-error>
-                <app-validator [formField]="password"  [fieldName]="'password'"></app-validator>
-              </mat-error>
+            <mat-label>Contraseña</mat-label>
+            <input matInput formControlName="password" [type]="(isHidden) ? 'password' : 'text'" placeholder="Contraseña">
+            <mat-icon matSuffix (click)="isHidden = !isHidden">{{ (isHidden) ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <mat-error>
+              <app-validator [formField]="password"  [fieldName]="'contraseña'"></app-validator>
+            </mat-error>
 
           </mat-form-field>
 
 
         </mat-card-content>
 
-            <mat-card-actions class="d-flex justify-content-center align-items-center py-2">
-                <button type="submit" [disabled]="formLogin.invalid" mat-raised-button  color="primary">Ingresar</button>
-                <button type="reset" mat-raised-button color="warn">Reiniciar</button>
-            </mat-card-actions>
+        <mat-card-actions class="row p-3">
+            <button class="d-block w-100 mx-0" type="submit" mat-raised-button [disabled]="formLogin.invalid" color="primary">Ingresar</button>
+            <button class="d-block w-100 mx-0 mt-1" type="reset" mat-raised-button color="warn">Limpiar</button>
+        </mat-card-actions>
 
         </mat-card>
 

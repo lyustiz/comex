@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
+import { AuthService } from '@core/service/auth/auth.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,7 +14,8 @@ export class LoginComponent implements OnInit {
   formLogin: FormGroup;
   isHidden = true;
 
-  constructor( private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,
+              private authService: AuthService) {
 
     this.buildForm();
   }
@@ -29,7 +32,7 @@ export class LoginComponent implements OnInit {
   public onSubmit(event: Event) {
     event.preventDefault();
     if ( this.formLogin.valid ) {
-      console.log(this.formLogin.value);
+     this.authService.logIn(this.formLogin.value.user, this.formLogin.value.password);
     }
   }
 

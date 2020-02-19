@@ -1,1 +1,39 @@
-<p>cargos-form works!</p>
+
+<div mat-dialog-title class="mat-elevation-z2 bg-danger rounded text-white p-2">
+  <span>{{data.title}}</span>
+</div>
+
+<form #form="ngForm" [formGroup]="formGroup">
+
+  <mat-dialog-content>
+
+    <mat-form-field class="col-md-12">
+      <input matInput formControlName="codCgoPsn" placeholder="Codigo Cargo" readonly required>
+      <mat-error><app-validator [formField]="formField('codCgoPsn')" [fieldName]="'Codigo Cargo'"></app-validator></mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-12">
+      <input matInput formControlName="glsCgoPsn" placeholder="Glosa Cargo" required>
+      <mat-error><app-validator [formField]="formField('glsCgoPsn')" [fieldName]="'Glosa Cargo'"></app-validator></mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-12">
+      <input matInput formControlName="numCrvOrdCgo" placeholder="Orden Cargo" readonly required>
+      <mat-error><app-validator [formField]="formField('numCrvOrdCgo')" [fieldName]="'Orden Cargo'"></app-validator></mat-error>
+    </mat-form-field>
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="container justify-content-end">
+
+    <app-form-buttons
+      (Cancel)="close()"
+      (Reset)="form.resetForm()"
+      (Send)="send()"
+      [disable]="formGroup.invalid"
+    ></app-form-buttons>
+
+  </mat-dialog-actions>
+
+</form>
+

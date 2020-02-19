@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from '@shared/shared.module';
 
 import { SucursalesRoutingModule } from './sucursales-routing.module';
 import { SucursalesSearchComponent } from './components/sucursales-search/sucursales-search.component';
@@ -11,7 +12,9 @@ import { SucursalesFormComponent } from './components/sucursales-form/sucursales
   declarations: [SucursalesSearchComponent, SucursalesListComponent, SucursalesFormComponent],
   imports: [
     CommonModule,
-    SucursalesRoutingModule
-  ]
+    SucursalesRoutingModule,
+    SharedModule
+  ],
+  entryComponents: [SucursalesFormComponent]
 })
 export class SucursalesModule { }

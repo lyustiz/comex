@@ -1,1 +1,70 @@
-<p>cargos-list works!</p>
+<h3 class="rounded text-white p-2 bg-primary ">
+  <span>Cargos</span>
+</h3>
+
+<div class="container-fluid">
+
+    <div class="row">
+      <!-- Filter  -->
+      <app-table-filter class="col-md-6"
+        (filter)="table.applyFilter($event)"
+        (clear)="table.clearFilter()"
+        [(inputModel)]="table.filterField" >
+      </app-table-filter>
+
+      <div class="col-md-6 mt-3 text-right">
+        <!-- Add Button  -->
+        <button mat-mini-fab (click)="create()" color="primary" class="mx-3" matTooltip="Agregar" matTooltipPosition="above">
+          <mat-icon>add</mat-icon>
+        </button>
+        <!-- Head Menu  -->
+        <app-form-menu [columns]="columns"></app-form-menu>
+      </div>
+    </div>
+
+    <mat-progress-bar *ngIf="table.loading" mode="query"></mat-progress-bar>
+
+    <div class="table-holder row">
+    <div class="col mb-3 overflow-auto">
+      <table mat-table [dataSource]="table.dataSource" matSort class="w-100">
+
+        <!-- Table Columns -->
+        <ng-container matColumnDef="COD_CGO_PSN">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Codigo Cargo </th>
+          <td mat-cell *matCellDef="let row">  {{ row.COD_CGO_PSN }}  </td>
+        </ng-container>
+
+        <ng-container matColumnDef="GLS_CGO_PSN">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Glosa Cargo </th>
+          <td mat-cell *matCellDef="let row">  {{ row.GLS_CGO_PSN }}  </td>
+        </ng-container>
+
+        <ng-container matColumnDef="NUM_CRV_ORD_CGO">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Orden Cargo </th>
+          <td mat-cell *matCellDef="let row">  {{ row.NUM_CRV_ORD_CGO }}  </td>
+        </ng-container>
+
+        <!-- Table Actions  -->
+        <ng-container matColumnDef="ACTIONS" stickyEnd>
+          <th mat-header-cell *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let row">
+            <app-list-buttons (edit)="edit($event)" (delete)="delete($event)" [row]="row"></app-list-buttons>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columns"></tr>
+        <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+
+      </table>
+
+        <mat-paginator #paginator
+            [length]="table.dataSource?.data.length"
+            [pageIndex]="0"
+            [pageSize]="5"
+            [pageSizeOptions]="[5, 10, 15, 20]">
+        </mat-paginator>
+      </div>
+      </div>
+    </div>
+
+

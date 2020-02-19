@@ -1,0 +1,27 @@
+[
+    {
+        "COD_SRV_EMAIL":  1,
+        "GLS_SRV_EMAIL":  "CARTOLA COMEX",
+        "FLG_SRV_ACV":    1
+    },
+    {
+        "COD_SRV_EMAIL":  2,
+        "GLS_SRV_EMAIL":  "AVISOS COMEX",
+        "FLG_SRV_ACV":    2
+    },
+    {
+        "COD_SRV_EMAIL":  3,
+        "GLS_SRV_EMAIL":  "TARIFADO COMEX",
+        "FLG_SRV_ACV":    3
+    },
+    {
+        "COD_SRV_EMAIL":  4,
+        "GLS_SRV_EMAIL":  "AVISAR DOCUMENTOS DE EMBARQUE RECIBIDOS",
+        "FLG_SRV_ACV":    4
+    },
+    {
+        "COD_SRV_EMAIL":  5,
+        "GLS_SRV_EMAIL":  "ENTREGA DOCUMENTOS DE EMBARQUE",
+        "FLG_SRV_ACV":    5
+    }
+]
