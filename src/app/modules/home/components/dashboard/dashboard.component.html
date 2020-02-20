@@ -23,7 +23,7 @@
           </div>
         </mat-card-content>
       </mat-card>
-    </mat-grid-tile>
+    </mat-grid-tile> 
 
     <mat-grid-tile>
       <mat-card class="dashboard-card bg-success text-white">
@@ -110,16 +110,28 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <div class="card-number">
-            <mat-icon class="card-number mr-5">shop_two</mat-icon>
-            <span class="d-inline-block">1235</span>
+          <div class="w-100 h-100 d-block">
+            <ngx-charts-bar-vertical-normalized
+            [view]="view"
+            [scheme]="colorScheme"
+            [results]="multi"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="showLegend"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="xAxisLabel"
+            [yAxisLabel]="yAxisLabel"
+           >
+            </ngx-charts-bar-vertical-normalized>
           </div>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
 
     <mat-grid-tile colspan="2" rowspan="2">
-      <mat-card class="dashboard-card bg-info text-white">
+      <mat-card class="dashboard-card map-card bg-info text-white mx-1">
         <mat-card-header>
           <mat-card-title>
             <h4>Sucursales</h4>
@@ -132,7 +144,7 @@
             </mat-menu>
           </mat-card-title>
         </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
+        <mat-card-content class="dashboard-card-content d-block">
           <div id="mapHolder" class="map-container rounded text-dark"></div>
         </mat-card-content>
       </mat-card>
@@ -152,11 +164,23 @@
             </mat-menu>
           </mat-card-title>
         </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div class="card-number">
-            <mat-icon class="card-number mr-5">people</mat-icon>
-            <span class="d-inline-block">458</span>
-          </div>
+        <mat-card-content class="dashboard-card-content row">
+          <div class="col">
+          <ngx-charts-bar-vertical style="width: 400px; height: 200px;"
+              [view]="view"
+              [scheme]="colorScheme"
+              [results]="single"
+              [gradient]="gradient"
+              [xAxis]="showXAxis"
+              [yAxis]="showYAxis"
+              [legend]="showLegend"
+              [showXAxisLabel]="showXAxisLabel"
+              [showYAxisLabel]="showYAxisLabel"
+              [xAxisLabel]="xAxisLabel"
+              [yAxisLabel]="yAxisLabel"
+              >
+              </ngx-charts-bar-vertical>
+            </div>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>

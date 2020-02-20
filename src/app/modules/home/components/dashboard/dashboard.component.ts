@@ -4,6 +4,8 @@ import { map } from 'rxjs/operators';
 
 import { MapService } from '@core/service/maps/map.service';
 import * as mapboxgl from 'mapbox-gl';
+import * as data from '@app/data/mock/sucursales.json';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -30,45 +32,166 @@ import * as mapboxgl from 'mapbox-gl';
   .card-number {
     font-size: 4rem;
   }
+  .map-card{
+    overflow: hidden;
+  }
   .map-container {
-    width: 800px; height: 290px ;
-    position: absolute;
-    border: solid 4px white;
+    width: 600px;
+    height: 290px;
+    border: 4px solid white;
+
+  }
+  .mapboxgl-canvas{
+    width: 100%; height: 100% ;
   }
 `]
 })
 export class DashboardComponent implements OnInit {
 
-
+  // maps
   style = 'mapbox://styles/lyustiz/ck6u1s5rd0z161ipbu0tpac8w/draft';
   map: mapboxgl.Map;
-
-
   latitude = -31.428;
   longitude = -65.403;
   zoom = 4.45;
+  sucursales: any = (data  as  any).default;
 
-  sucursales = {
-    Freire586: { longitud: -72.3521784, latitud: -35.2984965, dir: 'Freire 526, Constitución, Maule, Chile' }
+  //
+  title = 'Angular Charts';
 
-  /**
-   * Banco · Merced 411 -34.9848485,-71.5204178
-   * Banco · Arturo Prat 2302 -35.2984965,-72.3521784
-   * Banco · Uno Sur 829 -35.2984965,-72.3521784
-   * Banco · Av Circunvalación Ote 1055 -35.2984965,-72.3521784
-   * Banco · Independencia 336 -35.8460806,-71.878616
-   * Banco · Independencia 557 -35.8466638,-71.8750729
-   * Banco · Freire 586 -35.2984965,-72.3521784
-   * Santander Bank-> Gran Avenida 7070, La Cisterna, Santiago Metropolitan Region 7970000, Chile -33.5227387/-70.6601655
-   * Santander Bank-> Gran Avenida 8491, La Cisterna, Santiago Metropolitan Region 7970000, Chile -33.533079/-70.663352
-   * Santander Bank-> Gran Avenida 5040, San Miguel, Santiago Metropolitan Region 8900000, Chile
-   * Santander Bank-> Bascuñan Guerrero 30, San Ramón, Santiago Metropolitan Region 8860000, Chile -33.541163/-70.643315
-   * Santander Bank-> Américo Vespucio 1501 Loc. 114 y 116 - Cerrillos, Cerrillos, Santiago Metropolitan Region 9200000 -33.522114/-70.59935
-   */
-  };
+  view: any[] = [600, 110];
 
+  // options for the chart
+  showXAxis = true;
+  showYAxis = true;
+  gradient = false;
+  showLegend = true;
+  showXAxisLabel = true;
+  xAxisLabel = 'Pais';
+  showYAxisLabel = true;
+  yAxisLabel = 'Cartolas';
+  timeline = true;
+  colorScheme = 'picnic'; /*{
+    domain: ['#9370DB', '#87CEFA', '#FA8072', '#FF7F50', '#90EE90', '#9370DB']
+  };*/
 
+  // pie
+  showLabels = true;
 
+  //
+  // data goes here
+public single = [
+  {
+    name: 'China',
+    value: 2243772
+  },
+  {
+    name: 'USA',
+    value: 1126000
+  },
+  {
+    name: 'Norway',
+    value: 296215
+  },
+  {
+    name: 'Japan',
+    value: 257363
+  },
+  {
+    name: 'Germany',
+    value: 196750
+  },
+  {
+    name: 'France',
+    value: 204617
+  }
+];
+
+public multi = [
+  {
+    name: 'China',
+    series: [
+      {
+        name: '2018',
+        value: 2243772
+      },
+      {
+        name: '2017',
+        value: 1227770
+      }
+    ]
+  },
+
+  {
+    name: 'USA',
+    series: [
+      {
+        name: '2018',
+        value: 1126000
+      },
+      {
+        name: '2017',
+        value: 764666
+      }
+    ]
+  },
+
+  {
+    name: 'Norway',
+    series: [
+      {
+        name: '2018',
+        value: 296215
+      },
+      {
+        name: '2017',
+        value: 209122
+      }
+    ]
+  },
+
+  {
+    name: 'Japan',
+    series: [
+      {
+        name: '2018',
+        value: 257363
+      },
+      {
+        name: '2017',
+        value: 205350
+      }
+    ]
+  },
+
+  {
+    name: 'Germany',
+    series: [
+      {
+        name: '2018',
+        value: 196750
+      },
+      {
+        name: '2017',
+        value: 129246
+      }
+    ]
+  },
+
+  {
+    name: 'France',
+    series: [
+      {
+        name: '2018',
+        value: 204617
+      },
+      {
+        name: '2017',
+        value: 149797
+      }
+    ]
+  }
+];
 
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
@@ -98,32 +221,30 @@ export class DashboardComponent implements OnInit {
     }
 
   buildMap() {
+
     this.map = new mapboxgl.Map({
       container: 'mapHolder',
-      style: 'mapbox://styles/mapbox/streets-v11',
-      center: [ -70.59935, -33.522114 ],
-      zoom: 10,
-      Bearing: 180
+      style: 'mapbox://styles/mapbox/outdoors-v11',
+      center: [ -70.65, -33.438 ],
+      zoom: 14,
+      bearing: 90
 
     });
-
 
     this.map.addControl(new mapboxgl.NavigationControl());
 
     this.map.addControl(new mapboxgl.FullscreenControl());
 
-    const marker = new mapboxgl.Marker().setLngLat([-70.59935, -33.522114])
-    .setPopup(new mapboxgl.Popup({ offset: 25 })
-    .setHTML('<h3>' + 'Banco Santander' + '</h3><p>' + 'Américo Vespucio 1501 Loc. 114 y 116' + '</p>'))
-    .addTo(this.map);
-
-    const marker2 = new mapboxgl.Marker().setLngLat([-70.643315, -33.541163]).setPopup(new mapboxgl.Popup({ offset: 25 })
-    .setHTML('<h3>' + 'Banco Santander' + '</h3><p>' + 'Bascuñan Guerrero 30, San Ramón, Santiago Metropolitan Region' + '</p>'))
-    .addTo(this.map);
-
-    const marker3 = new mapboxgl.Marker().setLngLat([-70.6601655, -33.5227387]).setPopup(new mapboxgl.Popup({ offset: 25 })
-    .setHTML('<h3>' + 'Banco Santander' + '</h3><p>' + 'Gran Avenida 7070, La Cisterna, Santiago' + '</p>'))
-    .addTo(this.map);
+    for (const sucursal of this.sucursales) {
+      const mark = new mapboxgl.Marker({color: '#f44336'})
+      .setLngLat([sucursal.longitud, sucursal.latitud])
+      .setPopup(new mapboxgl.Popup({ offset: 25 })
+      .setHTML(
+        `<h3>${sucursal.sucursal} </h3>
+          <p>${sucursal.direccion}</p>
+          <p>${sucursal.telefono}</p>`
+      ))
+      .addTo(this.map);
+    }
   }
-
 }

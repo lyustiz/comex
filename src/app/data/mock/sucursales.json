@@ -1,0 +1,365 @@
+[{
+    "sucursal": "21 De Mayo",
+    "direccion": "21 De Mayo 793 - 795",
+    "telefono": "(02) 2320 4450",
+    "latitud": -33.434232,
+    "longitud": -70.650269
+},
+{
+    "sucursal": "Agustinas",
+    "direccion": "Bandera 237 Piso 1 Y 2",
+    "telefono": "(02) 2647 4428 / (02) 2647 4124",
+    "latitud": -33.440523,
+    "longitud": -70.652198
+},
+{
+    "sucursal": "Ahumada",
+    "direccion": "Bombero Ossa 1040",
+    "telefono": "(02) 2648 3085 / (02) 2648 3027",
+    "latitud": -33.44125,
+    "longitud": -70.651413
+},
+{
+    "sucursal": "Amunategui",
+    "direccion": "Huérfanos 1390",
+    "telefono": "(02) 2320 5505",
+    "latitud": -33.440055,
+    "longitud": -70.655346
+},
+{
+    "sucursal": "Avenida Matta",
+    "direccion": "Av. Matta 1026",
+    "telefono": "(02) 2320 5389",
+    "latitud": -33.459229,
+    "longitud": -70.646532
+},
+{
+    "sucursal": "Bascuñan Guerrero",
+    "direccion": "Bascuñan Guerrero 30",
+    "telefono": "(02) 2648 6719",
+    "latitud": -33.45068,
+    "longitud": -70.67531
+},
+{
+    "sucursal": "Bellas Artes",
+    "direccion": "Miraflores 222",
+    "telefono": "(02) 2320 1702 / (02) 2320 1706",
+    "latitud": -33.439923,
+    "longitud": -70.645304 
+},
+{
+    "sucursal": "C.Aux.Corredora De Bolsa",
+    "direccion": "Bandera 140 Piso 12",
+    "telefono": "(02) 2679 3065",
+    "latitud": -33.441486,
+    "longitud": -70.651998
+},
+{
+    "sucursal": "C. Aux. Univ. Diego Portales",
+    "direccion": "Manuel Rodriguez 253 - Santiago",
+    "telefono": "(02) 2320 0485 / (02) 2672 5570",
+    "latitud": -33.511152,
+    "longitud": -70.759877
+},
+{
+    "sucursal": "Carrera",
+    "direccion": "Bombero Ossa 1068 Piso 1",
+    "telefono": "(02) 2648 5709",
+    "latitud": -33.441254,
+    "longitud": -70.651424 
+},
+{
+    "sucursal": "Casa Matriz",
+    "direccion": "Bandera 140, 1Er. Piso",
+    "telefono": "(02) 2320 3506 / (02) 2647 4070",
+    "latitud": -33.441486,
+    "longitud": -70.651998
+},
+{
+    "sucursal": "Centro",
+    "direccion": "Huérfanos 837 . Opera",
+    "telefono": "(02) 2648 8463",
+    "latitud": -33.439407,
+    "longitud": -70.648691
+},
+{
+    "sucursal": "Diez de Julio",
+    "direccion": "Diez de Julio 1067",
+    "telefono": "(02) 2648 6138",
+    "latitud": -33.4539,
+    "longitud": -70.64974
+},
+{
+    "sucursal": "Endesa",
+    "direccion": "Sta. Rosa 76",
+    "telefono": "(02) 2648 5001",
+    "latitud": -33.444442,
+    "longitud": -70.645765
+},
+{
+    "sucursal": "Estación Central",
+    "direccion": "Av. B.O'Higgins 3177",
+    "telefono": "(02) 2320 5621 / (02) 2320 5634",
+    "latitud": -33.450353,
+    "longitud": -70.677514
+},
+{
+    "sucursal": "Franklin",
+    "direccion": "San Diego 1925 - 1927 - 1931",
+    "telefono": "(02) 2648 7315",
+    "latitud": -33.471394,
+    "longitud": -70.648426  
+},
+{
+    "sucursal": "Gral. Mackenna",
+    "direccion": "Gral. Mackenna 1305 Loc. 106 ",
+    "telefono": "(02) 2647 8060",
+    "latitud": -33.43292,
+    "longitud": -70.6561  
+},
+{
+    "sucursal": "Huérfanos",
+    "direccion": "Huérfanos 1081",
+    "telefono": "(02) 2320 5685",
+    "latitud": -33.43958,
+    "longitud": -70.651499
+},
+{
+    "sucursal": "La Bolsa",
+    "direccion": "Ahumada 86",
+    "telefono": "(02) 2648 5432",
+    "latitud": -33.442693,
+    "longitud": -70.65051
+},
+{
+    "sucursal": "Lido",
+    "direccion": "Huerfanos N° 676",
+    "telefono": "(02) 2647 0820",
+    "latitud": -33.4392042,
+    "longitud": -70.6464857
+},
+{
+    "sucursal": "Miraflores",
+    "direccion": "Agustinas 604",
+    "telefono": "(02) 2648 9223 / (02) 2648 9217",
+    "latitud": -33.440318,
+    "longitud": -70.645346 
+},
+{
+    "sucursal": "Nataniel",
+    "direccion": "Nataniel 35 - 41 Pza. Bulnes",
+    "telefono": "(02) 2320 4904",
+    "latitud": -33.445562,
+    "longitud": -70.653954 
+},
+{
+    "sucursal": "Plaza Bulnes",
+    "direccion": "Alameda 1296 Pza. Bulnes",
+    "telefono": "(02) 2648 7613",
+    "latitud": -33.44585,
+    "longitud": -70.65379
+},
+{
+    "sucursal": "Plaza Constitución",
+    "direccion": "Agustinas 1295 Stgo.",
+    "telefono": "(02) 2648 5855",
+    "latitud": -33.441158,
+    "longitud": -70.654873
+},
+{
+    "sucursal": "Plaza de Armas",
+    "direccion": "Portal Bulnes 495",
+    "telefono": "(02) 2647 8020",
+    "latitud": -33.43731,
+    "longitud": -70.63683
+},
+{
+    "sucursal": "Plaza Italia",
+    "direccion": "Irene Morales 10",
+    "telefono": "(02) 2648 6209",
+    "latitud": -33.43731,
+    "longitud": -70.63683
+},
+{
+    "sucursal": "Portugal",
+    "direccion": "Diagonal Paraguay 265, Santiago",
+    "telefono": "(02) 2647 5780",
+    "latitud": -33.442833,
+    "longitud": -70.637231
+},
+{
+    "sucursal": "Crillón",
+    "direccion": "Agustinas 1070 P. 6 Of. 52 Stgo. Centro",
+    "telefono": "(02) 2320 4860",
+    "latitud": -33.44079,
+    "longitud": -70.651084
+},
+{
+    "sucursal": "Estado",
+    "direccion": "Estado 152 Piso 7",
+    "telefono": "(02) 2648 4180",
+    "latitud": -33.44113,
+    "longitud": -70.64946
+},
+{
+    "sucursal": "Eurocentro",
+    "direccion": "Moneda 970 Piso 6 Loc. 1",
+    "telefono": "(02) 2647 0570",
+    "latitud": -33.441889,
+    "longitud": -70.650337
+},
+{
+    "sucursal": "Mac Iver",
+    "direccion": "Agustinas 640 Piso 17",
+    "telefono": "(02) 2647 0590",
+    "latitud": -33.440395,
+    "longitud": -70.64548
+},
+{
+    "sucursal": "Matias Cousiño",
+    "direccion": "Matias Cousiño 199 Piso 7",
+    "telefono": "(02) 2648 4140 / (02) 2648 4143",
+    "latitud": -33.44087,
+    "longitud": -70.64985
+},
+{
+    "sucursal": "Moneda",
+    "direccion": "Moneda 970 Piso 6 Loc. 2",
+    "telefono": "(02) 2647 0550",
+    "latitud": -33.441889,
+    "longitud": -70.650337 
+},
+{
+    "sucursal": "Nueva Agustinas",
+    "direccion": "Agustinas 1070 Piso 6 Of. 53 Santiago Centro",
+    "telefono": "(02) 2320 4890",
+    "latitud": -33.44079,
+    "longitud": -70.651084
+},
+{
+    "sucursal": "Merced",
+    "direccion": "Merced N° 480 Of. 301 piso 3 - Santiago",
+    "telefono": "(02) 2647 7669 / (02) 2633 9742",
+    "latitud": -33.437797,
+    "longitud": -70.644057       
+},
+{
+    "sucursal": "Torre Los Andes",
+    "direccion": "Miraflores N°130 Of. 2301 piso 23 - Santiago",
+    "telefono": "(02) 2647 7690 / (02) 2664 2597",
+    "latitud": -33.441101,
+    "longitud": -70.645156  
+},
+{
+    "sucursal": "Nva. Bandera",
+    "direccion": "Bandera 151 Santiago",
+    "telefono": "(02) 2648 3144",
+    "latitud": -33.4414,
+    "longitud": -70.65191
+},
+{
+    "sucursal": "Opera",
+    "direccion": "Huérfanos 835 Piso 21 - Stgo",
+    "telefono": "(02) 2647 0480",
+    "latitud": -33.439404,
+    "longitud": -70.648664
+},
+{
+    "sucursal": "Principal",
+    "direccion": "Agustinas 920",
+    "telefono": "(02) 2320 2238",
+    "latitud": -33.440735,
+    "longitud": -70.649686
+},
+{
+    "sucursal": "Puente",
+    "direccion": "Rosas N° 1088 - Santiago",
+    "telefono": "(02) 2647 1008",
+    "latitud": -33.435212,
+    "longitud": -70.652746
+},
+{
+    "sucursal": "Raulí",
+    "direccion": "Avda. 10 De Julio 357",
+    "telefono": "(02) 2647 1108",
+    "latitud": -33.45165,
+    "longitud": -70.63625
+},
+{
+    "sucursal": "República",
+    "direccion": "L.B.O'Higgins  2340",
+    "telefono": "(02) 2647 5942",
+    "latitud": -33.44857,
+    "longitud": -70.66916
+},
+{
+    "sucursal": "San Diego",
+    "direccion": "San Diego 1983",
+    "telefono": "(02) 2320 5210 / (02) 2320 5201",
+    "latitud": -33.47178,
+    "longitud": -70.64854
+},
+{
+    "sucursal": "San Pablo",
+    "direccion": "San Pablo 2810",
+    "telefono": "(02) 2320 5345",
+    "latitud": -33.435177,
+    "longitud": -70.674832
+},
+{
+    "sucursal": "Santa Lucía",
+    "direccion": "Av. B.O'Higgins 408",
+    "telefono": "(02) 2320 5863",
+    "latitud": -33.443506,
+    "longitud": -70.649732
+},
+{
+    "sucursal": "Santiago 2000",
+    "direccion": "Huerfanos 770 Of. 2003 P. 20 - Santiago.",
+    "telefono": "(02) 2320 0430 / (02) 2664 6358",
+    "latitud": -33.439319,
+    "longitud": -70.647616
+},
+{
+    "sucursal": "Santiago Centro",
+    "direccion": "Av. Bdo. O'Higgins Nº 933",
+    "telefono": "(02) 2647 0840",
+    "latitud": -33.4434073,
+    "longitud": -70.6493102
+},
+{
+    "sucursal": "Santiago Downtown",
+    "direccion": "Alameda 1449 Loc. 6 - Torre 2 Piso 1 -Stgo.",
+    "telefono": "(02) 2647 0644",
+    "latitud": -33.447194,
+    "longitud": -70.663538
+},
+{
+    "sucursal": "Santo Domingo",
+    "direccion": "Santo Domingo 979",
+    "telefono": "(02) 2320 4450",
+    "latitud": -33.436153,
+    "longitud": -70.651172
+},
+{
+    "sucursal": "Teatinos",
+    "direccion": "Huerfanos 1269",
+    "telefono": "(02) 2648 8322 / (02) 2648 8323",
+    "latitud": -33.440001,
+    "longitud": -70.655329
+},
+{
+    "sucursal": "Universidad de Chile",
+    "direccion": "Ahumada 52",
+    "telefono": "(02) 2320 1737 / (02) 2320 1740",
+    "latitud": -33.442812,
+    "longitud": -70.650523
+},
+{
+    "sucursal": "Vicuña Mackenna",
+    "direccion": "Vicuña Mackenna 1230",
+    "telefono": "(02) 2648 6426 / (02) 2648 6439",
+    "latitud": -33.457258,
+    "longitud": -70.629294
+}
+]
