@@ -7,28 +7,29 @@ import * as mapboxgl from 'mapbox-gl';
 })
 export class MapService {
 
-  mapBox = (mapboxgl as typeof mapboxgl);
+ // mapBox = (mapboxgl as typeof mapboxgl);
 
-  map: mapboxgl.Map;
 
   style = `mapbox://styles/mapbox/streets-v9`;
-
-  lat = 43.1746;
-  lng = -2.4125;
+  map: mapboxgl.Map;
+  latitude = -33.4569397;
+  longitude = -70.6482697;
   zoom = 15;
 
 
   constructor() {
-    this.mapBox.accessToken = environment.mapBox.token;
+    mapboxgl.accessToken = 'pk.eyJ1IjoibHl1c3RpeiIsImEiOiJjazZ0aGpzNjUwYW9qM2ZxaWxvY291b2x2In0.W4RUOc_RspaFduFD1XOxjA';
   }
 
   buildMap() {
     this.map = new mapboxgl.Map({
-      container: 'map',
+      container: 'mapHolder',
       style: this.style,
       zoom: this.zoom,
-      center: [this.lng, this.lat]
+      center: [this.longitude, this.latitude]
     });
-    this.map.addControl(new mapboxgl.NavigationControl());
   }
+
+
+
 }
