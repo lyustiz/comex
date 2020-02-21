@@ -134,21 +134,7 @@
 
     <mat-grid-tile colspan="2" rowspan="2">
       <mat-card class="dashboard-card map-card bg-info text-white mx-1">
-        <mat-card-header>
-          <mat-card-title>
-            <h4>Sucursales</h4>
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <div id="mapHolder" class="row map-container rounded text-dark mx-2"></div>
-        </mat-card-content>
+          <div id="mapHolder" class="map-container rounded text-dark mx-2"></div>
       </mat-card>
     </mat-grid-tile>
 
@@ -182,7 +168,7 @@
     </mat-grid-tile>
 
 
-
+<!---- https://stackoverflow.com/questions/43868044/set-google-maps-container-size-equal-to-md-card-content-width-->
 
 
   </mat-grid-list>

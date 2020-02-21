@@ -10,44 +10,7 @@ import * as data from '@app/data/mock/sucursales.json';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styles: [`
-  .grid-container {
-    margin: 20px;
-  }
-  .dashboard-card {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    right: 15px;
-    bottom: 15px;
-  }
-  .more-button {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-  }
-  .dashboard-card-content {
-    text-align: center;
-  }
-  .card-number {
-    font-size: 4rem;
-  }
-  .map-card{
-    overflow: hidden;
-  }
-  .map-container {
-    min-width: 400px;
-    height: 290px;
-    border: 4px solid white;
-
-  },
-  .chart-container{
-    max-height: 180px;
-  }
-  .mapboxgl-canvas{
-    min-width: 400px; height: 100% ;
-  }
-`]
+  styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
 
