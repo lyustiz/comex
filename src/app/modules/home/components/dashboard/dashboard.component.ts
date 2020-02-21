@@ -36,13 +36,16 @@ import * as data from '@app/data/mock/sucursales.json';
     overflow: hidden;
   }
   .map-container {
-    width: 600px;
+    min-width: 400px;
     height: 290px;
     border: 4px solid white;
 
+  },
+  .chart-container{
+    max-height: 180px;
   }
   .mapboxgl-canvas{
-    width: 100%; height: 100% ;
+    min-width: 400px; height: 100% ;
   }
 `]
 })
@@ -53,19 +56,20 @@ export class DashboardComponent implements OnInit {
   map: mapboxgl.Map;
   latitude = -31.428;
   longitude = -65.403;
-  zoom = 4.45;
+  zoom = 5;
   sucursales: any = (data  as  any).default;
 
   //
   title = 'Angular Charts';
 
-  view: any[] = [600, 110];
+  view: any[] = [0, 110];
 
   // options for the chart
   showXAxis = true;
   showYAxis = true;
   gradient = false;
   showLegend = true;
+  legendTitle = 'Leyenda';
   showXAxisLabel = true;
   xAxisLabel = 'Pais';
   showYAxisLabel = true;
