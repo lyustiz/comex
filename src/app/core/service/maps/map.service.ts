@@ -7,29 +7,15 @@ import * as mapboxgl from 'mapbox-gl';
 })
 export class MapService {
 
- // mapBox = (mapboxgl as typeof mapboxgl);
+  public map: mapboxgl.Map;
 
+  constructor() { }
 
-  style = `mapbox://styles/mapbox/streets-v9`;
-  map: mapboxgl.Map;
-  latitude = -33.4569397;
-  longitude = -70.6482697;
-  zoom = 15;
+  buildMap( mapParams: mapboxgl.MapboxOptions ) {
 
+    mapParams.accessToken = environment.mapBox.token;
 
-  constructor() {
-    mapboxgl.accessToken = 'pk.eyJ1IjoibHl1c3RpeiIsImEiOiJjazZ0aGpzNjUwYW9qM2ZxaWxvY291b2x2In0.W4RUOc_RspaFduFD1XOxjA';
+    return this.map = new mapboxgl.Map(mapParams);
   }
-
-  buildMap() {
-    this.map = new mapboxgl.Map({
-      container: 'mapHolder',
-      style: this.style,
-      zoom: this.zoom,
-      center: [this.longitude, this.latitude]
-    });
-  }
-
-
 
 }

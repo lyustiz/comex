@@ -1,117 +1,55 @@
 <div class="grid-container">
+
   <h4 class="mat-h4 bg-light p-2 mx-3 rounded "><mat-icon>assessment</mat-icon> Dashboard</h4>
+
   <mat-grid-list cols="4" rowHeight="200px">
 
     <mat-grid-tile>
-      <mat-card class="dashboard-card bg-warning text-white">
-        <mat-card-header>
-          <mat-card-title>
-            <h4>Cartolas de Flujo</h4>
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div class="card-number">
-            <mat-icon class="card-number mr-5">sync</mat-icon>
-            <span class="d-inline-block">125</span>
-          </div>
-        </mat-card-content>
-      </mat-card>
+      <app-simple-widget
+        class="dashboard-card"
+        colorClass="bg-warning text-white"
+        title="Cartolas de Flujo"
+        icon="sync"
+        text="125"
+      ></app-simple-widget>
     </mat-grid-tile>
 
     <mat-grid-tile>
-      <mat-card class="dashboard-card bg-success text-white">
-        <mat-card-header>
-          <mat-card-title>
-            <h4>Cartolas Stock</h4>
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div class="card-number">
-            <mat-icon class="card-number mr-5">account_balance</mat-icon>
-            <span class="d-inline-block">226</span>
-          </div>
-        </mat-card-content>
-      </mat-card>
+      <app-simple-widget
+        class="dashboard-card"
+        colorClass="bg-success text-white"
+        title="Cartolas Stock"
+        icon="account_balance"
+        text="226"
+      ></app-simple-widget>
     </mat-grid-tile>
 
     <mat-grid-tile>
-      <mat-card class="dashboard-card bg-danger text-white">
-        <mat-card-header>
-          <mat-card-title>
-            <h4>Sin Negociar</h4>
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div class="card-number">
-            <mat-icon class="card-number mr-5">work_off</mat-icon>
-            <span class="d-inline-block">52</span>
-          </div>
-        </mat-card-content>
-      </mat-card>
+      <app-simple-widget
+        class="dashboard-card"
+        colorClass="bg-danger text-white"
+        title="Sin Negociar"
+        icon="work_off"
+        text="52"
+      ></app-simple-widget>
     </mat-grid-tile>
 
-
     <mat-grid-tile>
-      <mat-card class="dashboard-card bg-info text-white">
-        <mat-card-header>
-          <mat-card-title>
-            <h4>Stand-By</h4>
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div class="card-number">
-            <mat-icon class="card-number mr-5">access_alarm</mat-icon>
-            <span class="d-inline-block">28</span>
-          </div>
-        </mat-card-content>
-      </mat-card>
+      <app-simple-widget
+        class="dashboard-card"
+        colorClass="bg-info text-white"
+        title="Stand-By"
+        icon="access_alarm"
+        text="28"
+      ></app-simple-widget>
     </mat-grid-tile>
 
     <mat-grid-tile colspan="2" rowspan="2">
-      <mat-card class="dashboard-card bg-light">
-        <mat-card-header>
-          <mat-card-title>
-            <h4>Resumen</h4>
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content >
-          <div class="row chart-container pb-4">
-            <ngx-charts-bar-vertical
+      <app-complex-widget
+        class="dashboard-card"
+        colorClass="bg-light text-danger"
+        title="Cartolas">
+          <ngx-charts-bar-vertical class="chatHolder contend"
             [view]=""
             [scheme]="colorScheme"
             [results]="single"
@@ -124,52 +62,33 @@
             [xAxisLabel]="xAxisLabel"
             [yAxisLabel]="yAxisLabel"
             [legendTitle]="legendTitle"
-            [animations]="false"
-            >
-            </ngx-charts-bar-vertical>
-          </div>
-        </mat-card-content>
-      </mat-card>
+            [animations]="false" >
+          </ngx-charts-bar-vertical>
+      </app-complex-widget>
     </mat-grid-tile>
 
     <mat-grid-tile colspan="2" rowspan="2">
-      <mat-card class="dashboard-card map-card bg-info text-white mx-1">
-          <div id="mapHolder" class="map-container rounded text-dark mx-2"></div>
-      </mat-card>
+      <app-complex-widget
+        class="dashboard-card"
+        colorClass="bg-light text-danger"
+        title="Sucursales">
+          <!-- <div id="mapHolder" class="mapHolder contend"></div> -->
+      </app-complex-widget>
     </mat-grid-tile>
 
-    <mat-grid-tile colspan="2" rowspan="2">
-      <mat-card class="dashboard-card bg-light">
-        <mat-card-header>
-          <mat-card-title>
-            <h4>Clientes</h4>
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <div class="chart-container mx-1 row pb-4 pt-0">
-            <ngx-charts-advanced-pie-chart
+    <mat-grid-tile colspan="4" rowspan="2">
+      <app-complex-widget
+        class="dashboard-card"
+        colorClass="bg-light text-danger"
+        title="Clientes">
+          <ngx-charts-advanced-pie-chart class="chatHolder text-dark contend"
             [view]=""
             [scheme]="colorScheme"
             [results]="single"
-            [gradient]="gradient"
-           >
-            </ngx-charts-advanced-pie-chart>
-
-            </div>
-        </mat-card-content>
-      </mat-card>
+            [gradient]="gradient">
+          </ngx-charts-advanced-pie-chart>
+      </app-complex-widget>
     </mat-grid-tile>
-
-
-<!---- https://stackoverflow.com/questions/43868044/set-google-maps-container-size-equal-to-md-card-content-width-->
-
 
   </mat-grid-list>
 

@@ -11,10 +11,9 @@
       </mat-menu>
     </mat-card-title>
   </mat-card-header>
-  <mat-card-content class="dashboard-card-content">
-    <div class="card-number">
-      <mat-icon class="card-number mr-5">{{ icon }}</mat-icon>
-      <span class="d-inline-block">{{ text }}</span>
+  <mat-card-content>
+    <div class="card-contend">
+      <ng-content selector=".contend"></ng-content>
     </div>
   </mat-card-content>
 </mat-card>
