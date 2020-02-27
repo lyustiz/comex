@@ -11,8 +11,15 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
       <button mat-icon-button (click)="deleteRow()" color="warn" class="mx-1" matTooltip="Eliminar" matTooltipPosition="right">
           <mat-icon>delete</mat-icon>
       </button>
+
+      <ng-content select=".addButton"></ng-content>
   </div>
-  `
+  `,
+  styles: [`
+    :host ::ng-deep .addButton{
+      display: inline !important;
+    }
+  `]
 })
 export class ListButtonsComponent implements OnInit {
 

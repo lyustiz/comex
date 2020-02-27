@@ -44,7 +44,6 @@ export class ClientesListComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-
     this.table.dataSource.paginator = this.paginator;
     this.table.dataSource.sort = this.sort;
   }
@@ -61,9 +60,9 @@ export class ClientesListComponent implements OnInit, AfterViewInit {
 
     const description = `Desea eliminar el Cliente ${item.CLI_NOM} ?`;
 
-    this.showDialog('Atencion', description, 'confirm', DialogComponent);
+    this.table.showDialog('Atencion', description, 'confirm', DialogComponent);
 
-    this.dialogRef.afterClosed().subscribe( result => {
+    this.table.dialogRef.afterClosed().subscribe( result => {
       if ( result.confirm ) {
         this.clientesService.deleteCliente( item.key );
       }
@@ -80,15 +79,5 @@ export class ClientesListComponent implements OnInit, AfterViewInit {
 
     this.dialogRef.afterClosed().subscribe( result => console.log(result));
   }
-
-  showDialog( title: string, description: string, type: string, component) {
-
-    this.dialogRef = this.dialog.open( component, {
-      data: { title, description, type },
-      disableClose: true,
-      autoFocus: true,
-    });
-  }
-
 
 }

@@ -18,6 +18,7 @@ import { FormFilterComponent } from './components/form/form-filter/form-filter.c
 import { TableFilterComponent } from './components/list/table-filter/table-filter.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { FormBaseComponent } from './components/form/form-base/form-base.component';
+import { ShowHideColumnDirective } from './directives/show-hide-column.directive';
 
 @NgModule({
   imports: [
@@ -57,6 +58,7 @@ import { FormBaseComponent } from './components/form/form-base/form-base.compone
     TableFilterComponent,
     DialogComponent,
     FormBaseComponent,
+    ShowHideColumnDirective,
   ],
   entryComponents: [
     DialogComponent,
