@@ -80,4 +80,10 @@ export class ClientesListComponent implements OnInit, AfterViewInit {
     this.dialogRef.afterClosed().subscribe( result => console.log(result));
   }
 
+  hideCol(colums) {
+    console.group(colums);
+   // this.columns.splice(0, 1);
+  }
+
+
 }

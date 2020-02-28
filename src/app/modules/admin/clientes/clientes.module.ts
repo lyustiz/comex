@@ -8,7 +8,6 @@ import { ClientesFormComponent } from './components/clientes-form/clientes-form.
 import { ClientesSearchComponent } from './components/clientes-search/clientes-search.component';
 
 
-
 @NgModule({
   declarations: [ClientesListComponent, ClientesFormComponent, ClientesSearchComponent],
   imports: [

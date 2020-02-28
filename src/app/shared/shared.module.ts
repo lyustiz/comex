@@ -18,6 +18,8 @@ import { FormFilterComponent } from './components/form/form-filter/form-filter.c
 import { TableFilterComponent } from './components/list/table-filter/table-filter.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { FormBaseComponent } from './components/form/form-base/form-base.component';
+
+// Directives
 import { ShowHideColumnDirective } from './directives/show-hide-column.directive';
 
 @NgModule({
@@ -26,13 +28,14 @@ import { ShowHideColumnDirective } from './directives/show-hide-column.directive
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [
     MaterialModule,
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
+    // components
     LayoutComponent,
     NavBarComponent,
     FooterComponent,
@@ -42,9 +45,12 @@ import { ShowHideColumnDirective } from './directives/show-hide-column.directive
     ListButtonsComponent,
     ListHeaderComponent,
     FormMenuComponent,
-    TableFilterComponent
+    TableFilterComponent,
+    // directives
+    ShowHideColumnDirective
   ],
   declarations: [
+    // components
     LayoutComponent,
     NavBarComponent,
     FooterComponent,
@@ -58,7 +64,8 @@ import { ShowHideColumnDirective } from './directives/show-hide-column.directive
     TableFilterComponent,
     DialogComponent,
     FormBaseComponent,
-    ShowHideColumnDirective,
+    // directives
+    ShowHideColumnDirective
   ],
   entryComponents: [
     DialogComponent,

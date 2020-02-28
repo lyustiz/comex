@@ -1,5 +1,5 @@
-<h3 class="rounded text-white p-2 bg-info ">
-  <span>Clientes</span>
+<h3 class="rounded text-white p-2 bg-info " [appShowHideColumn]="false">
+  <span >Clientes</span>
 </h3>
 
 <div class="container-fluid">
@@ -18,20 +18,20 @@
         <mat-icon>add</mat-icon>
       </button>
       <!-- Head Menu  -->
-      <app-form-menu [columns]="columns"></app-form-menu>
+      <app-form-menu [columns]="columns" (hideCol)="hideCol($event)"></app-form-menu>
     </div>
   </div>
 
   <mat-progress-bar *ngIf="table.loading" mode="query"></mat-progress-bar>
 
-  <div class="table-holder row">
+  <div class="table-holder row" >
   <div class="col mb-3 overflow-auto">
     <table mat-table [dataSource]="table.dataSource" matSort class="w-100">
 
       <!-- Table Columns -->
-      <ng-container matColumnDef="CLI_RUT" [ShowHideColumnDirective]="false">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Rut Cliente </th>
-        <td mat-cell *matCellDef="let row">  {{ row.CLI_RUT }}  </td>
+      <ng-container matColumnDef="CLI_RUT" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header > Rut Cliente </th>
+        <td mat-cell *matCellDef="let row" >  {{ row.CLI_RUT }}  </td>
       </ng-container>
 
       <ng-container matColumnDef="CLI_NOM">
