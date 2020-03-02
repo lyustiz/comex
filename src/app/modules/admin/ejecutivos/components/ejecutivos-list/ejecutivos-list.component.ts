@@ -21,32 +21,35 @@ export class EjecutivosListComponent implements OnInit, AfterViewInit {
   @ViewChild( MatPaginator, {static: false}) paginator: MatPaginator;
   @ViewChild( MatSort, {static: false}) sort: MatSort;
 
-  public columns: string[] = [
-                              'EJE_NOM',
-                              'EJE_RUT',
-                              'EJE_COD',
-                              'EJE_TIP',
-                              'EJE_SUC',
-                              'EJE_TEL',
-                              'EJE_FAX',
-                              'EJE_EML',
-                              'ACTIONS'
-                            ];
-
   constructor(
     public ejecutivoService: EjecutivoService,
     public dialog: MatDialog,
     public table: TableService
-  ) {
-    this.table.getData(this.ejecutivoService.getEjecutivos());
-  }
+  ) {  }
 
   ngOnInit() {
+    this.table.getData(this.ejecutivoService.getEjecutivos());
+    this.table.setDefineCols(this.defineCols());
+    this.table.setColums();
   }
 
   ngAfterViewInit() {
     this.table.dataSource.paginator = this.paginator;
     this.table.dataSource.sort = this.sort;
+  }
+
+  defineCols() {
+    return [
+      { colum: 'EJE_NOM', visible: true, label: 'Rut Ejecutivo' },
+      { colum: 'EJE_RUT', visible: true, label: 'Codigo'},
+      { colum: 'EJE_COD', visible: true, label: 'Tipo'},
+      { colum: 'EJE_TIP', visible: true, label: 'Nombre'},
+      { colum: 'EJE_SUC', visible: true, label: 'Sucursal'},
+      { colum: 'EJE_TEL', visible: true, label: 'Fax'},
+      { colum: 'EJE_FAX', visible: true, label: 'Fono'},
+      { colum: 'EJE_EML', visible: true, label: 'Email'},
+      { colum: 'ACTIONS', visible: true, label: 'Acciones'},
+    ];
   }
 
   create() {

@@ -21,27 +21,30 @@ export class CargosListComponent implements OnInit, AfterViewInit {
   @ViewChild( MatPaginator, {static: false}) paginator: MatPaginator;
   @ViewChild( MatSort, {static: false}) sort: MatSort;
 
-  public columns: string[] = [
-                              'COD_CGO_PSN',
-                              'GLS_CGO_PSN',
-                              'NUM_CRV_ORD_CGO',
-                              'ACTIONS'
-                              ];
-
   constructor(
     public cargoService: CargoService,
     public dialog: MatDialog,
     public table: TableService
-  ) {
-    this.table.getData(this.cargoService.getCargos());
-  }
+  ) {  }
 
   ngOnInit() {
+    this.table.getData(this.cargoService.getCargos());
+    this.table.setDefineCols(this.defineCols());
+    this.table.setColums();
   }
 
   ngAfterViewInit() {
     this.table.dataSource.paginator = this.paginator;
     this.table.dataSource.sort = this.sort;
+  }
+
+  defineCols() {
+    return [
+      { colum: 'COD_CGO_PSN', visible: true, label: 'Codigo Cargo' },
+      { colum: 'GLS_CGO_PSN', visible: true, label: 'Glosa Cargo'},
+      { colum: 'NUM_CRV_ORD_CGO', visible: true, label: 'Orden Cargo'},
+      { colum: 'ACTIONS', visible: true, label: 'Acciones'},
+    ];
   }
 
   create() {

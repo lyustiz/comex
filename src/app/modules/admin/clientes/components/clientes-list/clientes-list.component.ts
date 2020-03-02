@@ -3,11 +3,11 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 
-import { ClientesService } from '@service/clientes.service';
-import { Cliente } from '@model/cliente.model';
-import { TableService } from '@app/core/service/list/table.service';
-import { ClientesFormComponent } from '../clientes-form/clientes-form.component';
 import { DialogComponent } from '@shared/components/dialog/dialog.component';
+import { TableService } from '@app/core/service/list/table.service';
+
+import { ClientesService } from '@service/clientes.service';
+import { ClientesFormComponent } from '../clientes-form/clientes-form.component';
 
 @Component({
   selector: 'app-clientes-list',
@@ -16,22 +16,10 @@ import { DialogComponent } from '@shared/components/dialog/dialog.component';
 })
 export class ClientesListComponent implements OnInit, AfterViewInit {
 
-  public clientes: Cliente[];
-  public cliente: Cliente;
   private dialogRef: MatDialogRef<any>;
 
   @ViewChild( MatPaginator, {static: false}) paginator: MatPaginator;
   @ViewChild( MatSort, {static: false}) sort: MatSort;
-
-  public columns: string[] = ['CLI_RUT',
-                              'CLI_NOM',
-                              'CLI_DIR',
-                              'CLI_CIU',
-                              'CLI_COM',
-                              'CLI_FON',
-                              'CLI_EML',
-                              'CLI_CAS'
-                            ];
 
   constructor(
     public clientesService: ClientesService,
@@ -41,11 +29,26 @@ export class ClientesListComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.table.getData(this.clientesService.getClientes());
+    this.table.setDefineCols(this.defineCols());
+    this.table.setColums();
   }
 
   ngAfterViewInit() {
     this.table.dataSource.paginator = this.paginator;
     this.table.dataSource.sort = this.sort;
+  }
+
+  defineCols() {
+    return [
+      { colum: 'CLI_RUT', visible: true, label: 'Rut Cliente' },
+      { colum: 'CLI_NOM', visible: true, label: 'Nombre'      },
+      { colum: 'CLI_DIR', visible: true, label: 'Direccion'   },
+      { colum: 'CLI_CIU', visible: true, label: 'Ciudad'      },
+      { colum: 'CLI_COM', visible: true, label: 'Comuna'      },
+      { colum: 'CLI_FON', visible: true, label: 'Fono'        },
+      { colum: 'CLI_EML', visible: true, label: 'Email'       },
+      { colum: 'ACTIONS', visible: true, label: 'Acciones'    }
+    ];
   }
 
   create() {
@@ -79,11 +82,5 @@ export class ClientesListComponent implements OnInit, AfterViewInit {
 
     this.dialogRef.afterClosed().subscribe( result => console.log(result));
   }
-
-  hideCol(colums) {
-    console.group(colums);
-   // this.columns.splice(0, 1);
-  }
-
 
 }

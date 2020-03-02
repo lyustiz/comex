@@ -14,7 +14,7 @@
   </mat-menu>
 
   <mat-menu role="menuitemradio" #fields="matMenu">
-    <button mat-menu-item *ngFor="let colum of colsControl; index as i">
-      <mat-slide-toggle checked="true" (change)="alerta(i, $event)" [name]="colum">{{ colum }}</mat-slide-toggle>
+    <button mat-menu-item *ngFor="let colum of columns; index as i">
+      <mat-slide-toggle *ngIf="colum.label !=='Acciones'" [checked]="colum.visible" (change)="showHide(i, colum, $event)" [name]="colum.colum">{{ colum.label }}</mat-slide-toggle>
     </button>
   </mat-menu>

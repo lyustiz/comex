@@ -21,35 +21,38 @@ export class SucursalesListComponent implements OnInit, AfterViewInit {
   @ViewChild( MatPaginator, {static: false}) paginator: MatPaginator;
   @ViewChild( MatSort, {static: false}) sort: MatSort;
 
-  public columns: string[] = [
-                                'SUC_COD',
-                                'SUC_GLS',
-                                'SUC_DIR',
-                                'SUC_DIR_NUM',
-                                'SUC_DIR_COM',
-                                'SUC_TEL_NUM',
-                                'SUC_COD_NUM',
-                                'SUC_FAX_NUM',
-                                'FLG_IDC_BANCO_ORIGN',
-                                'NRO_NVO_BANCO',
-                                'GLS_EML_AGT',
-                                'ACTIONS'
-                              ];
-
   constructor(
     public sucursalService: SucursalService,
     public dialog: MatDialog,
     public table: TableService
-  ) {
-    this.table.getData(this.sucursalService.getSucursales());
-  }
+  ) {  }
 
   ngOnInit() {
+    this.table.getData(this.sucursalService.getSucursales());
+    this.table.setDefineCols(this.defineCols());
+    this.table.setColums();
   }
 
   ngAfterViewInit() {
     this.table.dataSource.paginator = this.paginator;
     this.table.dataSource.sort = this.sort;
+  }
+
+  defineCols() {
+    return [
+      { colum: 'SUC_COD', visible: true, label: 'Cod. Suc' },
+      { colum: 'SUC_GLS', visible: true, label: 'Num. Suc'},
+      { colum: 'SUC_DIR', visible: true, label: 'Glosa'},
+      { colum: 'SUC_DIR_NUM', visible: true, label: 'Direccion'},
+      { colum: 'SUC_DIR_COM', visible: true, label: 'Nro'},
+      { colum: 'SUC_TEL_NUM', visible: true, label: 'Comuna'},
+      { colum: 'SUC_COD_NUM', visible: true, label: 'Telefono'},
+      { colum: 'SUC_FAX_NUM', visible: true, label: 'Fax'},
+      { colum: 'FLG_IDC_BANCO_ORIGN', visible: true, label: 'Flg. Bco'},
+      { colum: 'NRO_NVO_BANCO', visible: true, label: 'Num. Bco'},
+      { colum: 'GLS_EML_AGT', visible: true, label: 'Email. Agte.'},
+      { colum: 'ACTIONS', visible: true, label: 'Acciones'},
+    ];
   }
 
   create() {

@@ -18,7 +18,7 @@
           <mat-icon>add</mat-icon>
         </button>
         <!-- Head Menu  -->
-        <app-form-menu [columns]="columns"></app-form-menu>
+        <app-form-menu [columns]="table.defineCols" (showHideCol)="table.showHideCols($event)"></app-form-menu>
       </div>
     </div>
 
@@ -30,70 +30,70 @@
 
         <!-- Table Columns -->
         <ng-container matColumnDef="SUC_COD">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Cod. Suc </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ table.getLabel('SUC_COD') }} </th>
           <td mat-cell *matCellDef="let row">  {{ row.SUC_COD }}  </td>
         </ng-container>
 
         <ng-container matColumnDef="SUC_COD_NUM">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Num. Suc </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ table.getLabel('SUC_COD_NUM') }} </th>
           <td mat-cell *matCellDef="let row">  {{ row.SUC_COD_NUM }}  </td>
         </ng-container>
 
         <ng-container matColumnDef="SUC_GLS">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Glosa </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ table.getLabel('SUC_GLS') }} </th>
           <td mat-cell *matCellDef="let row">  {{ row.SUC_GLS }}  </td>
         </ng-container>
 
         <ng-container matColumnDef="SUC_DIR">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Direccion </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ table.getLabel('SUC_DIR') }} </th>
           <td mat-cell *matCellDef="let row">  {{ row.SUC_DIR }}  </td>
         </ng-container>
 
         <ng-container matColumnDef="SUC_DIR_NUM">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Nro </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ table.getLabel('SUC_DIR_NUM') }} </th>
           <td mat-cell *matCellDef="let row">  {{ row.SUC_DIR_NUM }}  </td>
         </ng-container>
 
         <ng-container matColumnDef="SUC_DIR_COM">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Comuna </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ table.getLabel('SUC_DIR_COM') }} </th>
           <td mat-cell *matCellDef="let row">  {{ row.SUC_DIR_COM }}  </td>
         </ng-container>
 
         <ng-container matColumnDef="SUC_TEL_NUM">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Telefono </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ table.getLabel('SUC_TEL_NUM') }} </th>
           <td mat-cell *matCellDef="let row">  {{ row.SUC_TEL_NUM }}  </td>
         </ng-container>
 
         <ng-container matColumnDef="SUC_FAX_NUM">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Fax </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ table.getLabel('SUC_FAX_NUM') }} </th>
           <td mat-cell *matCellDef="let row">  {{ row.SUC_FAX_NUM }}  </td>
         </ng-container>
 
         <ng-container matColumnDef="FLG_IDC_BANCO_ORIGN">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Flg. Bco </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ table.getLabel('FLG_IDC_BANCO_ORIGN') }} </th>
           <td mat-cell *matCellDef="let row">  {{ row.FLG_IDC_BANCO_ORIGN }}  </td>
         </ng-container>
 
         <ng-container matColumnDef="NRO_NVO_BANCO">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Num. Bco </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ table.getLabel('NRO_NVO_BANCO') }} </th>
           <td mat-cell *matCellDef="let row">  {{ row.NRO_NVO_BANCO }}  </td>
         </ng-container>
 
         <ng-container matColumnDef="GLS_EML_AGT">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Email. Agte. </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ table.getLabel('GLS_EML_AGT') }} </th>
           <td mat-cell *matCellDef="let row">  {{ row.GLS_EML_AGT }}  </td>
         </ng-container>
 
         <!-- Table Actions  -->
         <ng-container matColumnDef="ACTIONS" stickyEnd>
-          <th mat-header-cell *matHeaderCellDef> Acciones </th>
+          <th mat-header-cell *matHeaderCellDef> {{ table.getLabel('ACTIONS') }} </th>
           <td mat-cell *matCellDef="let row">
             <app-list-buttons (edit)="edit($event)" (delete)="delete($event)" [row]="row"></app-list-buttons>
           </td>
         </ng-container>
 
-        <tr mat-header-row *matHeaderRowDef="columns"></tr>
-        <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+        <tr mat-header-row *matHeaderRowDef="table.columns"></tr>
+        <tr mat-row *matRowDef="let row; columns: table.columns;"></tr>
 
       </table>
 
