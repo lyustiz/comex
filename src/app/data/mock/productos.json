@@ -1,0 +1,89 @@
+{
+    "productos":
+	[{
+		"PRONUM" :"1",
+		"PROCOD": "CRDIS",
+		"PROGLO": "carta de credito de importacion"
+	},
+	{
+		"PRONUM" :"2",
+		"PROCOD": "CRDIN",
+		"PROGLO": "carta de credito de importacion"
+	},
+	{
+		"PRONUM" :"3",
+		"PROCOD": "OPCTD",
+		"PROGLO": "operaciones contado"
+	},
+	{
+		"PRONUM" :"4",
+		"PROCOD": "OPIMP",
+		"PROGLO": "orden de pago de importacion"
+	},
+	{
+		"PRONUM" :"5",
+		"PROCOD": "CRDES",
+		"PROGLO": "cartas de credito de exportacion"
+	},
+	{
+		"PRONUM" :"6",
+		"PROCOD": "CRDEN",
+		"PROGLO": "cartas de credito de exportacion"
+	},
+	{
+		"PRONUM" :"7",
+		"PROCOD": "STDBY",
+		"PROGLO": "lc stand by emitidas"
+	},
+	{
+		"PRONUM" :"8",
+		"PROCOD": "PAEXP",
+		"PROGLO": "prestamos a exportadores"
+	},
+	{
+		"PRONUM" :"9",
+		"PROCOD": "CREXT",
+		"PROGLO": "creditos externos"
+	},
+	{
+		"PRONUM" :"10",
+		"PROCOD": "CREAV",
+		"PROGLO": "creditos externos"
+	},
+	{
+		"PRONUM" :"11",
+		"PROCOD": "CR3V5",
+		"PROGLO": "colocaciones comerciales"
+	},
+	{
+		"PRONUM" :"12",
+		"PROCOD": "CRVB2",
+		"PROGLO": "colocaciones cap. v.b.2"
+	},
+	{
+		"PRONUM" :"13",
+		"PROCOD": "CCOME",
+		"PROGLO": "creditos comerciales"
+	},
+	{
+		"PRONUM" :"14",
+		"PROCOD": "OTROS",
+		"PROGLO": "otros"
+	},
+	{
+		"PRONUM" :"15",
+		"PROCOD": "CESDE",
+		"PROGLO": "cesion de derecho"
+	},
+	{
+		"PRONUM" :"16",
+		"PROCOD": "BLTGR",
+		"PROGLO": "boletas de garantia"
+	},
+	{
+		"PRONUM" :"17",
+		"PROCOD": "LTRDE",
+		"PROGLO": "letras descontadas"
+ }]
+}
+    
