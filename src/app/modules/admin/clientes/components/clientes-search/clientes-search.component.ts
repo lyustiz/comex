@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ComponentFactoryResolver, ViewChild, ViewContainerRef, Input, OnInit, ReflectiveInjector } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CustomValidators as cValidators} from '@shared/utils/validators';
 
 @Component({
   selector: 'app-clientes-search',
@@ -7,9 +9,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientesSearchComponent implements OnInit {
 
-  constructor() { }
+  public formGroup: FormGroup;
 
-  ngOnInit() {
+  public currentComponent = null;
+
+  @ViewChild('ComponentContainer', {static: true}) componentContainer: ViewContainerRef;
+  @Input() compo: any;
+  constructor(public viewContainerRef: ViewContainerRef) { }
+
+  ngOnInit() { 
+    let myComponent
   }
+
+ /* @ViewChild('dynamicComponentContainer', { read: ViewContainerRef, static: false}) dynamicComponentContainer: ViewContainerRef;
+  @Input() set componentData(data: {component: any, inputs: any}) {
+    if (!data) {
+      return;
+    }
+
+    let inputProviders = [];
+    if ( data.inputs ) {
+      inputProviders = Object.keys(data.inputs)
+      .map((inputName) => {
+        return {
+          provide: inputName,
+          useValue: data.inputs[inputName]
+        };
+      });
+    }*/
+
+
+
+  }
+
+  
+
+
 
 }

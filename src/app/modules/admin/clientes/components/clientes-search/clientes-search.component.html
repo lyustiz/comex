@@ -1,1 +1,40 @@
-<p>clientes-search works!</p>
+<form #form="ngForm" [formGroup]="formGroup" class="bg-white p-3 rounded ">
+
+<mat-dialog-content>
+
+    <mat-form-field class="col-md-6">
+    <input matInput formControlName="cliRut" placeholder="Rut Cliente" required>
+    <mat-icon matSuffix>person</mat-icon>
+    <mat-error><app-validator [formField]="formField('cliRut')" [fieldName]="'Rut Cliente'"></app-validator></mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-6">
+    <input matInput formControlName="cliNom" placeholder="Nombre Cliente" required>
+    <mat-error><app-validator [formField]="formField('cliNom')" [fieldName]="'Nombre Cliente'"></app-validator></mat-error>
+    </mat-form-field>
+
+    <div class="d-inline col-md-12">
+        <button mat-raised-button class="bg-danger text-white">
+            <mat-icon>search</mat-icon> Buscar
+        </button>
+    </div>
+
+    <div class="d-inline col-md-6">
+        <button mat-raised-button class="bg-ligth text-danger">
+            <mat-icon>list</mat-icon> Listar clientes con servicio de email activado
+        </button>
+    </div>
+    <div class="d-inline col-md-6">
+        <button mat-raised-button class="bg-ligth text-danger">
+            <mat-icon>list</mat-icon> Listar clientes con dir. email pero y sin servicio activo
+        </button>
+    </div>
+
+</mat-dialog-content>
+
+
+
+</form>
+
+<ng-template #ComponentContainer>s</ng-template>
+  
