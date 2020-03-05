@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
+  api_url:   'https://my-json-server.typicode.com/lyustiz/comex/',
   firebase: {
     apiKey: 'AIzaSyD7xo2c9TUtiUrpjKFP85b9gH-R3sDV4uk',
     authDomain: 'come-f012d.firebaseapp.com',
