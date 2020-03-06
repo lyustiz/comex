@@ -1,0 +1,21 @@
+{
+"estado":
+[{
+    "edocod": 1,	"edogsa": "sin revisar" 
+},
+{
+    "edocod": 2,	"edogsa": "aprobados" 
+},
+{
+    "edocod": -1,	"edogsa": "eliminados" 
+},
+{
+    "edocod": 3,	"edogsa": "bloqueados" 
+},
+{
+    "edocod": 4,	"edogsa": "modificados" 
+},
+{
+    "edocod": -2,	"edogsa": "eliminados (-2)" 
+}]
+}
