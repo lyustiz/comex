@@ -76,7 +76,7 @@
         <td mat-cell *matCellDef="let row">
           <app-list-buttons (edit)="edit($event)" (delete)="delete($event)" [row]="row">
 
-              <button  mat-icon-button (click)="edit()" class="addButton mx-1 text-info" matTooltip="Correos" matTooltipPosition="right">
+              <button  mat-icon-button (click)="edit(row)" class="addButton mx-1 text-info" matTooltip="Correos" matTooltipPosition="right">
                 <mat-icon>mail</mat-icon>
               </button>
 

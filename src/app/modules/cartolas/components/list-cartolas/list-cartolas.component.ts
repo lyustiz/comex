@@ -65,7 +65,7 @@ export class ListCartolasComponent implements AfterViewInit {
     }
   }
 
-  clearFilter(): void {
+  clearFilter(event): void {
     this.dataSource.filter = '';
     this.filterField = '';
   }
