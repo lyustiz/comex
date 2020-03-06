@@ -15,11 +15,19 @@ export class ClientesSearchComponent implements OnInit {
 
   @ViewChild('ComponentContainer', {static: true}) componentContainer: ViewContainerRef;
   @Input() compo: any;
-  constructor(public viewContainerRef: ViewContainerRef) { }
+  constructor(public viewContainerRef: ViewContainerRef, public formBuilder:FormBuilder ) { }
 
-  ngOnInit() { 
-    let myComponent
+  ngOnInit() {
+    let myComponent;
+
+    this.formGroup  = this.formBuilder.group({
+      cliRut: ['', [ Validators.required]],
+      cliNom: ['', [Validators.required]]
+
+    });
   }
+
+
 
  /* @ViewChild('dynamicComponentContainer', { read: ViewContainerRef, static: false}) dynamicComponentContainer: ViewContainerRef;
   @Input() set componentData(data: {component: any, inputs: any}) {
@@ -36,14 +44,15 @@ export class ClientesSearchComponent implements OnInit {
           useValue: data.inputs[inputName]
         };
       });
-    }*/
+    }
 
 
 
+  }*/
+
+  formField(field: string) {
+    return this.formGroup.get(field);
   }
-
-  
-
 
 
 }
