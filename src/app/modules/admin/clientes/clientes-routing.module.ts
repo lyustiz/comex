@@ -3,8 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 import { ClientesListComponent } from './components/clientes-list/clientes-list.component';
+import { ClientesPageComponent } from './components/clientes-page/clientes-page.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: ClientesPageComponent
+  },
   {
     path: 'list',
     component: ClientesListComponent

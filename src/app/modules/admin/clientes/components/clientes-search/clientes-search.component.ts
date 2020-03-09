@@ -2,21 +2,20 @@ import { Component, ComponentFactoryResolver, ViewChild, ViewContainerRef, After
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CustomValidators as cValidators} from '@shared/utils/validators';
 
-import { ClientesListComponent } from '../clientes-list/clientes-list.component';
 
 @Component({
   selector: 'app-clientes-search',
   templateUrl: './clientes-search.component.html',
   styleUrls: ['./clientes-search.component.scss']
 })
-export class ClientesSearchComponent implements OnInit, AfterViewInit {
-  
+export class ClientesSearchComponent implements OnInit {
+
   public formGroup: FormGroup;
 
   public currentComponent = null;
 
-  @ViewChild('ComponentContainer', { read: ViewContainerRef, static: false}) dynamicComponentContainer: ViewContainerRef;
-  
+
+
   /*@Input() set componentData(data: {component: any, inputs: any}) {
     if (!data) {
       return;
@@ -51,13 +50,9 @@ export class ClientesSearchComponent implements OnInit, AfterViewInit {
 
   }
 
-  ngAfterViewInit(): void {
-    console.log(this.dynamicComponentContainer);
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(ClientesListComponent);
-    const viewContainerRef = this.dynamicComponentContainer;
-    viewContainerRef.clear();
-    viewContainerRef.createComponent(componentFactory);
-  }
+
+
+
 
 
   formField(field: string) {

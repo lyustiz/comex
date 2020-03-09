@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, Input, Output, EventEmitter } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -21,6 +21,9 @@ export class ClientesListComponent implements OnInit, AfterViewInit {
   @ViewChild( MatPaginator, {static: false}) paginator: MatPaginator;
   @ViewChild( MatSort, {static: false}) sort: MatSort;
 
+  @Input()  dataFilter;
+  @Output() searchData = new EventEmitter();
+
   constructor(
     public clientesService: ClientesService,
     public dialog: MatDialog,
@@ -28,7 +31,9 @@ export class ClientesListComponent implements OnInit, AfterViewInit {
   ) { }
 
   ngOnInit() {
-    this.table.getData(this.clientesService.getClientes());
+
+    this.dataFilter =  {CLI_RUT: '10095179-7'};
+    this.table.getData(this.clientesService.getClientes(this.dataFilter));
     this.table.setDefineCols(this.defineCols());
     this.table.setColums();
   }

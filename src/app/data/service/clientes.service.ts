@@ -17,9 +17,15 @@ export class ClientesService {
 
   constructor(private db: AngularFireDatabase, private errorHandler: HttpHandlerErrorService) {  }
 
-  getClientes() {
+  getClientes(dataFilter) {
 
-    this.clientes = this.db.list<Cliente>('CARTOLAS/TB_SCC_CLI', ref => ref.limitToFirst(10));
+    this.clientes = this.db.list<Cliente>('CARTOLAS/TB_SCC_CLI',
+                    ( ref ) => {
+                      if (dataFilter.CLI_RUT) {
+                        return ref.orderByChild('CLI_RUT').equalTo(dataFilter.CLI_RUT).limitToFirst(10);
+                      }
+                      return ref.limitToFirst(10);
+                    });
 
     return  this.clientes.snapshotChanges()
     .pipe(
