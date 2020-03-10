@@ -1,7 +1,6 @@
-import { Component, ComponentFactoryResolver, ViewChild, ViewContainerRef, AfterViewInit, Input, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CustomValidators as cValidators} from '@shared/utils/validators';
-
 
 @Component({
   selector: 'app-clientes-search',
@@ -14,31 +13,9 @@ export class ClientesSearchComponent implements OnInit {
 
   public currentComponent = null;
 
+  @Output() searchCliente = new EventEmitter();
 
-
-  /*@Input() set componentData(data: {component: any, inputs: any}) {
-    if (!data) {
-      return;
-    }
-
-    let inputProviders = [];
-    if ( data.inputs ) {
-      inputProviders = Object.keys(data.inputs)
-      .map((inputName) => {
-        return {
-          provide: inputName,
-          useValue: data.inputs[inputName]
-        };
-      });
-    }
-
-
-
-  }*/
-
-  constructor(public formBuilder: FormBuilder,
-              public componentFactoryResolver: ComponentFactoryResolver,
-              /* */) { }
+  constructor(public formBuilder: FormBuilder) { }
 
   ngOnInit() {
 
@@ -46,9 +23,14 @@ export class ClientesSearchComponent implements OnInit {
       cliRut:	      [ '', [ Validators.required, cValidators.rut ] ],     // RUT
       cliNom:	      [ '', [ Validators.required] ],                       // NOMBRE
     });
-
-
   }
+
+  search() {
+    this.searchCliente.emit(this.formGroup.value);
+  }
+
+
+
 
 
 
