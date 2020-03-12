@@ -8,12 +8,15 @@ import { ClientesListComponent } from '../clientes-list/clientes-list.component'
 })
 export class ClientesPageComponent implements OnInit, AfterViewInit {
 
+  public searchExpanded: boolean;
+
   @ViewChild('componentContainer', { read: ViewContainerRef, static: false}) hostConstainer: ViewContainerRef;
 
   constructor( public componentFactoryResolver: ComponentFactoryResolver,
                public changeDetectorRef: ChangeDetectorRef ) { }
 
   ngOnInit( ) {
+    this.searchExpanded = true;
   }
 
   ngAfterViewInit(): void {
@@ -25,6 +28,12 @@ export class ClientesPageComponent implements OnInit, AfterViewInit {
     this.hostConstainer.clear();
     this.hostConstainer.createComponent(componentFactory);
     this.changeDetectorRef.detectChanges();
+  }
+
+
+  searchCliente(formData) {
+    console.log(formData);
+    this.searchExpanded = !this.searchExpanded;
   }
 
 }

@@ -1,10 +1,10 @@
-<mat-expansion-panel [expanded]="true" class="bg-info">
+<mat-expansion-panel [expanded]="searchExpanded" class="bg-info">
   <mat-expansion-panel-header>
     <mat-panel-title class="text-white">
       <mat-icon>search</mat-icon>  Buscar Clientes
     </mat-panel-title>
   </mat-expansion-panel-header>
-  <app-clientes-search></app-clientes-search>
+  <app-clientes-search (searchCliente)="searchCliente($event)"></app-clientes-search>
 </mat-expansion-panel>
 
 

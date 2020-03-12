@@ -88,10 +88,4 @@ export class ClientesListComponent implements OnInit, AfterViewInit {
     this.dialogRef.afterClosed().subscribe( result => console.log(result));
   }
 
-  searchCliente(formData){
-
-    console.log(formData);
-   }
-
-
 }
